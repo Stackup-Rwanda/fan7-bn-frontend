@@ -40,6 +40,12 @@ git clone https://github.com/Stackup-Rwanda/fan7-bn-frontend.git
 ```
 - npm run dev
 ``` 
+### Test
+ 
+- run test using ```npm test```
+- run test in watch mode using ```npm run test:watch```.
+- run test coverage using ```npm run test:coverage```.
+ 
 
 ## Features
 
@@ -50,6 +56,10 @@ git clone https://github.com/Stackup-Rwanda/fan7-bn-frontend.git
 
 ### Linting Library
 - Eslint 
+
+### Testing Framework
+- Jest     - JavaScript unit testing framework, used by Facebook to test services and React applications
+- Enzyme      - JavaScript Testing utility for React that makes it easier to assert, manipulate, and traverse your React Components’ output
 
 ### Compiler
 Babel - Compiler for ES6 Javascript
