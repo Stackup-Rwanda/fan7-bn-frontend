@@ -1,8 +1,8 @@
 .DS_Store
-node_modules
+node_modules/
 dist
-package-lock.json
 coverage
 .env
 .vscode
 html-report
+package-lock.json
