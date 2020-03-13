@@ -43,4 +43,22 @@ module.exports = {
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
 
   verbose: false,
+  reporters: [
+    "default",
+    [
+      "jest-html-reporters",
+      {
+        "publicPath": "./html-report",
+        "filename": "report.html",
+        "expand": true
+      }
+    ]
+  ],
+  collectCoverage: true,
+  coverageReporters: [
+    "lcov",
+    "json",
+    "text",
+    "html"
+  ]
 };

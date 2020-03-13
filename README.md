@@ -1,5 +1,6 @@
 # Barefoot Nomad - Frontend
 ## [Badges here]
+[![Test Coverage](https://api.codeclimate.com/v1/badges/15f4d3f84d859a33c759/test_coverage)](https://codeclimate.com/github/Stackup-Rwanda/fan7-bn-frontend/test_coverage)
 
 # General Overview
 A web application intend to make travel and accommodation easy and convenient.
