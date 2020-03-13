@@ -48,17 +48,11 @@ module.exports = {
     [
       "jest-html-reporters",
       {
-        "publicPath": "./html-report",
+        "publicPath": "./coverage/html-report",
         "filename": "report.html",
         "expand": true
       }
     ]
   ],
   collectCoverage: true,
-  coverageReporters: [
-    "lcov",
-    "json",
-    "text",
-    "html"
-  ]
 };
