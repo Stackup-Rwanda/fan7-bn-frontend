@@ -15,6 +15,8 @@ module.exports = {
     '!**/jest.config.js',
 
     '!**/webpack.config.js',
+
+    '!**/server.js',
   ],
 
   coverageDirectory: 'coverage',
@@ -44,15 +46,15 @@ module.exports = {
 
   verbose: false,
   reporters: [
-    "default",
+    'default',
     [
-      "jest-html-reporters",
+      'jest-html-reporters',
       {
-        "publicPath": "./coverage/html-report",
-        "filename": "report.html",
-        "expand": true
-      }
-    ]
+        publicPath: './coverage/html-report',
+        filename: 'report.html',
+        expand: true,
+      },
+    ],
   ],
   collectCoverage: true,
 };

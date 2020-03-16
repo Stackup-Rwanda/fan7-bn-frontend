@@ -2,7 +2,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
-module.exports = {
+module.exports = (env) => ({
   context: __dirname,
   entry: './src/index.js',
   output: {
@@ -10,10 +10,12 @@ module.exports = {
     filename: 'main.js',
     publicPath: '/',
   },
+  mode: env ? 'production' : 'development',
   devServer: {
     inline: true,
     port: 3000,
     historyApiFallback: true,
+    contentBase: path.join(__dirname, 'dist'),
   },
   module: {
     rules: [
@@ -39,11 +41,9 @@ module.exports = {
           },
           'sass-loader',
         ],
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|j?g|svg|gif)?$/,
+        test: /\.(png|jpg|svg|gif)?$/,
         use: 'file-loader',
       },
     ],
@@ -58,4 +58,5 @@ module.exports = {
       chunkFilename: '[id].css',
     }),
   ],
-};
+
+});

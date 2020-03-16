@@ -10,6 +10,6 @@
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/prefer-stateless-function": "off",
-    "linebreak-style": ["error", "windows"]
+    "linebreak-style": 0,
   }
 }
