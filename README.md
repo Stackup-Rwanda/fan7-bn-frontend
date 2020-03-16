@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/Stackup-Rwanda/fan7-bn-frontend.svg?branch=develop)](https://travis-ci.org/Stackup-Rwanda/fan7-bn-frontend)
 
 # General Overview
-A web application intend to make travel and accommodation easy and convenient.
+A web application intended to make travel and accommodation easy and convenient.
 
 # Github 
 

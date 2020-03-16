@@ -1,0 +1,14 @@
+# List of contexts (i.e. apps) and their corresponding statuses
+when:
+    # Allowed statuses are:
+    #
+    #   - success
+    #   - failure
+    #   - pending
+    #   - error
+    continuous-integration/travis-ci/pr: success
+    wip: pending
+    dep: failure
+  
+  # Override default label (optional)
+  label: 'Review Me'
