@@ -12,9 +12,9 @@ A web application intend to make travel and accommodation easy and convenient.
 
 https://github.com/Stackup-Rwanda/fan7-bn-frontend.git
 
-<!-- ## Server side hosted on Heroku
+## Client hosted on Heroku
 
-https://barefoot-nomad-staging.herokuapp.com/ -->
+https://barefoot-nomad-ui-staging.herokuapp.com/
 
 ## Getting Started
 
