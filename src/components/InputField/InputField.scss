@@ -1,1 +1,27 @@
 // css goes here
+input {
+    background-color: #F3E5F5;
+    border-radius: 50px !important;
+    padding: 12px 15px 12px 15px !important;
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: none !important;
+    border: 1px solid #F3E5F5 !important;
+    font-size: 16px !important;
+    color: #000 !important;
+    font-weight: 400;
+    border: 1px solid rgb(64, 129, 214) !important;
+    &:focus {
+      box-shadow: none !important;
+      outline-width: 0;
+      font-weight: 400
+    }
+  }
+
+  .error{
+    position: relative;
+    top: -20px;
+    padding: 5px 30px;
+    color: #ed5249
+  }

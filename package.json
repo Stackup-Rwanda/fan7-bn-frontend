@@ -29,6 +29,7 @@
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
+    "axios": "^0.19.2",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.4.2",
     "eslint": "^6.1.0",
@@ -36,7 +37,9 @@
     "express": "^4.17.1",
     "file-loader": "^5.1.0",
     "history": "^4.10.1",
+    "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "joi-browser": "^13.4.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
     "path": "^0.12.7",
@@ -68,6 +71,7 @@
     "jest": "^25.1.0",
     "jest-html-reporters": "^1.2.1",
     "jest-transform-stub": "^2.0.0",
+    "ts-loader": "^6.2.1",
     "webpack-dev-server": "^3.10.3"
   },
   "jest": {

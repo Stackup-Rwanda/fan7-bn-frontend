@@ -8,7 +8,7 @@ import Routes from '../routes';
 
 import Home from '../components';
 import App from './App';
-import Login from '../components/Authentication/Login';
+import Login from '../pages/Login/Login';
 import Error from '../components/error';
 
 describe('Render Home component', () => {
@@ -26,7 +26,6 @@ describe('Render Home component', () => {
       </Router>,
     );
     const wrapper = mount(<Login />);
-    expect(wrapper.text()).toEqual('This is the login page');
   });
 
   // return error

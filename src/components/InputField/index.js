@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './InputField.scss';
 
 const InputField = ({
   type,
@@ -16,7 +17,7 @@ const InputField = ({
   required,
   error,
 }) => (
-  <div className="">
+  <div className="form-group">
     <input
       type={type}
       name={name}
@@ -31,7 +32,7 @@ const InputField = ({
       onChange={onChange}
       required={required}
     />
-    <span className="invalid-input">{error}</span>
+    <span className="error">{error}</span>
   </div>
 );
 

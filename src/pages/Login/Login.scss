@@ -1,0 +1,117 @@
+
+$bg-img: url('../../assets/images/Login/login_background_image.jpeg');
+body {
+  color: #000;
+  overflow-x: hidden;
+  height: 100%;
+  background-color: #eee
+}
+.tab {
+  border-radius: 10;
+  height: 660px;
+  border: none
+}
+.tab1 {
+  width: 50%;
+  padding: 40px 30px 10px 30px
+}
+
+.tab2 {
+  background-image: $bg-img;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-attachment: inherit;
+  background-position: center;
+  width: 50%;
+}
+.logo {
+  position: absolute;
+  top: -80px;
+  left: -0px;
+  width: 50px;
+  height: 60px
+}
+.heading {
+  margin-top: -60px;
+  font-weight: 800px;
+  margin-bottom: 10px !important
+}
+.title {
+  padding-left: 80px;
+  margin-bottom: 30px
+}
+span {
+  color: rgba(38, 129, 255, 0.65);
+}
+a {
+  text-decoration: none;
+  color: rgba(38, 129, 255, 0.65);
+  &:hover {
+    color: #000
+  }
+}
+.btn {
+  border-radius: 50px;
+  color: #fff;
+  background-color: rgba(38, 129, 255, 0.65);
+  padding: 10px;
+  cursor: pointer;
+  border: none !important;
+  margin-top: 10px;
+  &:hover {
+    color: #fff;
+    background-color: rgb(57, 123, 185);
+  }
+}
+.no-account {
+  width: 100%;
+}
+
+.account-text {
+  font-size: 15px;
+}
+
+@media screen and (max-width: 992px) {
+  .tab1 {
+      width: 100%;
+      padding: 40px 30px 10px 30px;
+  }
+
+  .tab2 {
+      width: 100%
+  }
+
+  .travel__tab {
+      margin-top: 100px !important;
+      margin-bottom: 100px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+      padding: 300px;
+  }
+
+  .tab2 {
+      padding: 50px
+  }
+
+  .travel__tab {
+      margin-top: 50px !important;
+      margin-bottom: 50px !important
+  }
+}
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 100px !important
+}
+
+.tab2 {
+    padding: 20px
+}
+
+.travel__tab {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important
+}
+}

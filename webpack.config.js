@@ -2,7 +2,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
-module.exports = (env) => ({
+module.exports = {
   context: __dirname,
   entry: './src/index.js',
   output: {
@@ -10,42 +10,42 @@ module.exports = (env) => ({
     filename: 'main.js',
     publicPath: '/',
   },
-  mode: env ? 'production' : 'development',
   devServer: {
     inline: true,
     port: 3000,
     historyApiFallback: true,
-    contentBase: path.join(__dirname, 'dist'),
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader'],
+        use: ['babel-loader'],
       },
       {
-        test: /\.(scss|sass|css)$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loaders: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              modules: {
-                localIdentName: '[name]__[local]--[hash:base64:5]',
-              },
-              sourceMap: true,
-              importLoaders: 1,
-            },
-          },
-          'sass-loader',
-        ],
+        use: {
+          loader: 'babel-loader',
+        },
       },
       {
-        test: /\.(png|jpg|svg|gif)?$/,
+        test: /\.css$/,
+        loader: 'style-laoder!css-loader?modules=true',
+      },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.html$/,
+        use: [{ loader: 'html-loader' }],
+      },
+      {
+        test: /\.(png|jpg|svg|gif|jpeg)?$/,
         use: 'file-loader',
       },
+      { test: /\.ts$/, use: 'ts-loader' },
     ],
   },
   plugins: [
@@ -58,5 +58,4 @@ module.exports = (env) => ({
       chunkFilename: '[id].css',
     }),
   ],
-
-});
+};
