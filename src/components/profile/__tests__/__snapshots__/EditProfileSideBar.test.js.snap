@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EditProfileSideBar /> shallow rendering tests matches the snapshot 1`] = `
+<div
+  className="sideBar"
+>
+  <div
+    className="sideBar__avatar"
+  >
+    <ProfileAvatar
+      src={
+        Object {
+          "process": [Function],
+        }
+      }
+    />
+  </div>
+  <label
+    className="sideBar__change"
+    htmlFor="input-file"
+  >
+    change profile
+    <input
+      className="sideBar__change___file"
+      id="input-file"
+      onChange={[Function]}
+      type="file"
+    />
+  </label>
+  <p
+    className="sideBar__text"
+  >
+    <strong>
+      Email: 
+    </strong>
+    elvisrugamba@gmail.com
+  </p>
+  <p
+    className="sideBar__text"
+  >
+    <strong>
+      Role: 
+    </strong>
+    manager
+  </p>
+</div>
+`;

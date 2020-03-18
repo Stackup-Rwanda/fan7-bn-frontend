@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProfileFeeds /> shallow rendering tests matches the snapshot 1`] = `
+<div
+  className="feeds"
+>
+  <div
+    className="feeds-card1"
+  >
+    <h1
+      className="feeds-card1__title"
+    >
+      Intro
+    </h1>
+    <div
+      className="feeds-card1__content"
+    >
+      <p
+        className="feeds-card1__content___text"
+      >
+        Gender: Male
+      </p>
+    </div>
+    <div
+      className="feeds-card1__content"
+    >
+      <p
+        className="feeds-card1__content___text"
+      >
+        Birthday: 05/06/1996
+      </p>
+    </div>
+    <div
+      className="feeds-card1__content"
+    >
+      <span
+        className="feeds-card1__content___icon"
+      />
+      <p
+        className="feeds-card1__content___text"
+      >
+        Current location
+      </p>
+    </div>
+  </div>
+  <div
+    className="feeds-card2"
+  >
+    <h1
+      className="feeds-card2__title"
+    >
+      Fill Out Your Profile
+    </h1>
+    <p
+      className="feeds-card2__desc"
+    >
+      Add photos and info to your profile so people can find you easily and get to know you better!
+    </p>
+  </div>
+</div>
+`;

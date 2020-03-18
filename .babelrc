@@ -5,6 +5,7 @@
       {
         "modules": false,
         "targets": {
+          "node": "current",
           "browsers": [
             "last 2 Chrome versions",
             "last 2 Firefox versions",
@@ -21,7 +22,8 @@
   ],
   "env": {
     "test": {
-      "presets": [["@babel/env"], "@babel/react"]
+      "presets": [["@babel/env"], "@babel/react"],
+      "plugins": ["@babel/plugin-transform-runtime"]
     }
   },
   "plugins": [

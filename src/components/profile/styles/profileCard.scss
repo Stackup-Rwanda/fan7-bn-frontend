@@ -1,0 +1,74 @@
+.profile_card {
+  display: grid;
+  grid-template-columns: 110px auto 220px;
+  grid-template-rows: 110px auto;
+  background: #ffffff;
+  padding: 20px;
+
+  &__avatar {
+    grid-column: 1 / span 1;
+    grid-row: 1;
+  }
+
+  &__text {
+    display: block;
+    grid-column: 2 / span 1;
+    grid-row: 1;
+    &___fullname {
+      position: relative;
+      font-family: 'Poppins', sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 28px;
+      color: #000000;
+    }
+
+    &___username {
+      position: relative;
+      font-family: 'Poppins', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      color: #2681ff;
+    }
+  }
+
+  &__settings {
+    grid-column: 3 / span 1;
+    grid-row: 1;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    height: 35px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    margin-top: 15px;
+    text-decoration: none;
+
+    &___edit {
+      position: relative;
+      width: 164px;
+      font-family: 'Poppins', sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 1.9;
+      text-align: center;
+      color: #000000;
+      border-right: 1px solid #000000;
+    }
+
+    &___icon {
+      position: relative;
+      width: 40px;
+      background: url('../../../assets/images/settings-24px.svg') no-repeat center;
+    }
+  }
+
+  &__menu {
+    position: relative;
+    grid-column: 1 / span 3;
+    grid-row: 2;
+  }
+}

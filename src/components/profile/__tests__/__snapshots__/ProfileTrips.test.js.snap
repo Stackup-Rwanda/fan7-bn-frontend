@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProfileTrips /> shallow rendering tests matches the snapshot 1`] = `
+<div
+  className="trips"
+>
+  <h1
+    className="trips__title"
+  >
+    Recent Trip Requests
+  </h1>
+  <table
+    className="trips__table"
+  >
+    <thead>
+      <tr>
+        <td>
+          Destination
+        </td>
+        <td>
+           Travel Date
+        </td>
+        <td>
+           Status
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Nigeria, Lagos
+        </td>
+        <td>
+          05/06/2020
+        </td>
+        <td>
+          pending
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <Link
+    className="trips__more"
+    to="/trip-requests"
+  >
+    View more
+  </Link>
+</div>
+`;
