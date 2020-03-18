@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+body {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: #1A8CB8;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  margin-left: 4%;
+  margin-right: 4%;
+  width: 92%;
+  margin-top: 4%;
+  height: 560px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.tab1 {
+  width: 50%;
+  display: inline-block;
+}
+
+.tab2 {
+  background-image: url("../../assets/images/Login/login_background_image.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: inherit;
+  background-position: center;
+  width: 50%;
+  display: inline-block;
+}
+
+.input {
+  width: 60%;
+  margin-left: 20%;
+}
+
+.btn {
+  margin-left: 20%;
+}
+
+.glass {
+  background-color: #1A8CB8;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  opacity: 0.4;
+}
+
+.title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 100;
+  margin-top: 10px;
+}
+
+.links {
+  margin-top: 5%;
+  text-align: center;
+}
+
+.bottom_link {
+  margin-top: 15%;
+  text-align: center;
+}
+
+span {
+  color: rgba(38, 129, 255, 0.65);
+}
+
+a {
+  text-decoration: none;
+  color: rgba(38, 129, 255, 0.65);
+}
+
+a:hover {
+  color: #000;
+}
+
+.travel_info_title {
+  font-weight: bolder;
+  font-size: 45px;
+}
+
+.travel__tab {
+  text-align: center;
+  color: white;
+  margin-top: 25%;
+}
+
+.btn {
+  border-radius: 50px;
+  color: #fff;
+  background-color: rgba(38, 129, 255, 0.65);
+  padding: 12px 15px 12px 15px;
+  cursor: pointer;
+  border: none !important;
+  font-size: 16px !important;
+  width: 60%;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  color: #fff;
+  background-color: #397bb9;
+}
+
+@media screen and (max-width: 992px) {
+  .tab1 {
+    width: 100%;
+    padding: 40px 30px 10px 30px;
+  }
+  .tab2 {
+    width: 100%;
+  }
+  .travel_info {
+    margin-top: 100px !important;
+    margin-bottom: 100px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 300px;
+  }
+  .tab2 {
+    padding: 50px;
+  }
+  .travel__tab {
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 100px !important;
+  }
+  .tab2 {
+    padding: 20px;
+  }
+  .travel__tab {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+  }
+}
+/*# sourceMappingURL=authLayout.css.map */

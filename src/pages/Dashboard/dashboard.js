@@ -4,7 +4,7 @@ export default class Dashboard extends Component {
   render() {
     return (
       <div>
-        <h1>WELCOME TO BAREFOOT NOMAD</h1>
+        <h1>THIS IS THE DASHBOARD PAGE</h1>
       </div>
     );
   }
