@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProfileCardMenu /> shallow rendering tests matches the snapshot 1`] = `
+<Fragment>
+  <button
+    className="menu active"
+    name="activityFeeds"
+    onClick={[Function]}
+    type="button"
+  >
+    Activity Feeds
+  </button>
+  <button
+    className="menu"
+    name="trips"
+    onClick={[Function]}
+    type="button"
+  >
+    Trips
+  </button>
+</Fragment>
+`;

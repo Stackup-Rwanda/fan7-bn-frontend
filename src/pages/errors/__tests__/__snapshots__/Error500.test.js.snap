@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Error500 /> shallow rendering tests matches the snapshot 1`] = `
+<div
+  className="error"
+>
+  <div
+    className="content"
+  >
+    <h1>
+      500
+    </h1>
+    <div
+      className="desc"
+    >
+      500 Error Page
+    </div>
+    <div
+      className="actions"
+    >
+      <Link
+        to="/"
+      >
+        <button
+          type="button"
+        >
+          Back to Home
+        </button>
+      </Link>
+    </div>
+  </div>
+</div>
+`;

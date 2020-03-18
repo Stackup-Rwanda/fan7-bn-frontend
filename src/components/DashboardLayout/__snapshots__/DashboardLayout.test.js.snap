@@ -1,0 +1,240 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DashboardLayout /> shallow rendering tests matches the snapshot 1`] = `
+<div>
+  <div
+    className="sidebar"
+  >
+    <div
+      className="sidebar_header"
+    >
+      <img
+        alt="home"
+        className="sidebar_header_img"
+        src={
+          Object {
+            "process": [Function],
+          }
+        }
+      />
+      <h1
+        className="sidebar_header_title"
+      />
+    </div>
+    <ul
+      className="sidebar_main"
+    >
+      <li>
+        <Link
+          className="sidebar_main_component1"
+          to="/dashboard"
+        >
+          <img
+            alt="dashboard"
+            className="sidebar_main_component1_icon"
+            src={
+              Object {
+                "process": [Function],
+              }
+            }
+          />
+          <p
+            className="sidebar_main_component1_text"
+          >
+            Dashboard
+          </p>
+          <img
+            alt="forward"
+            className="sidebar_main_component1_image"
+            src={
+              Object {
+                "process": [Function],
+              }
+            }
+          />
+        </Link>
+      </li>
+      <li>
+        <Link
+          className="sidebar_main_component1"
+          to="/dashboard"
+        >
+          <img
+            alt="users"
+            className="sidebar_main_component1_icon"
+            src={
+              Object {
+                "process": [Function],
+              }
+            }
+          />
+          <p
+            className="sidebar_main_component1_text"
+          >
+            Users
+          </p>
+          <img
+            alt="forward"
+            className="sidebar_main_component1_image"
+            src={
+              Object {
+                "process": [Function],
+              }
+            }
+          />
+        </Link>
+      </li>
+      <li>
+        <Link
+          className="sidebar_main_component1"
+          to="/dashboard"
+        >
+          <img
+            alt="trip-requests"
+            className="sidebar_main_component1_icon"
+            src={
+              Object {
+                "process": [Function],
+              }
+            }
+          />
+          <p
+            className="sidebar_main_component1_text"
+          >
+            Trip Requests
+          </p>
+          <img
+            alt="forward"
+            className="sidebar_main_component1_image"
+            src={
+              Object {
+                "process": [Function],
+              }
+            }
+          />
+        </Link>
+      </li>
+      <li>
+        <Link
+          className="sidebar_main_component1"
+          to="/dashboard"
+        >
+          <img
+            alt="accomodations"
+            className="sidebar_bottom_component1_icon"
+            src={
+              Object {
+                "process": [Function],
+              }
+            }
+          />
+          <p
+            className="sidebar_main_component1_text"
+          >
+            Accomodations
+          </p>
+          <img
+            alt="forward"
+            className="sidebar_main_component1_image"
+            src={
+              Object {
+                "process": [Function],
+              }
+            }
+          />
+        </Link>
+      </li>
+    </ul>
+    <ul
+      className="sidebar_bottom"
+    >
+      <li>
+        <Link
+          className="sidebar_bottom_component"
+          to="/profile"
+        >
+          <img
+            alt="account"
+            className="sidebar_bottom_component_icon"
+            src={
+              Object {
+                "process": [Function],
+              }
+            }
+          />
+          <p
+            className="sidebar_bottom_component_text"
+          >
+            Account
+          </p>
+          <img
+            alt="forward"
+            className="sidebar_bottom_component_image"
+            src={
+              Object {
+                "process": [Function],
+              }
+            }
+          />
+        </Link>
+      </li>
+      <li>
+        <Link
+          className="sidebar_bottom_component"
+          to="/dashboard"
+        >
+          <img
+            alt="signout"
+            className="sidebar_bottom_component_icon"
+            src={
+              Object {
+                "process": [Function],
+              }
+            }
+          />
+          <p
+            className="sidebar_bottom_component_text"
+          >
+            Signout
+          </p>
+        </Link>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="navbar"
+  >
+    <ul
+      className="navbar_items"
+    >
+      <li>
+        <img
+          alt="notifications"
+          className="navbar_items_single"
+          src={
+            Object {
+              "process": [Function],
+            }
+          }
+        />
+      </li>
+      <li>
+        <img
+          alt="profile"
+          className="navbar_items_single2"
+          src={
+            Object {
+              "process": [Function],
+            }
+          }
+        />
+      </li>
+    </ul>
+  </div>
+  <div
+    className="body"
+  >
+    <TextInput />
+  </div>
+</div>
+`;

@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProfileCard /> shallow rendering tests matches the snapshot 1`] = `
+<div
+  className="profile_card"
+>
+  <ProfileAvatar
+    src={
+      Object {
+        "process": [Function],
+      }
+    }
+  />
+  <div
+    className="profile_card__text"
+  >
+    <h1
+      className="profile_card__text___fullname"
+    >
+      Test Test
+    </h1>
+    <p
+      className="profile_card__text___username"
+    >
+      @
+      testT
+    </p>
+  </div>
+  <Link
+    className="profile_card__settings"
+    to="/edit-profile"
+  >
+    <p
+      className="profile_card__settings___edit"
+    >
+      Edit Profile
+    </p>
+    <span
+      className="profile_card__settings___icon"
+    />
+  </Link>
+  <div
+    className="profile_card__menu"
+  >
+    <ProfileCardMenu
+      handleNavigation={[MockFunction]}
+    />
+  </div>
+</div>
+`;

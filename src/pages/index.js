@@ -1,1 +1,1 @@
-// put all class components in pages folder
+// put all class components in container folder

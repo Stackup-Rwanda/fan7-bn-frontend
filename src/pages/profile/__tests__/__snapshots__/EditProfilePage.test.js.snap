@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EditProfilePage /> shallow rendering tests matches the snapshot 1`] = `
+<ContextProvider
+  value={null}
+>
+  <_class
+    dispatch={[Function]}
+    email=""
+    loading={false}
+    profile={null}
+    profileImg=""
+    role=""
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    updateLoading={false}
+  />
+</ContextProvider>
+`;

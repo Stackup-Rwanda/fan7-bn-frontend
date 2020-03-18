@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProfileAvatar /> shallow rendering tests matches the snapshot 1`] = `
+<img
+  alt="Profile Avatar"
+  className="avatar"
+  src={
+    Object {
+      "process": [Function],
+    }
+  }
+/>
+`;
