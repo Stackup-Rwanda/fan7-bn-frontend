@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UserRole /> shallow rendering tests matches the snapshot 1`] = `
+<ContextProvider
+  value={null}
+>
+  <_class
+    dispatch={[Function]}
+    loading={false}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    users={
+      Array [
+        Object {
+          "email": "e.kskemc@gmail.com",
+          "role": "requester",
+        },
+      ]
+    }
+  />
+</ContextProvider>
+`;

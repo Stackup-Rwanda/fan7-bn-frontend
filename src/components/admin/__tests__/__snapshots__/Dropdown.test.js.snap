@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Dropdown /> shallow rendering tests matches the snapshot 1`] = `
+<div
+  className="Dropdown"
+>
+  <div
+    className="Dropdown_main"
+  >
+    <div
+      className="Dropdown_main_title"
+    >
+      <h3>
+        Change user role to :
+      </h3>
+    </div>
+    <div>
+      <ul
+        className="Dropdown_main_body"
+      >
+        <li
+          className="Dropdown_main_body_element1"
+          data-role="manager"
+          onClick={[Function]}
+        >
+          <img
+            alt="icon"
+            src={
+              Object {
+                "process": [Function],
+              }
+            }
+          />
+          Manager
+        </li>
+        <li
+          className="Dropdown_main_body_element2"
+          data-role="host-supplier"
+          onClick={[Function]}
+        >
+          <img
+            alt="icon"
+            src={
+              Object {
+                "process": [Function],
+              }
+            }
+          />
+          Host-supplier
+        </li>
+        <li
+          className="Dropdown_main_body_element3"
+          data-role="travel-administrator"
+          onClick={[Function]}
+        >
+          <img
+            alt="icon"
+            src={
+              Object {
+                "process": [Function],
+              }
+            }
+          />
+          Travel Admin
+        </li>
+        <li
+          className="Dropdown_main_body_element4"
+          data-role="requester"
+          onClick={[Function]}
+        >
+          <img
+            alt="icon"
+            src={
+              Object {
+                "process": [Function],
+              }
+            }
+          />
+          Requester
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

@@ -16,6 +16,8 @@ import EmailConfirm from '../pages/Authentication/EmailVerification';
 import Dashboard from '../pages/Dashboard/dashboard';
 import ForgetPassword from '../pages/forgetPassword';
 import ResetPassword from '../pages/resetPassword';
+import UserRole from '../components/admin/userRole';
+
 
 export default function index() {
   const isLogedIn = AuthService.isLoggedIn();
@@ -31,6 +33,10 @@ IsPrivate path="/" exact component={Home} />
       <Route
         path="/edit-profile"
         render={() => (isLogedIn ? <EditProfilePage /> : <Redirect to="/login" />)}
+      />
+      <Route 
+        path="/userrole" 
+        render={() => (isLogedIn ? <UserRole /> : <Redirect to="/login" />)}
       />
       <Route path="/test" exact component={Test} />
       <Route path="/403" exact component={Error403} />
