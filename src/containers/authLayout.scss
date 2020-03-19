@@ -9,6 +9,11 @@ body {
   background-color: #1A8CB8;
   font-family: 'Poppins', sans-serif;
 }
+.forgetPswd {
+  .socialContainer {
+    display: none;
+  }
+}
 .container{
   margin: 4%;
   width: 92%;
@@ -68,11 +73,11 @@ margin-top: 10px;
   text-align: center;
 }
 .links{
-  margin-top: 5%;
+  margin-top: 3%;
   text-align: center;
 }
 .bottom_link{
-  margin-top: 15%;
+  margin-top: 5%;
   text-align: center;
 }
 span {

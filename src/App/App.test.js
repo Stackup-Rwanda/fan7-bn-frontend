@@ -1,7 +1,9 @@
 import React from 'react';
 import { Router } from 'react-router-dom';
-import { mount, render, shallow } from 'enzyme';
-
+import { mount, shallow } from 'enzyme';
+import { applyMiddleware, createStore } from 'redux';
+import thunk from 'redux-thunk';
+import reducers from '../store/reducers/socialReducer';
 
 import history from '../utils/helpers/history';
 import Routes from '../routes';
@@ -11,6 +13,21 @@ import App from './App';
 import Error from '../components/error';
 
 describe('Render Home component', () => {
+  beforeEach(() => {
+    const middlewares = [thunk];
+    const testStore = (state) => {
+      const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore);
+      return createStoreWithMiddleware(reducers, state);
+    };
+
+    const setUp = (initialState = {}, props = {}) => {
+      const store = testStore(initialState);
+      return shallow(
+        <Routes {...props} store={store} />,
+      );
+    };
+  });
+
   it('should render the Home component successfully', () => {
     const wrapper = mount(<Home />);
 
@@ -18,7 +35,7 @@ describe('Render Home component', () => {
   });
 
   // return error
-  it('should return page not found', () => {
+  test('should return page not found', () => {
     const wrapper = mount(<Error />);
     expect(wrapper.text()).toEqual('Page not found');
   });

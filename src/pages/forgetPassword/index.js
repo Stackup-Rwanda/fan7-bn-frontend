@@ -61,7 +61,8 @@ class ForgetPassword extends Component {
        emailError,
     } = this.state;
     return (
-      <AuthLayout title="Reset Password" redirectMsg="Already have an account?" redirectLocation=" Login" redirect={() => history.push('/login')}>
+      <div className="forgetPswd">
+      <AuthLayout title="Reset Password" redirectMsg="already have an account? " redirectLocation=" Login" redirect={() => history.push('/login')}>
           <p className="paragraph">
             Enter your email, we will contact you shortly for reset password.
           </p>
@@ -92,6 +93,7 @@ class ForgetPassword extends Component {
           </div>
         </div>
  </AuthLayout>
+ </div>
     );
   }
 }
