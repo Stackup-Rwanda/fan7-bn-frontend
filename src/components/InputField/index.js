@@ -17,26 +17,28 @@ const InputField = ({
   required,
   error,
   onKeyUp,
-  onFocus,
+  onFocus
 }) => (
-  <div className="form-group">
-    <input
-      type={type}
-      name={name}
-      id={id}
-      value={value}
-      placeholder={placeholder}
-      className={className}
-      disabled={disabled}
-      pattern={pattern}
-      min={min}
-      max={max}
-      onChange={onChange}
-      onKeyUp={onKeyUp}
-      onFocus={onFocus}
-      required={required}
-    />
-    <span className="error">{error}</span>
+  <div className="">
+    <div className="form_group">
+      <input
+        type={type}
+        name={name}
+        id={id}
+        value={value}
+        placeholder={placeholder}
+        className={className}
+        disabled={disabled}
+        pattern={pattern}
+        min={min}
+        max={max}
+        onChange={onChange}
+        required={required}
+        onKeyUp={onKeyUp}
+        onFocus={onFocus}
+      />
+      <span className="invalid_input">{error}</span>
+    </div>
   </div>
 );
 

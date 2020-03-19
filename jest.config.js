@@ -14,6 +14,16 @@ module.exports = {
 
     '!**/jest.config.js',
 
+    '!**/src/pages/auth/Login/index.js',
+
+    '!**/src/pages/forgetPassword/index.js',
+
+    '!**src/pages/resetPassword/index.js',
+    
+    '!**src/utils/helpers/success.js',
+
+    '!**src/utils/helpers/errorHandle.js',
+
     '!**/webpack.config.js',
 
     '!**/server.js',
