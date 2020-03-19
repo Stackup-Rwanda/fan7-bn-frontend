@@ -1,6 +1,6 @@
 // css goes here
 input {
-    background-color: #F3E5F5;
+    background-color: white;
     border-radius: 50px !important;
     padding: 12px 15px 12px 15px !important;
     width: 100%;
@@ -18,10 +18,7 @@ input {
       font-weight: 400
     }
   }
-
   .error{
-    position: relative;
-    top: -20px;
-    padding: 5px 30px;
-    color: #ed5249
+    color: #ed5249;
+    font-size: 12px;
   }

@@ -2,7 +2,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
-module.exports = {
+module.exports = (env) => ({
   context: __dirname,
   entry: './src/index.js',
   output: {
@@ -10,10 +10,12 @@ module.exports = {
     filename: 'main.js',
     publicPath: '/',
   },
+  mode: env ? 'production' : 'development',
   devServer: {
     inline: true,
     port: 3000,
     historyApiFallback: true,
+    contentBase: path.join(__dirname, 'dist'),
   },
   module: {
     rules: [
@@ -21,13 +23,6 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
-      },
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
       },
       {
         test: /\.css$/,
@@ -38,14 +33,9 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.html$/,
-        use: [{ loader: 'html-loader' }],
-      },
-      {
         test: /\.(png|jpg|svg|gif|jpeg)?$/,
         use: 'file-loader',
       },
-      { test: /\.ts$/, use: 'ts-loader' },
     ],
   },
   plugins: [
@@ -58,4 +48,5 @@ module.exports = {
       chunkFilename: '[id].css',
     }),
   ],
-};
+
+});

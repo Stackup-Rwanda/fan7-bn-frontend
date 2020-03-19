@@ -16,6 +16,8 @@ const InputField = ({
   onChange,
   required,
   error,
+  onKeyUp,
+  onFocus,
 }) => (
   <div className="form-group">
     <input
@@ -30,6 +32,8 @@ const InputField = ({
       min={min}
       max={max}
       onChange={onChange}
+      onKeyUp={onKeyUp}
+      onFocus={onFocus}
       required={required}
     />
     <span className="error">{error}</span>
@@ -50,6 +54,8 @@ InputField.propTypes = {
   onChange: PropTypes.func,
   required: PropTypes.bool,
   error: PropTypes.string,
+  onKeyUp: PropTypes.func,
+  onFocus: PropTypes.func,
 };
 
 InputField.defaultProps = {
@@ -65,6 +71,8 @@ InputField.defaultProps = {
   pattern: null,
   disabled: null,
   error: null,
+  onKeyUp: null,
+  onFocus: null,
 };
 
 export default InputField;
