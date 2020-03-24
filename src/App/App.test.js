@@ -8,7 +8,6 @@ import Routes from '../routes';
 
 import Home from '../components';
 import App from './App';
-import Login from '../components/Authentication/Login';
 import Error from '../components/error';
 
 describe('Render Home component', () => {
@@ -16,17 +15,6 @@ describe('Render Home component', () => {
     const wrapper = mount(<Home />);
 
     expect(wrapper.text()).toEqual('WELCOME TO BAREFOOT NOMAD');
-  });
-
-  // login page
-  test('should return login page message', () => {
-    render(
-      <Router history={history}>
-        <Routes />
-      </Router>,
-    );
-    const wrapper = mount(<Login />);
-    expect(wrapper.text()).toEqual('This is the login page');
   });
 
   // return error

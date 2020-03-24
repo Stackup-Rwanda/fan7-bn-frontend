@@ -22,28 +22,18 @@ module.exports = (env) => ({
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader'],
+        use: ['babel-loader'],
       },
       {
-        test: /\.(scss|sass|css)$/,
-        exclude: /node_modules/,
-        loaders: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              modules: {
-                localIdentName: '[name]__[local]--[hash:base64:5]',
-              },
-              sourceMap: true,
-              importLoaders: 1,
-            },
-          },
-          'sass-loader',
-        ],
+        test: /\.css$/,
+        loader: 'style-laoder!css-loader?modules=true',
       },
       {
-        test: /\.(png|jpg|svg|gif)?$/,
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.(png|jpg|svg|gif|jpeg)?$/,
         use: 'file-loader',
       },
     ],

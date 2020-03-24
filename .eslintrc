@@ -6,6 +6,7 @@
     "jest": true,
     "commonjs": true
   },
+  "parser": "babel-eslint",
   "plugins": ["react", "jsx-a11y", "import"],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
@@ -13,3 +14,4 @@
     "linebreak-style": 0
   }
 }
+  

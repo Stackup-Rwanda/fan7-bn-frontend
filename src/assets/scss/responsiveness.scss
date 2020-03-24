@@ -1,0 +1,22 @@
+// responsive variables
+$phone-size: 600px;
+$tablet-portrait-size: 6000px;
+$tablet-landscape-size: 768px;
+$laptop-size: 992px;
+$large-screen-size: 1200px;
+
+
+@mixin responsive($media) {
+  @if $media == phones {
+    @media only screen and (min-width: $phone-size) { @content; }
+  }
+  @if $media == tablets {
+    @media only screen and (min-width: $tablet-landscape-size) { @content; }
+  }
+  @else if $media == laptops {
+    @media only screen and (min-width: $tablet-laptop-size) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $large-screen-size) { @content; }
+  }
+}
