@@ -40,11 +40,16 @@ module.exports = {
 
   snapshotSerializers: ['enzyme-to-json/serializer'],
 
+  testEnvironment: 'jsdom',
+
   testMatch: ['**/__tests__/**/*.js?(x)', '**/?(*.)+(spec|test).js?(x)'],
+
+  testURL: 'http://localhost',
 
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
 
   verbose: false,
+
   reporters: [
     'default',
     [
@@ -56,5 +61,6 @@ module.exports = {
       },
     ],
   ],
+
   collectCoverage: true,
 };

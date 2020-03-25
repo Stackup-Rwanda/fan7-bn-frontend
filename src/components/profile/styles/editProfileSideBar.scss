@@ -1,0 +1,50 @@
+.sideBar {
+  position: relative;
+  grid-column: 1 / span 1;
+  grid-row: 2;
+  background: #ffffff;
+  padding: 20px;
+  border-right: 1px solid rgba(61, 104, 143, 0.3);
+
+  &__avatar {
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+  }
+
+  &__change {
+    display: block;
+    width: 130px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    text-align: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+    color: #2681ff;
+    margin: 10px auto 0;
+
+    &___file {
+      display: none;
+
+      &::-webkit-file-upload-button {
+        visibility: hidden;
+      }
+    }
+  }
+
+  &__text {
+    display: block;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: #000000;
+    margin: 20px auto;
+    text-align: center;
+  }
+}

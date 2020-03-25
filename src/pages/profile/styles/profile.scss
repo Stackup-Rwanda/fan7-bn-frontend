@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=La+Belle+Aurore&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.profile {
+  background: #e5e5e5;
+  display: grid;
+  grid-template-rows: 190px 160px auto;
+  gap: 1em;
+  overflow: auto;
+  padding-bottom: 20px;
+}
+
+.profile-hero {
+  position: relative;
+  background: url('../../../assets/images/ll.jpg') no-repeat fixed;
+  background-size: 100% 40%;
+
+  &__title {
+    display: block;
+    text-align: center;
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 2.5;
+    color: #ffffff;
+  }
+}
+
+.profile-card {
+  position: relative;
+  width: 96%;
+  margin: -30px auto auto;
+}
+
+.profile-content {
+  width: 92%;
+  margin: -10px auto auto;
+}

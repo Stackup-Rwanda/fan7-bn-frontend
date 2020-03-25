@@ -30,14 +30,14 @@ class Login extends Component {
   //   }
   // }
 
-  handleChange = (event) => {
+  handleChange = event => {
     const { name, value } = event.target;
     this.setState({
       [name]: value,
     });
-  }
+  };
 
-  checkEmailInput = (e) => {
+  checkEmailInput = e => {
     const validEmailRegex = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     if (!validEmailRegex.test(e.target.value)) {
       this.setState({
@@ -50,9 +50,9 @@ class Login extends Component {
         isEmailValid: true,
       });
     }
-  }
+  };
 
-  checkPasswordInput = (e) => {
+  checkPasswordInput = e => {
     const validPasswordRegex = /^(?=.*[a-zA-Z])(?=.*[0-9]){3}/;
     if (!validPasswordRegex.test(e.target.value)) {
       this.setState({
@@ -65,86 +65,77 @@ class Login extends Component {
         isPasswordValid: true,
       });
     }
-  }
+  };
 
-  resetInput = (e) => {
+  resetInput = e => {
     if (e.target.id === 'email') {
       this.setState({ emailError: '', isEmailValid: false });
     }
     if (e.target.id === 'password') {
       this.setState({ passwordError: '', isPasswordValid: false });
     }
-  }
+  };
 
-  handleLogin = async (event) => {
+  handleLogin = async event => {
     const { email, password } = this.state;
     const { userFetch } = this.props;
     event.preventDefault();
     const payload = { email, password };
     await userFetch(payload);
-  }
+  };
 
   render() {
-    const {
-      email, password, emailError, passwordError,
-    } = this.state;
+    const { email, password, emailError, passwordError } = this.state;
     return (
-      <div className="container">
-        <div className="tab1">
-          <Logo />
-          <h6 className="title">Log in to continue</h6>
-          <div className="error">
-            {emailError}
-          </div>
-          <form className="loginForm">
-            <Input
-              type="text"
-              name="email"
-              id="email"
-              placeholder="Email"
-              className="input"
-              value={email}
-              onChange={this.handleChange}
-              onKeyUp={this.checkEmailInput}
-              onFocus={this.resetInput}
-            />
-            <div className="error">
-              {passwordError}
+      <div className="loginBody">
+        <div className="container">
+          <div className="tab1">
+            <Logo />
+            <h6 className="title">Log in to continue</h6>
+            <div className="error">{emailError}</div>
+            <form className="loginForm">
+              <Input
+                type="text"
+                name="email"
+                id="email"
+                placeholder="Email"
+                className="input"
+                value={email}
+                onChange={this.handleChange}
+                onKeyUp={this.checkEmailInput}
+                onFocus={this.resetInput}
+              />
+              <div className="error">{passwordError}</div>
+              <Input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+                className="input"
+                value={password}
+                onChange={this.handleChange}
+                onKeyUp={this.checkPasswordInput}
+                onFocus={this.resetInput}
+              />
+              <Button type="submit" className="btn" value="Login" onClick={this.handleLogin} />
+            </form>
+            <div className="links">
+              <a href="/auth/forget">Forgot Password?</a>
             </div>
-            <Input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Password"
-              className="input"
-              value={password}
-              onChange={this.handleChange}
-              onKeyUp={this.checkPasswordInput}
-              onFocus={this.resetInput}
-            />
-            <Button
-              type="submit"
-              className="btn"
-              value="Login"
-              onClick={this.handleLogin}
-            />
-          </form>
-          <div className="links">
-            <a href="/auth/forget">Forgot Password?</a>
+            <div className="bottom-link">
+              <p href="#" className="link">
+                You don't have an account?
+                <a href="/auth/signup"> Sign up</a>
+              </p>
+            </div>
           </div>
-          <div className="bottom-link">
-            <p href="#" className="link">
-              You don't have an account?
-              <a href="/auth/signup"> Sign up</a>
-            </p>
-          </div>
-        </div>
-        <div className="tab2">
-          <div className="glass">
-            <div className="travel__tab">
-              <h1 className="travel-info-title">Travel The World</h1>
-              <p className="travel-info">We make travel and accommodation</p>
-              <p className="travel-info"> easy and convenient</p>
+          <div className="tab2">
+            <div className="glass">
+              <div className="travel__tab">
+                <h1 className="travel-info-title">Travel The World</h1>
+                <p className="travel-info">We make travel and accommodation</p>
+                <p className="travel-info"> easy and convenient</p>
+              </div>
             </div>
           </div>
         </div>
@@ -156,14 +147,16 @@ class Login extends Component {
 Login.PropTypes = {
   loginAction: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
-}
+};
 
-const mapStateProps = (state) => ({
+const mapStateProps = state => ({
   user: state.user,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  userFetch: (data) => { dispatch(loginAction(data)); },
+const mapDispatchToProps = dispatch => ({
+  userFetch: data => {
+    dispatch(loginAction(data));
+  },
 });
 
 export default connect(mapStateProps, mapDispatchToProps)(Login);

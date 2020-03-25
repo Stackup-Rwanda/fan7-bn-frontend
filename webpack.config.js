@@ -4,7 +4,7 @@ const path = require('path');
 
 module.exports = (env) => ({
   context: __dirname,
-  entry: './src/index.js',
+  entry: ['@babel/polyfill', './src/index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
@@ -22,7 +22,7 @@ module.exports = (env) => ({
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: ['babel-loader', 'eslint-loader'],
       },
       {
         test: /\.css$/,
@@ -33,7 +33,7 @@ module.exports = (env) => ({
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(png|jpg|svg|gif|jpeg)?$/,
+        test: /\.(png|jpg|jpeg|svg|gif)?$/,
         use: 'file-loader',
       },
     ],

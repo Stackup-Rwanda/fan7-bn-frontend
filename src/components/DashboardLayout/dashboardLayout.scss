@@ -1,0 +1,178 @@
+@import '../../assets/scss/variables.scss';
+
+//Layout Stylling
+
+.sidebar {
+  position: absolute;
+  width: 20%;
+  height: 795px;
+  left: 0px;
+  top: 0px;
+  background: $backColor;
+  overflow: hidden;
+
+  &_header {
+    position: absolute;
+    top: 10px;
+
+    &_img {
+      position: absolute;
+      left: 0px;
+      top: 15px;
+      width: 40px;
+      padding-left: 10px;
+    }
+
+    &_title {
+      position: relative;
+      padding-left: 40px;
+      margin: 0 auto;
+      top: 15px;
+      font-family: $font-family;
+      font-weight: bold;
+      font-size: 30px;
+      text-transform: uppercase;
+      color: $TextColor;
+    }
+  }
+
+  &_main {
+    position: relative;
+    top: 94px;
+    list-style: none;
+
+    &_component1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      height: 60px;
+      border-top: 1px solid $HoverColor;
+      border-bottom: 1px solid $HoverColor;
+      font-family: $font-family;
+      font-weight: bold;
+      font-size: 16px;
+      color: $TextColor;
+      text-decoration: none;
+      padding: 0 .5em;
+
+      &:hover {
+        background: rgb(10, 45, 75);
+        cursor: pointer;
+      }
+
+      &_text {
+        display: inline-block;
+        width: 99%;
+        margin-left: 5px;
+      }
+
+      &_icon {
+        display: inline-block;
+        width: 24px;
+        justify-self: flex-start;
+      }
+
+      &_image {
+        display: inline-block;
+        justify-self: flex-end;
+        color: $TextColor;
+        width: 24px;
+      }
+    }
+  }
+
+  &_bottom {
+    position: absolute;
+    top: 630px;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+
+    &_component {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+      width: 90%;
+      height: 60px;
+      margin: 0 auto;
+      border-top: 1px solid $HoverColor;
+      border-bottom: 1px solid $HoverColor;
+      font-family: $font-family;
+      font-weight: bold;
+      font-size: 16px;
+      list-style: none;
+      color: $TextColor;
+      text-decoration: none;
+      &:hover {
+        background: rgb(10, 45, 75);
+        cursor: pointer;
+      }
+
+      &_text {
+        display: inline-block;
+        width: 99%;
+        margin-left: 5px;
+      }
+
+      &_icon {
+        display: inline-block;
+        justify-self: flex-start;
+        width: 24px;
+      }
+
+      &_image {
+        display: inline-block;
+        justify-self: flex-end;
+        color: $TextColor;
+        width: 24px;
+      }
+    }
+  }
+}
+
+.navbar {
+  position: absolute;
+  width: 79.9%;
+  height: 70px;
+  left: 20%;
+  top: 0px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  &_items {
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    list-style: none;
+    float: right;
+
+    &_single {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      margin-top: 15px;
+    }
+
+    &_single2 {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      margin: 5px 0 0 50px;
+      border-radius: 50%;
+    }
+  }
+}
+
+.body {
+  position: absolute;
+  left: 20%;
+  top: 10%;
+  width: 79.9%;
+  height: 712px;
+  background-color: #ececec;
+  overflow-y: scroll;
+}
