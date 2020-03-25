@@ -1,9 +1,5 @@
 import actionFormat from '../actionFormat';
-<<<<<<< HEAD
 import { storeToken } from '../authHelper';
-=======
-import storeToken from '../authHelper';
->>>>>>> ft(social-login):log user with social media accounts
 
 describe('Action', () => {
   const type = 'TEST';

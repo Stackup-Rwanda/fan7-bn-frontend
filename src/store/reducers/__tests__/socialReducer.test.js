@@ -1,5 +1,5 @@
 import socialReducer from '../socialReducer';
-import { SUCCESS_LOGIN, LOGIN_FAILURE } from '../../actions/types';
+import { SUCCESS_LOGIN, LOGIN_FAILURE, SUCCESS_GET_USER } from '../../actions/types';
 
 describe('Social Login Reducer Tests', () => {
   it('Should SET isAuthenticate to true on SUCCESS log in', () => {
@@ -27,6 +27,20 @@ describe('Social Login Reducer Tests', () => {
       isAuthenticated: false,
       user: {},
       error: 'Something went wrong, try again please',
+    });
+  });
+  it('Should GET user info', () => {
+    const GET_USER = {
+      type: SUCCESS_GET_USER,
+      payload: 'www.jpeg.com',
+    };
+    const newState = socialReducer(undefined, GET_USER);
+    expect(newState).toEqual({
+      isAuthenticated: true,
+      user: {
+        image: GET_USER.payload,
+      },
+      error: null,
     });
   });
   it('Should return default state', () => {
