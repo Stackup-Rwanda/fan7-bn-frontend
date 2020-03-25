@@ -18,7 +18,7 @@ import ResetPassword from '../pages/resetPassword';
 import UserRole from '../components/admin/userRole';
 import ProtectedRoutes from '../components/ProtectedRoutes';
 import Request from '../pages/Request';
-import CreateRequest from '../pages/requests/requests';
+// import CreateRequest from '../pages/requests/requests';
 import LandingPage from '../pages/landingPage'
 
 
@@ -50,7 +50,6 @@ export default function index() {
         component={Request}
         roleRequired={['requester', 'manager']}
       />
-      <Route path="/createRequest" exact component={CreateRequest} />
       <Route path="*" component={Error} />
     </Switch>
   );

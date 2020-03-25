@@ -1,0 +1,72 @@
+.homeBody {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background: #ECECEC;
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+}
+
+.homeBody_homeNavbar {
+  width: 100%;
+  height: 10%;
+  background: white;
+  position: fixed;
+  z-index: 1;
+}
+
+.homeBody_homeNavbar .logoo {
+  margin-right: 75%;
+}
+
+.homeBody_image {
+  background: url(../assets/images/reykjavik-iceland-city-mountan-view.jpg) no-repeat fixed;
+  background-size: 100% 40%;
+  height: 48%;
+  display: block;
+}
+
+.homeBody_image_title {
+  height: 10%;
+  width: 100%;
+}
+
+.homeBody_image_title h1 {
+  text-align: center;
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 4.4;
+  color: #ffffff;
+}
+
+.homeBody_image_homeTab {
+  height: 30%;
+  width: 85%;
+  background-color: white;
+  margin-top: 16%;
+  margin-left: 7%;
+}
+
+.homeBody_image_homeTab .location {
+  width: 75% !important;
+  height: 30% !important;
+  background-color: #ECECEC;
+  font-size: 20px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  color: black !important;
+  margin-top: 25px;
+  margin-left: 40px;
+}
+
+.homeBody_image_homeTab .findBtn {
+  width: 10%;
+}
+/*# sourceMappingURL=landingPage.css.map */

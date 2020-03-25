@@ -11,20 +11,51 @@
     font-family: 'Poppins', sans-serif;
     font-size: 13px;
 
-    &_homeNavbar{
-        width: 100%;
-        height: 10%;
-        background: white;
-        position: fixed;
-        z-index: 1;
-        .logoo{
-            
-         margin-right: 75%;
 
-        }
+        &_homeNavbar{
+            position: fixed;
+            width: 100%;
+            height: 60px;
+            top: 0px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            z-index: 1;
+            overflow: hidden;
+            .logoo{
+            
+                margin-right: 75%;
+       
+               }
+          
+            &_items {
+              display: flex;
+              flex-direction: row;
+              width: 200px;
+              list-style: none;
+              margin: 0px;
+              float: right;
+          
+              &_single {
+                position: relative;
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                margin-top: 7px;
+              }
+          
+              &_single2 {
+                position: relative;
+                display: inline-block;
+                width: 35px;
+                height: 35px;
+                margin: 3px 0 0 50px;
+                border-radius: 50%;
+              }
+            }
+          }
     
     
-    }
     
     &_image {
         background: url(../assets/images/reykjavik-iceland-city-mountan-view.jpg) no-repeat fixed;
@@ -49,11 +80,108 @@
 
 
         &_homeTab{
-            height: 25%;
+            height: 30%;
             width: 85%;
             background-color: white;
             margin-top: 16%;
             margin-left: 7%;
+
+           &_inputDiv{
+
+            display: inline-block;
+            width: 75%;
+
+            .location{
+                width: 100% !important;
+                height: 70% !important;
+                background-color: #ECECEC;
+                font-size: 20px !important;
+                border: 0 !important;
+                border-radius: 0 !important;
+                color: black !important;
+                margin-top: 25px;
+                margin-left: 40px;
+                
+            }
+           }
+            &_buttonDiv{
+
+                width: 15%;
+                display: inline-block;
+                .findBtn{
+
+                    margin-left: 80px;
+                    
+                    
+                }
+            }
+
+        }
+      }
+
+      &_mainDiv{
+          margin-top: 4%;
+          width: 100%;
+          height: 40%;
+
+          &_div1{
+              width: 26%;
+              height: 100%;
+              background-color: white;
+              display: inline-block;
+              margin-left: 2%;
+              margin-bottom: 10%;
+
+&_content{
+    width: 100%;
+    height: 100%;
+
+    h1{
+        font-size: 15px !important;
+        margin-left: 5%;
+        margin-top: 5%;
+    }
+    ul {
+       list-style: square inside none;
+       margin-left: 5%;
+
+   }
+
+   li{
+       font-size: 13px;
+   }
+   .signupBtn{
+width: 90% !important;
+height: 40px !important;
+margin-left: 5%;
+
+   }
+}
+}
+
+          &_div2{
+            width: 40%;
+            height: 100%;
+            background-color: white;
+            display: inline-block;
+            margin-left: 2%;
+            margin-right: 2%;
+
+
+            
+
+
+        }
+        &_div3{
+            width: 26%;
+            height: 100%;
+            background-color: white;
+            display: inline-block;
+            margin-right: 2%;
+
+
+
+
         }
       }
 }

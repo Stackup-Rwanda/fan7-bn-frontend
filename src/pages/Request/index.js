@@ -7,7 +7,6 @@ import {
   create_one_way_trip,
   create_return_trip,
   create_multi_city_trip,
-  get_requests,
   editTripRequest
 
 } from '../../store/modules/requests/userRequests/actions';
@@ -156,7 +155,7 @@ const { dispatch } = this.props;
             data={requests}
             loading={loading}
             actions={true}
-            handleAction={this.handleAction}
+            handleAction={role === 'manager' && this.handleAction}
             handleEdit={role === 'requester' && this.toggleEditPopup.bind(this)}
           />
             {/* Pagination start*/}

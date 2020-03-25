@@ -27,6 +27,7 @@ class Popup extends Component {
             id: this.props.data ? this.props.data.id : null,
             isEdit: !!this.props.data,
             checked: this.props.data ? this.props.data.type : null,
+            numInputs: (this.props.data && this.props.data.type === 'multiCity') ? this.props.data.destination.length : 1
             // accommodations: this.props.data ? _.filter(accommodations, accommodation => this.props.data.destination.includes(accommodation.address)) : null
         })
     }
@@ -44,7 +45,7 @@ class Popup extends Component {
             checked: value,
             numInputs: 1
         }));
-        if(value==="oneway"){
+        if (value === "oneway") {
             this.setState(() => ({
                 returnDate: null
             }))
@@ -64,8 +65,8 @@ class Popup extends Component {
     }
     handleDate = (event) => {
         const { name, value } = event.target;
-        console.log(value);
-        
+        console.log('return date', value);
+
         this.setState(() => ({
             [name]: moment(value).format('YYYY-MM-DD'),
         }));
@@ -74,7 +75,7 @@ class Popup extends Component {
     }
     handleSubmitBtn = (event) => {
         event.preventDefault();
-        const { checked, isEdit, id, ...data } = this.state
+        const { numInputs, checked, isEdit, id, ...data } = this.state
         if (isEdit) {
             if (this.state.destination.length === 0
                 && this.state.travelDate.length === 0) {
@@ -97,10 +98,12 @@ class Popup extends Component {
             data.travelDate = data.travelDate[0];
             return this.props.oneWay(data)
         } else if (checked === "multiCity") {
-            console.log(this.state.destination);
+            console.log(this.state.travelDate);
 
-            return this.props.multiCity(data)
-            
+            data.travelDates = data.travelDate;
+            const { travelDate, ...multiCityData } = data;
+            return this.props.multiCity(multiCityData)
+
 
         } else if (checked === "returnTrip") {
             data.destination = data.destination[0];

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TableLoader from './TableLoader';
 import './styles/Table.scss';
+import Button from '../Button'
 import options from '../../assets/icons/icons8-menu-vertical-30.png';
 
 const renderData = (data, cols, actions, handleAction, handleEdit) =>
@@ -21,7 +22,7 @@ const renderData = (data, cols, actions, handleAction, handleEdit) =>
       ))}
       {actions && !!handleAction && (
         <td key="actions">
-          <button type="button"  onClick={() => handleAction(row)}>
+          <button type="button"  onClick={() => handleAction(row)} className="actionBtn">
             <img src={options} alt="more options" />
           </button>
         </td>
@@ -30,8 +31,10 @@ const renderData = (data, cols, actions, handleAction, handleEdit) =>
       {actions && !!handleEdit && (
         <td key="actions">
         <button
+        className="editBtn"
+        value="Edit"
         disabled={row.status !== 'Pending'}
-          onClick={() => handleEdit(row)}>Edit</button>
+          onClick={() => handleEdit(row)} > Edit </button>
         </td>
       )}
     </tr>
