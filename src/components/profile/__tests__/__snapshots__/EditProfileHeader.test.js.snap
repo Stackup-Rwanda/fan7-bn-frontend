@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EditProfileHeader /> shallow rendering tests matches the snapshot 1`] = `
+<div
+  className="header"
+>
+  <h1
+    className="header__title"
+  >
+    Settings
+  </h1>
+  <div
+    className="header__menu"
+  >
+    <button
+      className="header__menu___item active"
+      name="profile"
+      onClick={[Function]}
+      type="button"
+    >
+      Profile
+    </button>
+    <button
+      className="header__menu___item"
+      name="notification"
+      onClick={[Function]}
+      type="button"
+    >
+      Notification
+    </button>
+  </div>
+</div>
+`;
