@@ -14,6 +14,8 @@ import AuthService from '../utils/AuthService';
 import Signup from '../pages/Authentication/Signup';
 import EmailConfirm from '../pages/Authentication/EmailVerification';
 import Dashboard from '../pages/Dashboard/dashboard';
+import ForgetPassword from '../pages/forgetPassword';
+import ResetPassword from '../pages/resetPassword';
 
 export default function index() {
   const isLogedIn = AuthService.isLoggedIn();
@@ -36,6 +38,8 @@ IsPrivate path="/" exact component={Home} />
       <Route path="/500" exact component={Error500} />
       <Route path="/confirmEmail" exact component={EmailConfirm} />
       <Route path="/dashboard" exact component={Dashboard} isPrivate />
+      <Route path="/forgetPassword" exact component={ForgetPassword} />
+      <Route path="/resetPassword" exact component={ResetPassword} />
       <Route path="*" component={Error} />
     </Switch>
   );

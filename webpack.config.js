@@ -1,10 +1,9 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
-
 module.exports = (env) => ({
   context: __dirname,
-  entry: ['@babel/polyfill', './src/index.js'],
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
@@ -22,7 +21,7 @@ module.exports = (env) => ({
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader'],
+        use: ['babel-loader'],
       },
       {
         test: /\.css$/,
@@ -33,7 +32,7 @@ module.exports = (env) => ({
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(png|jpg|jpeg|svg|gif)?$/,
+        test: /\.(png|jpg|svg|gif|jpeg)?$/,
         use: 'file-loader',
       },
     ],
@@ -48,5 +47,7 @@ module.exports = (env) => ({
       chunkFilename: '[id].css',
     }),
   ],
-
+  performance: {
+    hints: false
+}
 });

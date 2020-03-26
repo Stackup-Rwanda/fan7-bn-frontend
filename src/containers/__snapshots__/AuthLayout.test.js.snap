@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AuthLayout /> shallow rendering tests matches the snapshot 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="tab1"
+  >
+    <Logo />
+    <h6
+      className="title"
+    />
+    <div
+      className="bottom_link"
+    >
+      <p
+        className="link"
+        href="#"
+      >
+        <a />
+      </p>
+    </div>
+  </div>
+  <div
+    className="tab2"
+  >
+    <div
+      className="glass"
+    >
+      <div
+        className="travel__tab"
+      >
+        <h1
+          className="travel_info_title"
+        >
+          Travel The World
+        </h1>
+        <p
+          className="travel_info"
+        >
+          We make travel and accommodation
+        </p>
+        <p
+          className="travel_info"
+        >
+           easy and convenient
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
