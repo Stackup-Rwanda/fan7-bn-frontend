@@ -1,7 +1,5 @@
 import swal from 'sweetalert';
 import history from './history';
-
-
 const selectErrorCode = (error) => {
   if (error && error.response) return Number(error.response.status);
   if (error && error.request) return 500;
@@ -30,18 +28,16 @@ export default class Errors {
         title: 'Error',
         text: `${selectErrorMessage(error)}`,
         icon: 'error',
-        timer: 4000,
+        timer: 5000,
         buttons: false,
       });
       return;
     }
     history.push('/500');
   }
-
   static errorCode(error) {
     return selectErrorCode(error);
   }
-
   static selectMessage(error) {
     return selectErrorMessage(error);
   }

@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
-$bg-img: url('../assets/images/Login/login_background_image.jpeg');
-body {
-  padding: 0;
-  margin: 0;
+$bg-img: url('../../../assets/images/Login/login_background_image.jpeg');
+
+.loginBody {
   overflow-x: hidden;
   width: 100%;
   height: 100%;
@@ -12,44 +10,41 @@ body {
 .container{
   margin: 4%;
   width: 92%;
-  min-height: 560px;
-  height: fit-content;
+  height: 560px;
   background-color: white;
   display:flex;
   justify-content: center;
-  box-sizing: border-box;
-}
-.tab1 {
-  width: 50%;
-  display: block;
-  box-sizing: border-box;
-  padding: 15px 10px;
-}
-.form-box{
-  max-width: 332px;
-  width: 100%;
-  margin: auto;
-  margin-top: 9%;
+
 }
 
-.error{
-  padding: 0px 15px 2px 15px !important;
-  margin: 0 23%;
-  color: #ed5249;
-  font-size: 12px;
+.tab1 {
+  width: 50%;
+  display: inline-block;
+
+  
 }
+
 .tab2 {
   background-image: $bg-img;
   background-repeat: no-repeat;
-  background-size: cover;
+ background-size: cover;
   background-attachment: inherit;
   background-position: center;
   width: 50%;
   display: inline-block;
 }
 .input{
-  width: 100%;
-  margin-left: 0;
+  width: 60%;
+  margin-left: 20%;
+}
+.btn{
+  margin-left: 20%;
+}
+.error{
+  padding: 0px 15px 2px 15px !important;
+  margin: 0 23%;
+  color: #ed5249;
+  font-size: 12px;
 }
 .glass {
   background-color: rgba(26, 140, 184, 0.4);
@@ -63,62 +58,62 @@ font-size: 18px;
 font-weight:100;
 margin-top: 10px;
 }
-.paragraph {
-  margin-top: 3%;
-  text-align: center;
-}
 .links{
   margin-top: 5%;
+  
   text-align: center;
-}
-.bottom_link{
-  margin-top: 15%;
-  text-align: center;
-}
-span {
-  color: rgba(38, 129, 255, 0.65);
-}
-a {
-  text-decoration: none;
-  color: rgba(38, 129, 255, 0.65);
-  &:hover {
-    color: #000;
-    cursor: pointer;
+
+  a {
+    text-decoration: none;
+    color: rgba(38, 129, 255, 0.65);
+    &:hover {
+      color: #000
+    }
   }
 }
-.travel_info_title{
+.bottom-link{
+  margin-top: 15%;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: rgba(38, 129, 255, 0.65);
+    &:hover {
+      color: #000
+    }
+  }
+}
+.travel-info-title{
 font-weight: bolder;
+color: #fff !important;
+opacity: 0.9 !important;
 font-size: 45px;
 }
-// .travel-info{}
+ .travel-info{
+  color: #fff !important;
+  opacity: 0.9 !important;
+ }
 .travel__tab{
 text-align: center;
-color: white;
+color: white !important;
 margin-top: 25%;
+
 }
 .btn {
   border-radius: 50px;
   color: #fff;
   background-color: rgba(38, 129, 255, 0.65);
-  padding: 12px 15px 12px 15px;
+  padding: 10px;
   cursor: pointer;
   border: none !important;
-  font-size: 16px !important;
-  width:100%;
-  margin-left: 0;
   margin-top: 10px;
   &:hover {
     color: #fff;
     background-color: rgb(57, 123, 185);
-    outline: none;
-  }
-  &:focus {
-    color: #fff;
-    background-color: rgb(57, 123, 185);
-    outline: none;
   }
 }
-  @media screen and (max-width: 337px) {
+
+@media screen and (max-width: 337px) {
   .input{
   width: 100%;
   padding: 16px 13px !important;
@@ -142,6 +137,7 @@ margin-top: 25%;
   }
 }
 }
+
 @media screen and (max-width: 415px) {
   .container {
       padding: 0;
@@ -161,6 +157,7 @@ margin-top: 25%;
     padding: 0;
     flex-direction: column-reverse;
 }
+
 .tab2 {
     padding: 0px;
     height: 16%;
@@ -170,6 +167,7 @@ margin-top: 25%;
   margin-left: 0;
   width: 100%;
 }
+
 .travel__tab {
     margin-top: 50px !important;
     margin-bottom: 50px !important

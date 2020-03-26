@@ -20,6 +20,12 @@ class Login extends Component {
       isEmailValid: false,
       isPasswordValid: false,
     };
+    
+    this.resetInput = this.resetInput.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.checkEmailInput = this.checkEmailInput.bind(this);
+    this.checkPasswordInput = this.checkPasswordInput.bind(this);
   }
 
   handleChange = event => {
@@ -70,10 +76,8 @@ class Login extends Component {
 
   handleLogin = async event => {
     const { email, password } = this.state;
-    const { userFetch } = this.props;
     event.preventDefault();
-    const payload = { email, password };
-    await userFetch(payload);
+    await this.props.userFetch({email, password});
   };
 
   render() {
