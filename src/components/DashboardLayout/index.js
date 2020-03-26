@@ -32,7 +32,7 @@ const DashboardLayout = (ContentComponent) => class extends Component {
               </Link>
             </li>
             <li>
-              <Link to="/dashboard" className="sidebar_main_component1">
+              <Link to="/userrole" className="sidebar_main_component1">
                 <img src={user} alt="users" className="sidebar_main_component1_icon" />
                 <p className="sidebar_main_component1_text">Users</p>
                 <img src={forward} alt="forward" className="sidebar_main_component1_image" />
@@ -73,7 +73,6 @@ const DashboardLayout = (ContentComponent) => class extends Component {
             </li>
           </ul>
         </div>
-
         <div className="navbar">
           <ul className="navbar_items">
             <li>
@@ -92,5 +91,4 @@ const DashboardLayout = (ContentComponent) => class extends Component {
     );
   }
 };
-
 export default DashboardLayout;

@@ -1,0 +1,28 @@
+.body_display_pagination_items{
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    width: 42%;
+    margin: 0 auto;
+    float: none;
+
+    &_currentPage{
+        margin-left: 25px;
+        padding-top: 15px;
+    }
+    
+    &_rowsPerPage{
+        margin-left: 25px;
+        padding-top: 15px;
+    }
+    
+    &_allPages{
+        margin-left: 25px;
+        padding-top: 15px;
+    }
+    
+    &_nextPrev{
+        padding-top: 15px;
+        margin-left: 25px;
+    }
+}
