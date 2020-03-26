@@ -31,7 +31,7 @@ export const apiError = (error) => ({
 export const confirmUser = (data) => async (dispatch) => {
   dispatch(apiStart());
   try {
-    const response = await API.post(`/auth/confirmation/${data}`);
+    const response = await API.post(`/api/auth/confirmation/${data}`);
     localStorage.setItem('token', data);
     return dispatch(apiSuccess(response.data.data.user));
   } catch (error) {
