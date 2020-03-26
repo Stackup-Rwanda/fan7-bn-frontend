@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import './Login.scss';
-import Logo from '../../../components/logo/logo';
+import '../../../containers/authLayout.scss';
 import Input from '../../../components/InputField';
 import Button from '../../../components/Button';
 import { loginAction } from '../../../store/modules/auth/actions';
+import AuthLayout from '../../../containers/AuthLayout';
+import history from '../../../utils/helpers/history';
 
 class Login extends Component {
   constructor(props) {
@@ -20,15 +21,6 @@ class Login extends Component {
       isPasswordValid: false,
     };
   }
-  // componentDidUpdate() {
-  //   const { user } = this.props;
-  //   if(user.isAuthenticated === true) {
-  //     const token = localStorage.getItem('token')
-  //     if(token){
-  //       window.location.href('/')
-  //     }
-  //   }
-  // }
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -87,12 +79,14 @@ class Login extends Component {
   render() {
     const { email, password, emailError, passwordError } = this.state;
     return (
-      <div className="loginBody">
-        <div className="container">
-          <div className="tab1">
-            <Logo />
-            <h6 className="title">Log in to continue</h6>
-            <div className="error">{emailError}</div>
+      <AuthLayout
+        title="Login into your account"
+        redirectMsg="don't have an account"
+        redirectLocation=" Signup"
+        redirect={() => history.push('/signup')}
+      >
+        <div className="form-box">
+          <div>
             <form className="loginForm">
               <Input
                 type="text"
@@ -117,29 +111,16 @@ class Login extends Component {
                 onKeyUp={this.checkPasswordInput}
                 onFocus={this.resetInput}
               />
-              <Button type="submit" className="btn" value="Login" onClick={this.handleLogin} />
+              <Button
+                type="submit"
+                className="btn"
+                value="Login"
+                onClick={this.handleLogin}
+              />
             </form>
-            <div className="links">
-              <a href="/auth/forget">Forgot Password?</a>
-            </div>
-            <div className="bottom-link">
-              <p href="#" className="link">
-                You don't have an account?
-                <a href="/auth/signup"> Sign up</a>
-              </p>
-            </div>
-          </div>
-          <div className="tab2">
-            <div className="glass">
-              <div className="travel__tab">
-                <h1 className="travel-info-title">Travel The World</h1>
-                <p className="travel-info">We make travel and accommodation</p>
-                <p className="travel-info"> easy and convenient</p>
-              </div>
-            </div>
           </div>
         </div>
-      </div>
+      </AuthLayout>
     );
   }
 }
