@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,gBAAgB,CAAC;EACf,eAAe,EAAE,IAAI;EACrB,UAAU,EAAE,MAAM;EAClB,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;CAKX;;AATD,AAKE,gBALc,CAKd,EAAE,CAAC;EACD,OAAO,EAAE,YAAY;EACrB,OAAO,EAAE,GAAG;CACb",
+    "sources": [
+        "SocialButtons.scss"
+    ],
+    "names": [],
+    "file": "SocialButtons.css"
+}

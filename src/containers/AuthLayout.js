@@ -4,9 +4,11 @@
 import React from 'react';
 import Logo from '../components/logo/logo';
 import './authLayout.scss';
+import SocialButtons from '../components/SocialButtons';
 
 // eslint-disable-next-line react/prop-types
 export default function AuthLayout({ title, redirectMsg, redirect, redirectLocation, children }) {
+  const page = redirectLocation == ' Signup' ? 'log in' : 'sign up';
   return (
     <div className="container">
       <div className="tab1">
@@ -14,6 +16,7 @@ export default function AuthLayout({ title, redirectMsg, redirect, redirectLocat
 
         <h6 className="title">{title}</h6>
         {children}
+        <SocialButtons page={page} />
         <div className="bottom_link">
           <p href="#" className="link">
             {redirectMsg}

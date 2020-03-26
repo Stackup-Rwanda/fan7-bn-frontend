@@ -116,7 +116,7 @@ class Signup extends Component {
       email, password, username, emailError, passwordError, userNameError,
     } = this.state;
     return (
-      <AuthLayout title="Create an account" redirectMsg="already have an account" redirectLocation=" Login" redirect={() => history.push('/login')}>
+      <AuthLayout title="Create an account" redirectMsg="already have an account? " redirectLocation=" Login" redirect={() => history.push('/login')}>
         <div className="form-box">
           <div>
             <form onSubmit={this.handleSubmit}>

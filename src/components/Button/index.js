@@ -22,7 +22,7 @@ const Button = ({
 );
 
 Button.propTypes = {
-  value: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.shape()]).isRequired,
   className: PropTypes.string,
   isloading: PropTypes.bool,
   onClick: PropTypes.func,
