@@ -25,7 +25,7 @@ export const apiError = (error) => ({
 export const addUser = (data) => async (dispatch) => {
   dispatch(apiStart());
   try {
-    const response = await API.post('/auth/signup', data);
+    const response = await API.post('/api/auth/signup', data);
     onSuccess.handle('You are successfully registered, verify your email');
     return (dispatch(apiSuccess(response.data.data.user)) && history.push('/login'));
   } catch (error) {
