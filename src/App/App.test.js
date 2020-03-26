@@ -1,8 +1,11 @@
 import React from 'react';
 import { Router } from 'react-router-dom';
 import { mount, render, shallow } from 'enzyme';
+
+
 import history from '../utils/helpers/history';
 import Routes from '../routes';
+
 import Home from '../components';
 import App from './App';
 import Error from '../components/error';
@@ -15,12 +18,7 @@ describe('Render Home component', () => {
   });
 
   // return error
-  test('should return page not found', () => {
-    render(
-      <Router history={history}>
-        <Routes />
-      </Router>
-    );
+  it('should return page not found', () => {
     const wrapper = mount(<Error />);
     expect(wrapper.text()).toEqual('Page not found');
   });
