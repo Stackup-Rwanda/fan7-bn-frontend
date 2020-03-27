@@ -7,16 +7,15 @@ import jwt from 'jwt-decode';
 import AuthService from '../utils/AuthService';
 
 function RouteWrapper({ component: Component, users, user, isPrivate, roleRequired, ...rest }) {
-  const signedIn = users.isAuthenticated;
-  const LoggedIn = user.isAuthenticated;
   const token = AuthService.getToken();
   const { role } = !!token ? jwt(token) : { role: '' };
+  const LoggedIn = user.isAuthenticated;
 
-  if (isPrivate && !(signedIn || LoggedIn)) {
+  if (isPrivate && !LoggedIn) {
     return <Redirect to="/login" />;
   }
 
-  if (!isPrivate && (signedIn || LoggedIn)) {
+  if (!isPrivate && LoggedIn) {
     return <Redirect to="/dashboard" />;
   }
 

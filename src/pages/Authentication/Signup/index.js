@@ -116,14 +116,19 @@ class Signup extends Component {
       email, password, username, emailError, passwordError, userNameError,
     } = this.state;
     return (
-      <AuthLayout title="Create an account" redirectMsg="already have an account? " redirectLocation=" Login" redirect={() => history.push('/login')}>
+      <AuthLayout
+        title="Create an account"
+        redirectMsg="already have an account? "
+        redirectLocation=" Login"
+        redirect={() => history.push('/login')}
+      >
         <div className="form-box">
           <div>
             <form onSubmit={this.handleSubmit}>
               <div className="error">{userNameError}</div>
               <Input
                 type="text"
-                className="input"
+                className="input auth_input"
                 name="username"
                 id="username"
                 value={username}
@@ -138,7 +143,7 @@ class Signup extends Component {
                 name="email"
                 id="email"
                 placeholder="Email"
-                className="input"
+                className="input auth_input"
                 value={email}
                 onChange={this.handleChange}
                 onKeyUp={this.checkEmailInput}
@@ -151,7 +156,7 @@ class Signup extends Component {
                 id="password"
                 required
                 placeholder="Password"
-                className="input"
+                className="input auth_input"
                 value={password}
                 onChange={this.handleChange}
                 onKeyUp={this.checkPasswordInput}

@@ -1,32 +1,41 @@
-import { LOGIN_SUCCESS, LOGIN_FAILURE } from './actionTypes';
+// root reducer codes
 
-const INITIAL_STATE = {
+const initialState = {
   isLoading: false,
   user: {},
   isAuthenticated: false,
   error: null,
 };
 
-
-const LoginReducer = (state = INITIAL_STATE, action) => {
+const currentUser = (state = initialState, action) => {
   switch (action.type) {
-    case LOGIN_SUCCESS:
+    case 'AUTH_START': {
       return {
         ...state,
         isLoading: true,
-        user: action.payload,
+      };
+    }
+    case 'AUTH_SUCCESS': {
+      return {
+        ...state,
+        user: { ...action.payload },
         isAuthenticated: true,
         error: null,
+        isLoading: false,
       };
-    case LOGIN_FAILURE:
+    }
+    case 'AUTH_ERROR': {
       return {
-        user: {},
-        isAuthenticated: false,
+        ...state,
         error: action.error,
+        isAuthenticated: false,
+        isLoading: false,
       };
-    default:
+    }
+    default: {
       return state;
+    }
   }
 };
 
-export default LoginReducer;
+export default currentUser;

@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { confirmUser } from '../../../store/modules/authentication/EmailVerification/actions';
+import { confirmUser } from '../../../store/modules/auth/VerifyEmailActions';
 
 class EmailConfirm extends Component {
   constructor(props) {

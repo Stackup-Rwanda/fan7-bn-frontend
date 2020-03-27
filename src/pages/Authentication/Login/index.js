@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import '../../../containers/authLayout.scss';
 import Input from '../../../components/InputField';
 import Button from '../../../components/Button';
-import { loginAction } from '../../../store/modules/auth/actions';
+import { loginAction } from '../../../store/modules/auth/loginActions';
 import AuthLayout from '../../../containers/AuthLayout';
 import history from '../../../utils/helpers/history';
 
@@ -21,6 +21,7 @@ class Login extends Component {
       isPasswordValid: false,
     };
   }
+
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -92,7 +93,7 @@ class Login extends Component {
                 name="email"
                 id="email"
                 placeholder="Email"
-                className="input"
+                className="input auth_input"
                 value={email}
                 onChange={this.handleChange}
                 onKeyUp={this.checkEmailInput}
@@ -104,7 +105,7 @@ class Login extends Component {
                 name="password"
                 id="password"
                 placeholder="Password"
-                className="input"
+                className="input auth_input"
                 value={password}
                 onChange={this.handleChange}
                 onKeyUp={this.checkPasswordInput}
@@ -117,9 +118,9 @@ class Login extends Component {
                 onClick={this.handleLogin}
               />
             </form>
-          <div className="links">
-            <a href="/forgetPassword">Forgot Password?</a>
-          </div>
+            <div className="links">
+              <a href="/forgetPassword">Forgot Password?</a>
+            </div>
           </div>
         </div>
       </AuthLayout>

@@ -62,38 +62,37 @@ class ForgetPassword extends Component {
     } = this.state;
     return (
       <div className="forgetPswd">
-      <AuthLayout title="Reset Password" redirectMsg="already have an account? " redirectLocation=" Login" redirect={() => history.push('/login')}>
+        <AuthLayout
+          title="Reset Password"
+          redirectMsg="already have an account? "
+          redirectLocation=" Login"
+          redirect={() => history.push('/login')}
+        >
           <p className="paragraph">
             Enter your email, we will contact you shortly for reset password.
           </p>
-        <div className="form-box">
-          <div>
-          <form onSubmit={this.handleSubmit}>
-          <div className="error">
-            {emailError}
+          <div className="form-box">
+            <div>
+              <form onSubmit={this.handleSubmit}>
+                <div className="error">{emailError}</div>
+                <InputField
+                  type="text"
+                  name="Email"
+                  id="email"
+                  placeholder="Email"
+                  className="input auth_input"
+                  required
+                  error={this.state.error}
+                  onChange={this.handleChange}
+                  onKeyUp={this.checkEmailInput}
+                  onFocus={this.resetInput}
+                />
+                <Button type="submit" value="Request reset" className="btn" />
+              </form>
+            </div>
           </div>
-            <InputField
-              type="text"
-              name="Email"
-              id="email"
-              placeholder="Email"
-              className="input"
-              required
-              error={this.state.error}
-              onChange={this.handleChange}
-              onKeyUp={this.checkEmailInput}
-              onFocus={this.resetInput}
-            />
-            <Button
-              type="submit"
-              value="Request reset"
-              className="btn"
-            />
-          </form>
-          </div>
-        </div>
- </AuthLayout>
- </div>
+        </AuthLayout>
+      </div>
     );
   }
 }
