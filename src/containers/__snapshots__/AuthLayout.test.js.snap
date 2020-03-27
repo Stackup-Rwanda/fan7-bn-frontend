@@ -2,53 +2,57 @@
 
 exports[`<AuthLayout /> shallow rendering tests matches the snapshot 1`] = `
 <div
-  className="container"
+  className="mainnn"
 >
   <div
-    className="tab1"
+    className="container"
   >
-    <Logo />
-    <h6
-      className="title"
-    />
-    <SocialButtons
-      page="sign up"
-    />
     <div
-      className="bottom_link"
+      className="tab1"
     >
-      <p
-        className="link"
-        href="#"
+      <Logo />
+      <h6
+        className="title"
+      />
+      <SocialButtons
+        page="sign up"
+      />
+      <div
+        className="bottom_link"
       >
-        <a />
-      </p>
+        <p
+          className="link"
+          href="#"
+        >
+          <a />
+        </p>
+      </div>
     </div>
-  </div>
-  <div
-    className="tab2"
-  >
     <div
-      className="glass"
+      className="tab2"
     >
       <div
-        className="travel__tab"
+        className="glass"
       >
-        <h1
-          className="travel_info_title"
+        <div
+          className="travel__tab"
         >
-          Travel The World
-        </h1>
-        <p
-          className="travel_info"
-        >
-          We make travel and accommodation
-        </p>
-        <p
-          className="travel_info"
-        >
-           easy and convenient
-        </p>
+          <h1
+            className="travel_info_title"
+          >
+            Travel The World
+          </h1>
+          <p
+            className="travel_info"
+          >
+            We make travel and accommodation
+          </p>
+          <p
+            className="travel_info"
+          >
+             easy and convenient
+          </p>
+        </div>
       </div>
     </div>
   </div>
