@@ -10,6 +10,7 @@ import SocialButtons from '../components/SocialButtons';
 export default function AuthLayout({ title, redirectMsg, redirect, redirectLocation, children }) {
   const page = redirectLocation == ' Signup' ? 'log in' : 'sign up';
   return (
+    <div className="mainnn">
     <div className="container">
       <div className="tab1">
         <Logo />
@@ -35,6 +36,7 @@ export default function AuthLayout({ title, redirectMsg, redirect, redirectLocat
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
