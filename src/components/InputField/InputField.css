@@ -20,5 +20,9 @@ input:focus {
   outline-width: 0;
   font-weight: 400;
 }
+
+.error {
+  color: #ed5249;
+  font-size: 12px;
+}
 /*# sourceMappingURL=InputField.css.map */
-/* No CSS *//*# sourceMappingURL=InputField.css.map */

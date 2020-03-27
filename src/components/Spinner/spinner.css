@@ -1,0 +1,78 @@
+.loading {
+  width: 100px;
+  height: 100px;
+  margin: 22% auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 50%;
+  border-top: 5px solid #A2AAB1;
+  position: relative;
+  vertical-align: middle;
+  -webkit-animation: a1 2s linear infinite;
+          animation: a1 2s linear infinite;
+}
+
+.loading::before, .loading::after {
+  content: '';
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  top: -5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-top: 5px solid #A2AAB1;
+  border-radius: 50%;
+}
+
+.loading::before {
+  -webkit-transform: rotate(120deg);
+          transform: rotate(120deg);
+}
+
+.loading::after {
+  -webkit-transform: rotate(240deg);
+          transform: rotate(240deg);
+}
+
+.loading span {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  color: #000000;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+  line-height: 100px;
+  -webkit-animation: a2 2s linear infinite;
+          animation: a2 2s linear infinite;
+}
+
+@-webkit-keyframes a1 {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes a1 {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes a2 {
+  to {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+
+@keyframes a2 {
+  to {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+/*# sourceMappingURL=spinner.css.map */

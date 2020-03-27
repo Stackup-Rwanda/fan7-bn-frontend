@@ -1,0 +1,34 @@
+.body_display_pagination_items {
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 42%;
+  margin: 0 auto;
+  float: none;
+}
+
+.body_display_pagination_items_currentPage {
+  margin-left: 25px;
+  padding-top: 15px;
+}
+
+.body_display_pagination_items_rowsPerPage {
+  margin-left: 25px;
+  padding-top: 15px;
+}
+
+.body_display_pagination_items_allPages {
+  margin-left: 25px;
+  padding-top: 15px;
+}
+
+.body_display_pagination_items_nextPrev {
+  padding-top: 15px;
+  margin-left: 25px;
+}
+/*# sourceMappingURL=pagination.css.map */
