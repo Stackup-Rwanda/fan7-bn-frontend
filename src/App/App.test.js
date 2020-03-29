@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import reducers from '../store/reducers/socialReducer';
 
 import history from '../utils/helpers/history';
-import Routes from '../routes';
+import Routes from '../routes/Authenticantion';
 
 import Home from '../components';
 import App from './App';

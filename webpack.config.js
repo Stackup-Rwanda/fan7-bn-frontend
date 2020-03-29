@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
 const path = require('path');
 module.exports = (env) => ({
   context: __dirname,
@@ -45,6 +46,8 @@ module.exports = (env) => ({
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',
+    }),
+    new webpack.DefinePlugin({ __CLIENT__: true, __SERVER__: false, __DEVELOPMENT__: true, __DEVTOOLS__: false
     }),
   ],
   performance: {

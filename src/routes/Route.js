@@ -6,19 +6,17 @@ import { connect } from 'react-redux';
 
 function RouteWrapper({
   component: Component,
-  users,
   user,
   isPrivate,
   ...rest
 }) {
-  const signedIn = users.isAuthenticated;
-  const LoggedIn = user.isAuthenticated;
+  const LoggedIn = user.isAuthenticated; 
 
-  if (isPrivate && !(signedIn || LoggedIn)) {
+  if (isPrivate && !LoggedIn) {
     return <Redirect to="/login" />;
   }
 
-  if (!isPrivate && (signedIn || LoggedIn)) {
+  if (!isPrivate && LoggedIn) {
     return <Redirect to="/dashboard" />;
   }
 
@@ -37,8 +35,7 @@ RouteWrapper.defaultProps = {
 
 
 const mapStateToProps = (state) => ({
-  users: state.currentUser,
-  user: state.user,
+  user: state.currentUser,
 });
 
 export default connect(mapStateToProps, null)(RouteWrapper);

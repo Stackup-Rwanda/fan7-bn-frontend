@@ -1,0 +1,47 @@
+.header {
+  position: relative;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / span 3;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  background-color: #ffffff;
+  padding: 20px 20px 0;
+  border-bottom: 1px solid rgba(61, 104, 143, 0.3);
+}
+
+.header__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  color: #000000;
+}
+
+.header__menu {
+  position: relative;
+  margin-top: 20px;
+}
+
+.header__menu___item {
+  display: inline-block;
+  width: 80px;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  margin-right: 20px;
+}
+
+.header .active {
+  font-weight: 600 !important;
+  border-bottom: 2px solid #2681ff;
+  color: #2681ff;
+}
+/*# sourceMappingURL=editProfileHeader.css.map */

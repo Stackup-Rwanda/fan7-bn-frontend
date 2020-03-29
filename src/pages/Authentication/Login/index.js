@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import '../../../containers/authLayout.scss';
 import Input from '../../../components/InputField';
 import Button from '../../../components/Button';
-import { loginAction } from '../../../store/modules/auth/actions';
+import { loginAction } from '../../../store/modules/auth/loginActions';
 import AuthLayout from '../../../containers/AuthLayout';
 import history from '../../../utils/helpers/history';
 

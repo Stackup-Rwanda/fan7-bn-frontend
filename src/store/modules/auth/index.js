@@ -1,4 +1,5 @@
-import authActions from './actions';
+import authActions from './loginActions';
+import VerifyEmailActions from './VerifyEmailActions';
 import authReducers from './reducers';
 
-export { authActions, authReducers };
+export { authActions, VerifyEmailActions, authReducers };
