@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import arrow from '../../assets/icons/icons8-chevron-left-30.png';
 import './ServerSidePagination.scss';
 
@@ -32,11 +33,12 @@ class ServerSidePagination extends Component {
       const totalPages = Math.ceil(totalRows / rpg);
       
       return (
-          <div className="rest_pagination_items">
-          <div className="rest_pagination_items_currentPage">
-                  Page 
+          <div className="pagination-container">
+          <div className="pagination-section">
+            <div className="pagination-section__text">Page:</div>
               <select
-                  className="rest_pagination_items_dropdown"     
+                  className="pagination-section__select"   
+                  name="page"  
                   value={curPage}           
                   onChange={e => this.onChangePage(parseInt(e.target.value), rpg)}  
                   > 
@@ -44,10 +46,11 @@ class ServerSidePagination extends Component {
               </select>
           </div>
   
-          <div className="rest_pagination_items_rowsPerPage">
-              Rows per page
+          <div className="pagination-section">
+          <div className="pagination-section__text">Rows Per Page:</div>
                   <select
-                  className="rest_pagination_items_dropdown"                
+                  name="rowsPerPage"
+                  className="pagination-section__select"                
                   onChange={e => this.onChangePage(curPage, parseInt(e.target.value))}  
                   >                            
                   <option value={5}>5</option>
@@ -56,24 +59,26 @@ class ServerSidePagination extends Component {
                   <option value={50}>50</option>
               </select>
           </div>
-          <div className="rest_pagination_items_allPages">
-              <p>
-                  {curPage} - {rowsPerPage || 5} of {totalPages}
-              </p>
+          <div className="pagination-section">
+          <div className="pagination-section__text">
+            {curPage} - {rowsPerPage || 5} of {totalPages}
           </div>
-          <div className="rest_pagination_items_nextPrev">
+          </div>
+          <div className="pagination-section">
               <button
-                  className="rest_pagination_items_nextPrev_prev"
-                  disabled={curPage === 1 ? true : false}
-                  onClick={() => this.onChangePage(curPage - 1, rowsPerPage || 5)}>
-                    <img src={arrow} alt="previous" />                  
+                name="decrement"
+                className="pagination-section__navigation"
+                disabled={curPage === 1 ? true : false}
+                onClick={() => this.onChangePage(curPage - 1, rowsPerPage || 5)}>
+                <img src={arrow} className="pagination-section__navigation___left" alt="previous" />                  
               </button>
                                   
               <button
-                  className="rest_pagination_items_nextPrev_next"
-                  disabled={currentPage === totalPages ? true : false}
-                  onClick={() => this.onChangePage(curPage + 1, rowsPerPage || 5)}>
-                    <img src={arrow} alt="previous" />
+                name="increment"
+                className="pagination-section__navigation"
+                disabled={currentPage === totalPages ? true : false}
+                onClick={() => this.onChangePage(curPage + 1, rowsPerPage || 5)}>
+                <img src={arrow} className="pagination-section__navigation___right" alt="next" />
               </button>
           </div>
   

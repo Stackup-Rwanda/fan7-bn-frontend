@@ -8,7 +8,6 @@ export const requesterDashboard = {
     head: 'Trip requests',
     description: 'All my trip requests',
   },
-  notifications: 0,
   links: [
     {
       name: 'My Bookings',
@@ -34,7 +33,6 @@ export const managerDashboard = {
     head: 'Trip requests',
     description: 'All trip requests',
   },
-  notifications: 0,
   links: [
     {
       name: 'Trip request',

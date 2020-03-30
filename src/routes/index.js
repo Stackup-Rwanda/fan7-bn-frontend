@@ -32,7 +32,6 @@ export default function index() {
       <ProtectedRoutes path="/edit-profile" exact component={EditProfilePage} />
       <ProtectedRoutes path="/dashboard/:token" exact component={Dashboard} />
       <ProtectedRoutes path="/dashboard" exact component={Dashboard} />
-      <ProtectedRoutes path="/request" exact component={TripRequest} />
       <Route path="/test" exact component={Test} />
       <Route path="/403" exact component={Error403} />
       <Route path="/404" exact component={Error404} />

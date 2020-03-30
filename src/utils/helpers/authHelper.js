@@ -17,8 +17,3 @@ export const getUser = () => async (dispatch) => {
   const image = userData.image !== undefined ? userData.image : res.data.image_url;
   dispatch(actionFormat(SUCCESS_GET_USER, image));
 }
-
-export const getRequests = (page, limit) => async (dispatch) => {
-  const res = await HttpService.get(`/requests?page=${page}&numberOfRows=${limit}`);
-  dispatch(actionFormat(SUCCESS_GET_REQUESTS, res.data));
-}

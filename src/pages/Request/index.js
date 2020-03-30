@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import jwtDecode from 'jwt-decode';
-import DashboardLayout from '../../components/DashboardLayout';
 import Table from '../../components/Table';
-import Pagination from '../../components/request/Pagination';
 import { getTripRequests } from '../../store/modules/request/view/actions';
 import {
   selectLoading,
@@ -13,6 +11,12 @@ import {
 } from '../../store/modules/request/view/selectors';
 import AuthService from '../../utils/AuthService';
 import './Request.scss';
+import DynamicDashboard from '../../components/DynamicDashboard/Dashboard';
+import ServerSidePagination from '../../components/ServerPagination/ServerSidePagination';
+import { requesterDashboard, managerDashboard } from '../../assets/sidebar';
+import profileImg from '../../assets/images/icons8-user-30.png';
+import InputField from '../../components/InputField';
+import Button from '../../components/Button';
 
 class Request extends Component {
   constructor(props) {
@@ -23,15 +27,20 @@ class Request extends Component {
 
     this.state = this.initialState;
     this.handleAction = this.handleAction.bind(this);
+    this.onChangePage = this.onChangePage.bind(this);
   }
 
   componentDidMount() {
     const { dispatch } = this.props;
-    dispatch(getTripRequests());
+    dispatch(getTripRequests(1, 5));
   }
 
   handleAction(row) {
     console.log(row);
+  }
+  onChangePage(page, limit) {
+    const { dispatch } = this.props;
+    dispatch(getTripRequests(page, limit));
   }
 
   render() {
@@ -57,25 +66,52 @@ class Request extends Component {
     const { loading, count, requests } = this.props;
     const token = AuthService.getToken();
     const { role } = !!token ? jwtDecode(token) : { role: '' };
+    const board = role === 'requester' ? requesterDashboard : managerDashboard;
+    const createBtn = role === 'requester' ?
+      <div className="mainButton">
+        <Button
+          type="submit"
+          className="btn buton"
+          value=" + Create Trip Request"
+        />
+      </div>
+      : <div className="emptyDiv"></div>;
 
     return (
-      <div className="request-page">
-        <Table
-          cols={(role === 'requester' && requesterCols) || (role === 'manager' && managerCols) || []}
-          data={requests}
-          loading={loading}
-          actions={true}
-          handleAction={this.handleAction}
-        />
-        <Pagination
-          total={count}
-          // page={page}
-          // rowsPerPage={rowsPerPage}
-          // numberOfRows={numberOfRows}
-          // updateRows={this.updateRows}
-          // onChangePage={this.handleChangePage}
-          // onChangeRowsPerPage={this.handleChangeRowsPerPage}
-        />
+      <div className="big-container">
+        <div className="sub-container">
+          {createBtn}
+          <hr className="line"></hr>
+          <div className="search">
+          <label className="page-title">Records per page</label> 
+          <div className="search-box">
+          <label className="">Search:</label> 
+          <InputField
+          type="text"
+          name="search"
+          className="search-input"
+          />
+          </div>
+          </div>
+          <hr className="line"></hr>
+          <DynamicDashboard
+          properties={board}
+          profile={profileImg}
+          />
+          <Table
+            cols={(role === 'requester' && requesterCols) || (role === 'manager' && managerCols) || []}
+            data={requests}
+            loading={loading}
+            actions={true}
+            handleAction={this.handleAction}
+          />
+            {/* Pagination start*/}
+            <ServerSidePagination
+            handleChangePage={this.onChangePage}
+            totalRows={count}
+            />
+            {/* Pagination end */}
+          </div>
       </div>
     );
   }
@@ -94,4 +130,4 @@ const select = ({ viewRequests }) => ({
   requests: selectRequests(viewRequests),
 });
 
-export default connect(select)(DashboardLayout(Request));
+export default connect(select)(Request);
