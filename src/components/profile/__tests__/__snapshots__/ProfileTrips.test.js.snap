@@ -18,10 +18,10 @@ exports[`<ProfileTrips /> shallow rendering tests matches the snapshot 1`] = `
           Destination
         </td>
         <td>
-           Travel Date
+          Travel Date
         </td>
         <td>
-           Status
+          Status
         </td>
       </tr>
     </thead>

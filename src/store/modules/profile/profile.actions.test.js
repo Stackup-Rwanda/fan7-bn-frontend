@@ -1,11 +1,8 @@
 import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
-import axios from 'axios';
-import MockAdapter from 'axios-mock-adapter';
 import moxios from 'moxios';
 import actions from './actions';
-import AuthService from '../../../utils/AuthService';
-import API from '../../../utils/API';
+import { instance } from '../../../utils/API';
 import {
   GET_PROFILE_START,
   GET_PROFILE_SUCCESS,
@@ -20,8 +17,6 @@ const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
 
 jest.mock('../../../utils/AuthService');
-// jest.mock('../../../utils/HttpService');
-// jest.mock('../../../utils/API');
 
 const onSuccess = response => {
   console.debug('Request Successful!', response);
@@ -29,42 +24,39 @@ const onSuccess = response => {
 };
 
 const onError = error => {
-  console.error('Request Failed:', error.config);
-  return Promise.reject(error);
+  console.error('Request Failed:', error);
+  return error;
 };
 
 describe('Should dispatch the right action', () => {
-  const token = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJlbHZpc3J1Z2FtYmFAZ21haWwuY29tIiwicm9sZSI6Im1hbmFnZXIiLCJpYXQiOjE1ODIyOTY0Mzl9.gwq-S5fGQ1Z2nq19CYfpyhW_Ppe1bRYKYJTZXmYOYj8`;
-
-  let axiosInstance;
   beforeEach(() => {
-    axiosInstance = axios.create();
-    moxios.install(axiosInstance);
+    moxios.install(instance);
   });
   afterEach(() => {
-    moxios.uninstall(axiosInstance);
-  });
-  beforeAll(() => {
-    // window.localStorage.setItem('barefoot_nomad_token', token);
-    // AuthService.setToken(token);
-    // expect(AuthService.setToken).toHaveBeenCalled();
+    moxios.uninstall(instance);
   });
 
-  it('should dispatch a get profile success action', done => {
+  it('should dispatch a get profile success action', () => {
     const mockData = {
-      status: 200,
-      message: 'User profile data',
       data: {
-        email: 'elvisrugamba@gmail.com',
+        status: 200,
+        responseText: {
+          status: 200,
+          message: 'User profile data',
+          data: {
+            email: 'elvisrugamba@gmail.com',
+          },
+        },
       },
     };
     const data = {
       email: 'elvisrugamba@gmail.com',
     };
 
-    moxios.stubRequest('https://barefoot-nomad-staging.herokuapp.com/api/profile', {
-      status: 200,
-      response: mockData,
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+
+      request.respondWith(onSuccess(mockData));
     });
 
     const expectedActions = [
@@ -77,24 +69,22 @@ describe('Should dispatch the right action', () => {
 
     const store = mockStore({});
 
-    return store
-      .dispatch(actions.getProfile())
-      .then(() => {
-        expect(store.getActions()).toEqual(expectedActions);
-      })
-      .finally(done());
+    return store.dispatch(actions.getProfile()).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
   });
 
-  it('should dispatch get profile failure action', done => {
+  it('should dispatch get profile failure action', () => {
     const errorResp = {
-      status: 422,
-      response: { status: 422, error: 'Invalid Email.' },
+      status: 404,
+      response: { data: { status: 404, error: 'Not Found.' } },
     };
-    const error = 'Invalid Email.';
+    const error = 'Not Found.';
 
     moxios.wait(() => {
       const request = moxios.requests.mostRecent();
-      request.respondWith(onError(errorResp));
+
+      request.reject(onError(errorResp));
     });
 
     const expectedActions = [
@@ -107,29 +97,32 @@ describe('Should dispatch the right action', () => {
 
     const store = mockStore({});
 
-    return store
-      .dispatch(actions.getProfile())
-      .then(() => {
-        expect(store.getActions()).toEqual(expectedActions);
-      })
-      .finally(done());
+    return store.dispatch(actions.getProfile()).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
   });
 
-  it('should dispatch a get trips success action', done => {
+  it('should dispatch a get trips success action', () => {
     const mockData = {
-      status: 200,
-      message: 'Trip requests',
       data: {
-        trips: [{destination: 'Nigeria, Lagos'}],
+        status: 200,
+        responseText: {
+          status: 200,
+          message: 'Trip requests',
+          data: {
+            trips: [{ destination: 'Nigeria, Lagos' }],
+          },
+        },
       },
     };
     const data = {
-      trips: [{destination: 'Nigeria, Lagos'}],
+      trips: [{ destination: 'Nigeria, Lagos' }],
     };
 
-    moxios.stubRequest('https://barefoot-nomad-staging.herokuapp.com/api/requests', {
-      status: 200,
-      response: mockData,
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+
+      request.respondWith(onSuccess(mockData));
     });
 
     const expectedActions = [
@@ -142,29 +135,60 @@ describe('Should dispatch the right action', () => {
 
     const store = mockStore({});
 
-    return store
-      .dispatch(actions.getProfile())
-      .then(() => {
-        expect(store.getActions()).toEqual(expectedActions);
-      })
-      .finally(done());
+    return store.dispatch(actions.getTrips()).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
   });
 
-  it('should dispatch update profile success action', done => {
+  it('should dispatch get trips failure action', () => {
+    const errorResp = {
+      status: 404,
+      response: { data: { status: 404, error: 'Not Found.' } },
+    };
+    const error = 'Not Found.';
+
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+
+      request.reject(onError(errorResp));
+    });
+
+    const expectedActions = [
+      { type: GET_PROFILE_START },
+      {
+        type: GET_PROFILE_ERROR,
+        payload: error,
+      },
+    ];
+
+    const store = mockStore({});
+
+    return store.dispatch(actions.getTrips()).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
+
+  it('should dispatch update profile success action', () => {
     const mockData = {
-      status: 200,
-      message: 'User profile updated',
       data: {
-        email: 'elvisrugamba@gmail.com',
+        status: 200,
+        responseText: {
+          status: 200,
+          message: 'Profile updated successfully',
+          data: {
+            email: 'elvisrugamba@gmail.com',
+          },
+        },
       },
     };
     const data = {
       email: 'elvisrugamba@gmail.com',
     };
 
-    moxios.stubRequest('https://barefoot-nomad-staging.herokuapp.com/api/profile', {
-      status: 200,
-      response: mockData,
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+
+      request.respondWith(onSuccess(mockData));
     });
 
     const expectedActions = [
@@ -177,24 +201,25 @@ describe('Should dispatch the right action', () => {
 
     const store = mockStore({});
 
-    return store
-      .dispatch(actions.getProfile())
-      .then(() => {
-        expect(store.getActions()).toEqual(expectedActions);
-      })
-      .finally(done());
+    return store.dispatch(actions.updateProfile(data)).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
   });
 
-  it('should dispatch apdate profile failure action', done => {
+  it('should dispatch apdate profile failure action', () => {
     const errorResp = {
       status: 422,
-      response: { status: 422, error: 'Invalid Email.' },
+      response: { data: { status: 422, error: 'Invalid Email.' } },
     };
     const error = 'Invalid Email.';
+    const data = {
+      email: 'elvisrugamba.com',
+    };
 
     moxios.wait(() => {
       const request = moxios.requests.mostRecent();
-      request.respondWith(onError(errorResp));
+
+      request.reject(onError(errorResp));
     });
 
     const expectedActions = [
@@ -207,11 +232,8 @@ describe('Should dispatch the right action', () => {
 
     const store = mockStore({});
 
-    return store
-      .dispatch(actions.getProfile())
-      .then(() => {
-        expect(store.getActions()).toEqual(expectedActions);
-      })
-      .finally(done());
+    return store.dispatch(actions.updateProfile(data)).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
   });
 });

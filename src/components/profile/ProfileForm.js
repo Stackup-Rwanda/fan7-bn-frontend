@@ -43,7 +43,7 @@ class ProfileForm extends Component {
       address,
       country,
       prefered_language: preferedLanguage,
-      prefered_currency: preferdCurrency,
+      prefered_currency: preferedCurrency,
       company,
       department,
     } = profile;
@@ -116,6 +116,7 @@ class ProfileForm extends Component {
                   </option>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
+                  <option value="Female">Prefer not to tell</option>
                 </select>
               </div>
             </label>
@@ -174,27 +175,42 @@ class ProfileForm extends Component {
           <div className="form_content__inputField">
             <label htmlFor="prefered_language">
               <span className="form_content__inputField___label">PREFERED LANGUAGE</span>
-              <input
-                type="text"
-                className="form_content__inputField___input"
-                name="prefered_language"
-                defaultValue={preferedLanguage}
-                placeholder="Enter your prefered language"
-                onChange={this.handleChange}
-              />
+              <div className="form_content__inputField__select">
+                <select
+                  type="text"
+                  className="form_content__inputField___input"
+                  name="prefered_language"
+                  defaultValue={preferedLanguage}
+                  placeholder="Enter your prefered language"
+                  onChange={this.handleChange}
+                >
+                  <option disabled selected className="placeholder">
+                    Select your prefered language
+                  </option>
+                  <option value="English">English</option>
+                  <option value="French">French</option>
+                </select>
+              </div>
             </label>
           </div>
           <div className="form_content__inputField">
             <label htmlFor="prefered_currency">
               <span className="form_content__inputField___label">PREFERED CURRENCY</span>
-              <input
-                type="text"
-                className="form_content__inputField___input"
-                name="prefered_currency"
-                defaultValue={preferdCurrency}
-                placeholder="Enter your prefered currency"
-                onChange={this.handleChange}
-              />
+              <div className="form_content__inputField__select">
+                <select
+                  className="form_content__inputField___input"
+                  name="prefered_currency"
+                  defaultValue={preferedCurrency}
+                  placeholder="Enter your prefered currency"
+                  onChange={this.handleChange}
+                >
+                  <option disabled selected className="placeholder">
+                    Select your prefered currency
+                  </option>
+                  <option value="USD">USD</option>
+                  <option value="Euro">Euro</option>
+                </select>
+              </div>
             </label>
           </div>
           <div className="form_content__inputField">

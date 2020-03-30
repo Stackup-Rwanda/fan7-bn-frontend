@@ -11,24 +11,32 @@ const ProfileTrips = ({ trips }) => (
       <thead>
         <tr>
           <td>Destination</td>
-          <td> Travel Date</td>
-          <td> Status</td>
+          <td>Travel Date</td>
+          <td>Status</td>
         </tr>
       </thead>
       <tbody>
-        {trips
-          ? trips.map((trip) => (
+        {trips ? (
+          trips.map(trip => (
             <tr>
-              <td>{trip.destination.map((destination) => destination)}</td>
-              <td>{trip.travel_date.map((travelDate) => moment(travelDate).format('L'))}</td>
+              <td>
+                {Array.isArray(trip.destination)
+                  ? trip.destination.map(destination => destination)
+                  : trip.destination}
+              </td>
+              <td>
+                {Array.isArray(trip.travel_date)
+                  ? trip.travel_date.map(travelDate => moment(travelDate).format('L'))
+                  : moment(trip.travel_date).format('L')}
+              </td>
               <td>{trip.status}</td>
             </tr>
           ))
-          : (
-            <tr>
-              <td colSpan="3">No trip requests found</td>
-            </tr>
-          )}
+        ) : (
+          <tr>
+            <td colSpan="3">No trip requests found</td>
+          </tr>
+        )}
       </tbody>
     </table>
     <Link to="/trip-requests" className="trips__more">
@@ -38,7 +46,11 @@ const ProfileTrips = ({ trips }) => (
 );
 
 ProfileTrips.propTypes = {
-  trips: PropTypes.arrayOf().isRequired,
+  trips: PropTypes.arrayOf(),
+};
+
+ProfileTrips.defaultProps = {
+  trips: [],
 };
 
 export default ProfileTrips;

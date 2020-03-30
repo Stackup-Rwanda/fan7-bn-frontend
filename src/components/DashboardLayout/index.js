@@ -10,7 +10,7 @@ import accomodations from '../../assets/icons/icons8-hotel-check-in-30.png';
 import account from '../../assets/icons/icons8-customer-26.png';
 import signout from '../../assets/icons/icons8-exit-30.png';
 import notification from '../../assets/icons/notification.png';
-import profile from '../../assets/images/download (1).jpeg';
+import profile from '../../assets/icons/icons8-customer-48.png';
 
 const DashboardLayout = (ContentComponent) => class extends Component {
   render() {
@@ -39,7 +39,7 @@ const DashboardLayout = (ContentComponent) => class extends Component {
               </Link>
             </li>
             <li>
-              <Link to="/dashboard" className="sidebar_main_component1">
+              <Link to="/request" className="sidebar_main_component1">
                 <img src={trip} alt="trip-requests" className="sidebar_main_component1_icon" />
                 <p className="sidebar_main_component1_text">Trip Requests</p>
                 <img src={forward} alt="forward" className="sidebar_main_component1_image" />

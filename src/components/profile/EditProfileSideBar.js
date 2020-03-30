@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import swal from 'sweetalert';
 import Avatar from './ProfileAvatar';
 import './styles/editProfileSideBar.scss';
-import defaultImg from '../../assets/images/download (1).jpeg';
+import defaultImg from '../../assets/icons/icons8-customer-48.png';
 
 class EditProfileSideBar extends Component {
   constructor(props) {

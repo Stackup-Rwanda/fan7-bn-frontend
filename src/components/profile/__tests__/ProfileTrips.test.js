@@ -35,6 +35,20 @@ describe('ProfileTrips Component Test', () => {
     ).toEqual('Nigeria, Lagos');
   });
 
+  it('should display appropriate props when it\'s not a array', () => {
+    const props = {
+      trips: [{ destination: 'Nigeria, Lagos', travel_date: '2020-5-6', status: 'pending' }],
+    };
+    const wrapper = shallow(<ProfileTrips {...props} />);
+
+    expect(
+      wrapper
+        .find('tbody tr td')
+        .first()
+        .text(),
+    ).toEqual('Nigeria, Lagos');
+  });
+
   it('should display no trip  requests found', () => {
     const props = {
       trips: null,

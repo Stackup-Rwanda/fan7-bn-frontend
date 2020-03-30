@@ -82,6 +82,7 @@
         font-size: 14px;
         line-height: 2;
         margin-left: 15px;
+        color: #000000 !important;
       }
 
       &___input {
@@ -180,9 +181,11 @@
   }
 }
 
-// @media only screen and (max-width: 768px) {
-//   .form {
-//     grid-template-columns: auto;
-//     gap: 1em;
-//   }
-// }
+@media only screen and (max-width: 768px) {
+  .form {
+    &_content {
+      grid-template-columns: auto;
+      gap: 1em;
+    }
+  }
+}

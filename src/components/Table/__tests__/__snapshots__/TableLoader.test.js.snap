@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TableLoader /> shallow rendering tests matches the snapshot 1`] = `
+<div
+  className="table-ellipsis"
+>
+  <div />
+  <div />
+  <div />
+  <div />
+</div>
+`;

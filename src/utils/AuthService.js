@@ -1,7 +1,5 @@
 export default class AuthService {
   static setToken(token) {
-    console.log(token);
-    
     localStorage.setItem('barefoot_nomad_token', token);
   }
 
@@ -11,9 +9,5 @@ export default class AuthService {
 
   static isLoggedIn() {
     return !!localStorage.getItem('barefoot_nomad_token');
-  }
-
-  static logout() {
-    localStorage.removeItem('barefoot_nomad_token');
   }
 }

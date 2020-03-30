@@ -1,31 +1,24 @@
 import AuthService from '../AuthService';
+import localStorageMock from '../__mocks__/localStorageMock';
 
-jest.mock('../AuthService');
+window.localStorage = localStorageMock;
 
-describe('AuthService util tests', () => {
-  const token = 'token';
+describe('localStorage', () => {
+  beforeEach(() => localStorage.clear());
 
-  it('should handle set token', () => {
-    AuthService.setToken(token);
-
-    expect(AuthService.setToken).toHaveBeenCalled();
+  it("returns null if requested token doesn't exist", () => {
+    const token = AuthService.getToken();;
+    expect(token).toBeNull();
   });
 
-  it('should handle get token', () => {
-    AuthService.getToken();
-
-    expect(AuthService.getToken).toHaveBeenCalled();
+  it('sets the value of a token', () => {
+    AuthService.setToken('token');
+    expect(localStorage.getItem('barefoot_nomad_token')).toEqual('token');
   });
 
-  it('should handle isLoggedIn', () => {
-    AuthService.isLoggedIn();
-
-    expect(AuthService.isLoggedIn).toHaveBeenCalled();
+  it('should return true if logged in', () => {
+    localStorage.setItem('barefoot_nomad_token', 'token');
+    expect(AuthService.isLoggedIn()).toBe(true);
   });
 
-  it('should handle remove token', () => {
-    AuthService.logout();
-
-    expect(AuthService.logout).toHaveBeenCalled();
-  });
 });

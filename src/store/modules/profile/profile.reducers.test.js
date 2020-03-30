@@ -49,7 +49,9 @@ describe('Reducers test', () => {
   it('should handle GET_TRIPS_SUCCESS', () => {
     const action = {
       type: GET_TRIPS_SUCCESS,
-      payload: [{ destination: 'Nigeria, Lagos' }],
+      payload: {
+        rows: [{ destination: 'Nigeria, Lagos' }],
+      },
     };
     const expectedAction = {
       loading: false,

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Avatar from './ProfileAvatar';
 import Menu from './ProfileCardMenu';
 import './styles/profileCard.scss';
-import defaultImg from '../../assets/images/download (1).jpeg';
+import defaultImg from '../../assets/icons/icons8-customer-48.png';
 
 const ProfileCard = ({
   fullName, userName, profileImg, handleNavigation,

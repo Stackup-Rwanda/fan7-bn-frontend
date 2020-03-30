@@ -11,36 +11,32 @@ import {
 import HttpService from '../../../utils/HttpService';
 import Errors from '../../../utils/helpers/errors';
 
-const getProfile = () => async (dispatch) => {
+const getProfile = () => async dispatch => {
+  dispatch({ type: GET_PROFILE_START });
   try {
-    dispatch({ type: GET_PROFILE_START });
-
     const res = await HttpService.get('/profile');
 
     dispatch({ type: GET_PROFILE_SUCCESS, payload: res.data });
   } catch (error) {
-    Errors.handle(error);
     dispatch({ type: GET_PROFILE_ERROR, payload: Errors.selectMessage(error) });
   }
 };
 
-const getTrips = () => async (dispatch) => {
+const getTrips = () => async dispatch => {
+  dispatch({ type: GET_PROFILE_START });
   try {
-    dispatch({ type: GET_PROFILE_START });
-
-    const res = await HttpService.get('/requests');
+    const params = { page: 1, numberOfRows: 3 };
+    const res = await HttpService.get('/requests', params);
 
     dispatch({ type: GET_TRIPS_SUCCESS, payload: res.data });
   } catch (error) {
-    Errors.handle(error);
     dispatch({ type: GET_PROFILE_ERROR, payload: Errors.selectMessage(error) });
   }
 };
 
-const updateProfile = (data) => async (dispatch) => {
+const updateProfile = data => async dispatch => {
+  dispatch({ type: UPDATE_PROFILE_START });
   try {
-    dispatch({ type: UPDATE_PROFILE_START });
-
     const config = {
       headers: {
         'content-type': 'multipart/form-data',
