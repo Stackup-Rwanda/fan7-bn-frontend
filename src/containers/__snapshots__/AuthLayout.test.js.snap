@@ -11,6 +11,9 @@ exports[`<AuthLayout /> shallow rendering tests matches the snapshot 1`] = `
     <h6
       className="title"
     />
+    <SocialButtons
+      page="sign up"
+    />
     <div
       className="bottom_link"
     >

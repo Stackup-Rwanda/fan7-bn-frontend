@@ -85,7 +85,7 @@ class Login extends Component {
     return (
       <AuthLayout
         title="Login into your account"
-        redirectMsg="don't have an account"
+        redirectMsg="don't have an account? "
         redirectLocation=" Signup"
         redirect={() => history.push('/signup')}
       >
@@ -122,6 +122,9 @@ class Login extends Component {
                 onClick={this.handleLogin}
               />
             </form>
+          <div className="links">
+            <a href="/forgetPassword">Forgot Password?</a>
+          </div>
           </div>
         </div>
       </AuthLayout>

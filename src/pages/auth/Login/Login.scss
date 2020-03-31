@@ -8,9 +8,15 @@ $bg-img: url('../../../assets/images/Login/login_background_image.jpeg');
   font-family: 'Poppins', sans-serif;
 }
 .container{
+<<<<<<< HEAD
   margin: 4%;
   width: 92%;
   height: 560px;
+=======
+  margin: 3%;
+  width: 92%;
+  height: 600px;
+>>>>>>> cc4e19396cc62c24cbcbb98bbcaa6a38a2bc0983
   background-color: white;
   display:flex;
   justify-content: center;
@@ -72,7 +78,11 @@ margin-top: 10px;
   }
 }
 .bottom-link{
+<<<<<<< HEAD
   margin-top: 15%;
+=======
+  margin-top: 3%;
+>>>>>>> cc4e19396cc62c24cbcbb98bbcaa6a38a2bc0983
   text-align: center;
 
   a {
@@ -113,6 +123,7 @@ margin-top: 25%;
   }
 }
 
+<<<<<<< HEAD
 @media screen and (max-width: 337px) {
   .input{
   width: 100%;
@@ -145,12 +156,43 @@ margin-top: 25%;
 
   .tab2 {
       display: none;
+=======
+@media screen and (max-width: 992px) {
+  .tab1 {
+      width: 100%;
+      
+  }
+
+  .tab2 {
+      width: 100%
+  }
+
+  .travel-info{
+      margin-top: 100px !important;
+      margin-bottom: 100px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container{ 
+    flex-direction: column-reverse;
+  }
+  .tab1 {
+    width: 100% !important;
+    padding: 30px;
+  }
+
+  .tab2 {
+      width: 100%;
+      padding: 0px
+>>>>>>> cc4e19396cc62c24cbcbb98bbcaa6a38a2bc0983
   }
 
   .travel__tab {
       margin-top: 50px !important;
       margin-bottom: 50px !important
   }
+<<<<<<< HEAD
 }
 @media screen and (max-width: 768px) {
   .container {
@@ -172,4 +214,6 @@ margin-top: 25%;
     margin-top: 50px !important;
     margin-bottom: 50px !important
 }
+=======
+>>>>>>> cc4e19396cc62c24cbcbb98bbcaa6a38a2bc0983
 }

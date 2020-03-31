@@ -3,10 +3,10 @@ import { mount, shallow } from 'enzyme';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
-
 import store from '../../../../store/store';
-
 import AuthLayout from '../../../../containers/AuthLayout';
+import Signup from '../index';
+import { Router } from 'express';
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
@@ -17,8 +17,6 @@ const history = {
   createHref: jest.fn()
 };
 
-import Signup from '../index';
-import { Router } from 'express';
 
 React.useLayoutEffect = React.useEffect;
 

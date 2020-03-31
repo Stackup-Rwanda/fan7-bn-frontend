@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DisplayUsers /> shallow rendering tests matches the snapshot 1`] = `
+<tr>
+  <td />
+  <td />
+  <td />
+  <td />
+  <td />
+  <td />
+  <td>
+    <button
+      className="more"
+      type="button"
+    >
+      <img
+        alt="morev"
+        onClick={[Function]}
+        src={
+          Object {
+            "process": [Function],
+          }
+        }
+      />
+    </button>
+  </td>
+</tr>
+`;
