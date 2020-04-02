@@ -1,0 +1,132 @@
+.request_container {
+    background-color: white;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    &_logo{
+        float: left;
+    }
+    &_request {
+        width: 70%;
+        min-height: 300px;
+        margin-top: 10px;
+        margin-left: 150px;
+        display: inline-flex;
+        border-bottom: 1px solid  #0d0d0d;
+        &_left{
+            width: 50%;
+            box-sizing: border-box;
+            padding: 15px 10px;
+            float: left;
+            ul{
+                list-style-type: none;
+            }
+            li{
+                margin: 5px;
+                background-color: #f0f2f4;
+                padding: 10px;
+            }
+        }
+        &_right{
+            width: 50%;
+            box-sizing: border-box;
+            padding: 15px 10px;
+            float: left;
+            ul{
+                list-style-type: none;
+            }
+            li{
+                margin: 5px;
+                background-color: #f0f2f4;
+                padding: 10px;
+            }
+        }
+        h1{
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+    }
+    &_comment{
+        width: 70%;
+        min-height: 400px;
+        margin-left: 150px;
+        margin-top: 10px;
+        justify-content: center;
+        &_add_comment {
+            padding-bottom: 1em;
+            margin-bottom: 1em;
+            border-bottom: 1px  #0d0d0d solid ;
+        }
+        &_buttons{
+            width: 100%;
+            .button{
+              margin-top: -40px;
+              float: right;
+              width: 20%;
+              height: 40px;
+              background-color: #4081d6;
+              font-size: 16px !important;
+              border: none;
+              color: white;
+              border-radius: none;
+              &:hover {
+                color: #fff;
+                background-color: rgb(57, 123, 185);
+              }
+            }
+          }
+          &_row{
+              margin-bottom: 30px;
+              &_text {
+                margin-top: 5px;
+                position: relative;
+                width: 100%;
+                border: none !important;
+                border-radius: 1px !important;
+                border-bottom: 1px solid rgb(64, 129, 214) !important;
+                height: 40px;
+            }
+          }
+    }
+}
+.view_comments{
+    width: 70%;
+    margin-left: 150px;
+    margin-top: 10px;
+    justify-content: center;
+    &_item{
+        margin: 10px 0px 0px 0px;
+        h4{
+            text-decoration: underline;
+            color: #000;
+            text-underline-position: under;
+            margin-left: 10px;
+        }
+        h2{
+            text-align: center;
+        }
+        &_comment{
+            margin-left: 10px;
+        }
+        small{
+            margin-left: 10px;
+            color: #4081d6;
+        }
+    }
+    &_delete_button{
+        width: 100%;
+        .delete{
+            float: right;
+            width: 15%;
+            height: 30px;
+            font-size: 16px !important;
+            font-weight: bolder;
+            text-decoration: underline;
+            color: #ff0000;
+            &:hover {
+                color: rgb(204, 0, 0);
+              }
+        }
+    }
+}
+
+

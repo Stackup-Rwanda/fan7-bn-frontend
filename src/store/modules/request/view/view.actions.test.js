@@ -82,7 +82,7 @@ describe('Should dispatch the right action', () => {
     const error = { response: { data: { status: 404, error: 'Not Found.' } } };
     const params = { page: 0, numberOfRows: 0 };
 
-    moxios.wait(() => {
+    moxios.wait(() => { 
       const request = moxios.requests.mostRecent();
 
       request.reject(onError(errorResp));

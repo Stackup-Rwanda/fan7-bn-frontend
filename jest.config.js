@@ -16,7 +16,7 @@ module.exports = {
 
     '!**/src/pages/auth/Login/index.js',
 
-    '!**/src/pages/forgetPassword/index.js',
+    '!**src/pages/forgetPassword/index.js',
 
     '!**src/pages/resetPassword/index.js',
     
