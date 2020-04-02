@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Table /> shallow rendering tests matches the snapshot 1`] = `
+<div
+  className="data-table"
+>
+  <table
+    className="table"
+  >
+    <thead>
+      <tr>
+        <th
+          key="id"
+        >
+          ID
+        </th>
+        <th
+          key="name"
+        >
+          Name
+        </th>
+        <th
+          key="email"
+        >
+          Email
+        </th>
+        <th
+          key="date"
+        >
+          Date
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        key="1"
+      >
+        <td
+          key="id"
+        >
+          1
+        </td>
+        <td
+          key="name"
+        >
+          Elvis
+        </td>
+        <td
+          key="email"
+        >
+          elvisrugamba@example.com
+        </td>
+        <td
+          key="date"
+        >
+          1997-10-12
+          <br />
+          1997-10-12
+          <br />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

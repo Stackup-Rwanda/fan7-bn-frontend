@@ -87,7 +87,7 @@ exports[`<DashboardLayout /> shallow rendering tests matches the snapshot 1`] = 
       <li>
         <Link
           className="sidebar_main_component1"
-          to="/dashboard"
+          to="/request"
         >
           <img
             alt="trip-requests"

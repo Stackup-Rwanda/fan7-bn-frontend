@@ -1,0 +1,113 @@
+.data-table {
+  width: auto;
+  padding-top: 1em;
+  background: white;
+
+  &__header {
+    border-top: 0.5px solid rgba(211, 210, 210, 0.5);
+    border-bottom: 0.5px solid rgba(211, 210, 210, 0.5);
+
+    label {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0.5em 1em;
+      font-size: 14px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    span {
+      color: #555252 !important;
+      margin-right: 1em;
+    }
+
+    &___search {
+      display: block;
+      width: auto !important;
+      height: 14px !important;
+      padding: 6px 12px;
+      box-sizing: border-box;
+      color: #555 !important;
+      background-color: #ffffff;
+      background-image: none;
+      border: 1px solid rgba(0, 0, 0, 0.4) !important;
+      border-radius: 0 !important;
+      margin-bottom: 0;
+
+      &:focus {
+        outline: 0;
+        -webkit-box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 8px rgba(5, 108, 242, 0.6);
+        box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 8px rgba(5, 108, 242, 0.6);
+      }
+
+      &::-moz-placeholder {
+        color: #999;
+        opacity: 1;
+      }
+
+      &:-ms-input-placeholder {
+        color: #999;
+      }
+
+      &::-webkit-input-placeholder {
+        color: #999;
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+    padding: 0 .5em;
+    border-top: 0.5px solid rgba(211, 210, 210, 0.5);
+    border-bottom: 0.5px solid rgba(211, 210, 210, 0.5);
+
+    th,
+    td {
+      padding: 10px 5px;
+    }
+
+    th {
+      border-bottom: 0.2px solid rgba(211, 210, 210, 0.5);
+    }
+
+    tr {
+      box-sizing: border-box;
+
+      &:nth-child(even) {
+        background-color: rgba(236, 236, 236, 0.5);
+      }
+    }
+
+    td {
+      button {
+        display: block;
+        font-weight: normal;
+        text-align: center;
+        white-space: nowrap;
+        background-color: transparent;
+        background-image: none;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: none;
+        cursor: pointer;
+
+        &:focus,
+        &:active &:active:focus {
+          outline: 0;
+          background-image: none;
+        }
+      }
+
+      img {
+        height: 1.5em;
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ManagerRequestTable /> shallow rendering tests matches the snapshot 1`] = `
+<div
+  className="requests-table"
+>
+  <div
+    className="requests-table__header"
+  >
+    <label
+      htmlFor="search"
+    >
+      <span>
+        Search:
+      </span>
+      <input
+        className="requests-table__header___search"
+        name="search"
+        placeholder="Search..."
+        type="text"
+      />
+    </label>
+  </div>
+  <table
+    className="table"
+  >
+    <thead>
+      <tr>
+        <th>
+          Requester
+        </th>
+        <th>
+          Trip Reason
+        </th>
+        <th>
+          Destination(s)
+        </th>
+        <th>
+          Travel Date
+        </th>
+        <th>
+          Return Date
+        </th>
+        <th>
+          Type
+        </th>
+        <th>
+          Status
+        </th>
+        <th>
+          Action
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        key="11"
+      >
+        <td>
+          elvis@gmail.com
+        </td>
+        <td>
+          dddddddddd
+        </td>
+        <td>
+          burundi, bujumbura  
+        </td>
+        <td>
+          06/24/2020  
+        </td>
+        <td />
+        <td />
+        <td>
+          Pending
+        </td>
+        <td>
+          <button
+            type="button"
+          >
+            <img
+              alt="more options"
+              data-requestId={11}
+              src={
+                Object {
+                  "process": [Function],
+                }
+              }
+            />
+          </button>
+        </td>
+      </tr>
+      <tr
+        key="10"
+      >
+        <td>
+          elvis@gmail.com
+        </td>
+        <td>
+          dddddddddd
+        </td>
+        <td>
+          burundi, bujumbura  
+        </td>
+        <td>
+          05/22/2020  
+        </td>
+        <td />
+        <td />
+        <td>
+          Pending
+        </td>
+        <td>
+          <button
+            type="button"
+          >
+            <img
+              alt="more options"
+              data-requestId={10}
+              src={
+                Object {
+                  "process": [Function],
+                }
+              }
+            />
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
