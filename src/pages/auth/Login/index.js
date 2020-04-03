@@ -27,7 +27,6 @@ class Login extends Component {
     this.checkEmailInput = this.checkEmailInput.bind(this);
     this.checkPasswordInput = this.checkPasswordInput.bind(this);
   }
-
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({

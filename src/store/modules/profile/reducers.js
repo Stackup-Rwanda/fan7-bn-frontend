@@ -35,7 +35,7 @@ export default (state = initialState, { type, payload }) => {
       return {
         ...state,
         loading: false,
-        trips: payload,
+        trips: payload.rows,
       };
 
     case GET_PROFILE_ERROR:

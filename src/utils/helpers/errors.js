@@ -13,17 +13,10 @@ const selectErrorMessage = (error) => {
   if (error && error.response) return error.response.data.error;
 
   if (error && error.request) return error.message;
-
-  return error.response.data;
 };
 
 export default class Errors {
   static handle(error) {
-    if (process.env.NODE_ENV !== 'test') {
-      console.error(selectErrorMessage(error));
-      console.error(error);
-    }
-
     if (selectErrorCode(error) === 403) {
       history.push('/403');
       return;

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Request /> shallow rendering tests matches the snapshot 1`] = `
+<ContextProvider
+  value={null}
+>
+  <Request
+    count={0}
+    dispatch={[Function]}
+    loading={false}
+    requests={Array []}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+  />
+</ContextProvider>
+`;

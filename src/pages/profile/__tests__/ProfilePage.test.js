@@ -27,13 +27,13 @@ describe('ProfilePage Component Test', () => {
         <Router history={history}>
           <ProfilePage />
         </Router>
-      </Provider>,
+      </Provider>
     );
 
     expect(wrapper.find('.profile').exists()).toBe(true);
   });
 
-  it('should display spinner if it\'s loading', () => {
+  it("should display spinner if it's loading", () => {
     const initialState = {
       userProfile: { loading: true },
     };
@@ -43,7 +43,7 @@ describe('ProfilePage Component Test', () => {
         <Router history={history}>
           <ProfilePage />
         </Router>
-      </Provider>,
+      </Provider>
     );
 
     expect(wrapper.find(Spinner).exists()).toBe(true);
@@ -59,7 +59,7 @@ describe('ProfilePage Component Test', () => {
         <Router history={history}>
           <ProfilePage />
         </Router>
-      </Provider>,
+      </Provider>
     );
 
     expect(wrapper.find('.profile-card').exists()).toBe(true);
