@@ -30,7 +30,7 @@ export default class Errors {
       || selectErrorCode(error) === 415
     ) {
       swal({
-        title: 'Profile error',
+        title: 'Error',
         text: `${selectErrorMessage(error)}`,
         icon: 'error',
         buttons: 'Close',

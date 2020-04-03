@@ -7,6 +7,7 @@ const InputField = ({
   name,
   id,
   value,
+  defaultValue,
   placeholder,
   className,
   disabled,
@@ -26,6 +27,7 @@ const InputField = ({
         name={name}
         id={id}
         value={value}
+        defaultValue={defaultValue}
         placeholder={placeholder}
         className={className}
         disabled={disabled}
@@ -47,6 +49,7 @@ InputField.propTypes = {
   name: PropTypes.string.isRequired,
   id: PropTypes.string,
   value: PropTypes.string,
+  defaultValue: PropTypes.string,
   className: PropTypes.string,
   disabled: PropTypes.bool,
   min: PropTypes.string,
@@ -63,6 +66,7 @@ InputField.propTypes = {
 InputField.defaultProps = {
   type: 'text',
   value: null,
+  defaultValue: null,
   id: null,
   placeholder: null,
   className: null,

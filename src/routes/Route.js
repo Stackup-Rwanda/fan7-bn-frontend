@@ -13,7 +13,7 @@ function RouteWrapper({ component: Component, users, user, isPrivate, roleRequir
   const { role } = !!token ? jwt(token) : { role: '' };
 
   if (isPrivate && !(signedIn || LoggedIn)) {
-    return <Redirect to="/login" />;
+    return <Redirect to="/" />;
   }
 
   if (!isPrivate && (signedIn || LoggedIn)) {

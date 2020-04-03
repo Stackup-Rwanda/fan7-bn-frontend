@@ -4,7 +4,7 @@ exports[`<Request /> shallow rendering tests matches the snapshot 1`] = `
 <ContextProvider
   value={null}
 >
-  <_class
+  <Request
     count={0}
     dispatch={[Function]}
     loading={false}

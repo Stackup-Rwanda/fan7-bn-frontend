@@ -1,0 +1,28 @@
+.mainTable{
+    width: 98%;
+    background: white;
+    margin-left: 1%;
+
+    &_table{
+        width: 100%;
+        text-align: left;
+        &_th{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-bottom: 0.2px solid rgba(211, 210, 210, 0.5);
+        
+        }
+        &_td{
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        &_tr{
+            &:nth-child(even) {
+
+                background-color: rgba(236, 236, 236, 0.5);
+        }
+        }
+    }
+}
+
+

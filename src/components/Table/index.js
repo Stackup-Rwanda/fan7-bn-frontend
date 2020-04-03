@@ -4,7 +4,7 @@ import TableLoader from './TableLoader';
 import './styles/Table.scss';
 import options from '../../assets/icons/icons8-menu-vertical-30.png';
 
-const renderData = (data, cols, actions, handleAction) =>
+const renderData = (data, cols, actions, handleAction, handleEdit) =>
   data.map(row => (
     <tr key={row.id}>
       {!!cols && cols.map(col => (
@@ -19,11 +19,19 @@ const renderData = (data, cols, actions, handleAction) =>
             : row[col.name]}
         </td>
       ))}
-      {actions && (
+      {actions && !!handleAction && (
         <td key="actions">
           <button type="button"  onClick={() => handleAction(row)}>
             <img src={options} alt="more options" />
           </button>
+        </td>
+      )}
+
+      {actions && !!handleEdit && (
+        <td key="actions">
+        <button
+        disabled={row.status !== 'Pending'}
+          onClick={() => handleEdit(row)}>Edit</button>
         </td>
       )}
     </tr>
@@ -31,7 +39,7 @@ const renderData = (data, cols, actions, handleAction) =>
 
 const renderEmptyState = (cols, actions) => <tr><td colSpan={actions ? cols.length + 1 : cols.length}>There is no data in this table</td></tr>;
 
-const Table = ({ cols, data, loading, actions, handleAction }) => {
+const Table = ({ cols, data, loading, actions, handleAction, handleEdit }) => {
   return (
     <div className="data-table">
       <table className="table">
@@ -47,7 +55,7 @@ const Table = ({ cols, data, loading, actions, handleAction }) => {
           {loading ? (
             <div className="table-loader"><TableLoader /></div>
           ) : data.length > 0 ? (
-            renderData(data, cols, actions, handleAction)
+            renderData(data, cols, actions, handleAction, handleEdit)
           ) : (
             renderEmptyState(cols, actions)
           )}

@@ -1,4 +1,4 @@
-import { LOGIN_FAILURE, SUCCESS_LOGIN } from '../actions/types';
+import { LOGIN_FAILURE, SUCCESS_LOGIN, SUCCESS_GET_USER } from '../actions/types';
 
 const initialState = {
   isAuthenticated: false,
@@ -18,6 +18,14 @@ export default (state = initialState, { type, payload }) => {
       return {
         ...state,
         error: 'Something went wrong, try again please',
+      };
+    case SUCCESS_GET_USER:
+      return {
+        ...state,
+        isAuthenticated: true,
+        user: {
+          image: payload,
+        },
       };
     default:
       return state;

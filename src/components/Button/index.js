@@ -8,7 +8,7 @@ const Button = ({
   value,
   onClick,
 }) => (
-  <div className="row justify-content-center my-3 px-3">
+  <div className="row">
     <button
       className={className}
       type="submit"

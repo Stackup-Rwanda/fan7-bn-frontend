@@ -6,8 +6,6 @@ import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Request from './';
-import Table from '../../components/Table';
-import Pagination from '../../components/request/Pagination';
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
@@ -30,7 +28,7 @@ describe('Request Component Test', () => {
       </Provider>
     );
 
-    expect(wrapper.find('.request-page').exists()).toBe(true);
+    expect(wrapper.find('.big-container').exists()).toBe(true);
   });
 });
 
