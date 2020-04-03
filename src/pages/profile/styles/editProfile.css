@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css?family=La+Belle+Aurore&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.editProfile {
+  background: #e5e5e5;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  -ms-grid-columns: 300px auto;
+      grid-template-columns: 300px auto;
+  overflow: auto;
+  padding-bottom: 20px;
+}
+/*# sourceMappingURL=editProfile.css.map */

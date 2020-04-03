@@ -1,0 +1,25 @@
+.menu {
+  display: inline-block;
+  width: 130px;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  text-align: center;
+  line-height: 1.5;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+.menu:focus .menu:active .menu:active:focus .menu:visited {
+  border: none;
+  outline: none;
+}
+
+.menu.active {
+  font-weight: 600 !important;
+  border-bottom: 5px solid #2681ff;
+}
+/*# sourceMappingURL=profileCardMenu.css.map */

@@ -1,0 +1,54 @@
+.sideBar {
+  position: relative;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / span 1;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  background: #ffffff;
+  padding: 20px;
+  border-right: 1px solid rgba(61, 104, 143, 0.3);
+}
+
+.sideBar__avatar {
+  display: block;
+  width: 100px;
+  margin: 0 auto;
+}
+
+.sideBar__change {
+  display: block;
+  width: 130px;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  text-align: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  color: #2681ff;
+  margin: 10px auto 0;
+}
+
+.sideBar__change___file {
+  display: none;
+}
+
+.sideBar__change___file::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.sideBar__text {
+  display: block;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: #000000;
+  margin: 20px auto;
+  text-align: center;
+}
+/*# sourceMappingURL=editProfileSideBar.css.map */

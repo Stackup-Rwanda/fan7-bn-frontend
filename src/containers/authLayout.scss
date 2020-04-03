@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 $bg-img: url('../assets/images/Login/login_background_image.jpeg');
-body {
+body{
   padding: 0;
   margin: 0;
-  overflow-x: hidden;
+}
+.mainnn {
+  padding: 0;
+  margin: 0;
+  overflow: auto;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: #1A8CB8;
   font-family: 'Poppins', sans-serif;
 }
@@ -99,12 +103,12 @@ font-size: 45px;
 .travel__tab{
 text-align: center;
 color: white;
-margin-top: 25%;
+margin-top: 30%;
 }
 .btn {
   border-radius: 50px;
   color: #fff;
-  background-color: rgba(38, 129, 255, 0.65);
+  background-color: #4081d6;
   padding: 12px 15px 12px 15px;
   cursor: pointer;
   border: none !important;
@@ -134,7 +138,7 @@ margin-top: 25%;
 .btn {
   border-radius: 50px;
   color: #fff;
-  background-color: rgba(38, 129, 255, 0.65);
+  background-color: #4081d6;
   padding: 9px 13px !important;
   cursor: pointer;
   border: none !important;
