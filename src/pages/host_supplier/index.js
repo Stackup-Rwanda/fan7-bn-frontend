@@ -3,14 +3,21 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import jwtDecode from 'jwt-decode';
 import Table from '../../components/Table';
-import { getTripRequests } from '../../store/modules/request/view/actions';
+// import {
+//   create_one_way_trip,
+//   create_return_trip,
+//   create_multi_city_trip,
+//   editTripRequest,
+// } from '../../store/modules/requests/userRequests/actions';
+// import { getTripRequests } from '../../store/modules/request/view/actions';
 import {
   selectLoading,
   selectCount,
   selectRequests,
 } from '../../store/modules/request/view/selectors';
+import Popup from '../../components/AccommodationPopup/popup';
 import AuthService from '../../utils/AuthService';
-import './Request.scss';
+import './host_supplier.scss';
 import DynamicDashboard from '../../components/DynamicDashboard/Dashboard';
 import ServerSidePagination from '../../components/ServerPagination/ServerSidePagination';
 import { requesterDashboard, managerDashboard } from '../../assets/sidebar';
@@ -22,25 +29,56 @@ class Request extends Component {
   constructor(props) {
     super(props);
     this.initialState = {
+      showPopup: false,
       requests: [],
+      data: null,
     };
 
     this.state = this.initialState;
     this.handleAction = this.handleAction.bind(this);
     this.onChangePage = this.onChangePage.bind(this);
+    this.togglePopup = this.togglePopup.bind(this);
   }
 
   componentDidMount() {
-    const { dispatch } = this.props;
-    dispatch(getTripRequests(1, 5));
+    // const { dispatch } = this.props;
+    // dispatch(getTripRequests(1, 5));
   }
 
   handleAction(row) {
     console.log(row);
   }
   onChangePage(page, limit) {
+    // const { dispatch } = this.props;
+    // dispatch(getTripRequests(page, limit));
+  }
+  togglePopup() {
+    this.setState({
+      showPopup: !this.state.showPopup,
+      data: null,
+    });
+  }
+  toggleEditPopup(data) {
+    // this.setState({
+    //   showPopup: !this.state.showPopup,
+    //   data,
+    // });
+  }
+  oneway(data) {
     const { dispatch } = this.props;
-    dispatch(getTripRequests(page, limit));
+    dispatch(create_one_way_trip(data));
+  }
+  returnTrip(data) {
+    const { dispatch } = this.props;
+    dispatch(create_return_trip(data));
+  }
+  multicity(data) {
+    const { dispatch } = this.props;
+    dispatch(create_multi_city_trip(data));
+  }
+  handleTripRequestUpdate(data, id) {
+    const { dispatch } = this.props;
+    dispatch(editTripRequest(data, id));
   }
 
   render() {
@@ -67,15 +105,30 @@ class Request extends Component {
     const token = AuthService.getToken();
     const { role } = !!token ? jwtDecode(token) : { role: '' };
     const board = role === 'requester' ? requesterDashboard : managerDashboard;
-    const createBtn = role === 'requester' ?
-      <div className="mainButton">
-        <Button
-          type="submit"
-          className="btn buton"
-          value=" + Create Trip Request"
-        />
-      </div>
-      : <div className="emptyDiv"></div>;
+    const createBtn =
+      role === 'requester' ? (
+        <div className="mainButton">
+          <Button
+            type="submit"
+            className="btn buton"
+            value=" + Add accommodation"
+            onClick={this.togglePopup.bind(this)}
+          />
+
+          {this.state.showPopup ? (
+            <Popup
+              oneWay={this.oneway.bind(this)}
+              returntrip={this.returnTrip.bind(this)}
+              multiCity={this.multicity.bind(this)}
+              closePopup={this.togglePopup.bind(this)}
+              data={this.state.data}
+              update={this.handleTripRequestUpdate.bind(this)}
+            />
+          ) : null}
+        </div>
+      ) : (
+        <div className="emptyDiv"></div>
+      );
 
     return (
       <div className="big-container">
@@ -83,35 +136,33 @@ class Request extends Component {
           {createBtn}
           <hr className="line"></hr>
           <div className="search">
-          <label className="page-title">Records per page</label> 
-          <div className="search-box">
-          <label className="">Search:</label> 
-          <InputField
-          type="text"
-          name="search"
-          className="search-input"
-          />
-          </div>
+            <label className="page-title">Records per page</label>
+            <div className="search-box">
+              <label className="">Search:</label>
+              <InputField type="text" name="search" className="search-input" />
+            </div>
           </div>
           <hr className="line"></hr>
-          <DynamicDashboard
-          properties={board}
-          profile={profileImg}
-          />
+          <DynamicDashboard properties={board} profile={profileImg} />
           <Table
-            cols={(role === 'requester' && requesterCols) || (role === 'manager' && managerCols) || []}
+            cols={
+              (role === 'requester' && requesterCols) ||
+              (role === 'manager' && managerCols) ||
+              []
+            }
             data={requests}
             loading={loading}
             actions={true}
-            handleAction={this.handleAction}
+            handleAction={role === 'manager' && this.handleAction}
+            handleEdit={role === 'requester' && this.toggleEditPopup.bind(this)}
           />
-            {/* Pagination start*/}
-            <ServerSidePagination
+          {/* Pagination start*/}
+          <ServerSidePagination
             handleChangePage={this.onChangePage}
             totalRows={count}
-            />
-            {/* Pagination end */}
-          </div>
+          />
+          {/* Pagination end */}
+        </div>
       </div>
     );
   }

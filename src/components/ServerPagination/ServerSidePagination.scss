@@ -21,7 +21,7 @@
       color: #555 !important;
     }
   }
-
+ 
   &__select {
     width: 75px;
     display: inline-block;
@@ -64,6 +64,7 @@
 
     &:disabled {
       cursor: not-allowed;
+      opacity: 0.5;
     }
 
     &___left {
