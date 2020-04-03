@@ -9,6 +9,8 @@ import signUpUser from './modules/authentication/Signup/reducers';
 import forgetEmail from './modules/forgetPassword/reducers';
 import resetPassword from './modules/resetPassword/reducers';
 import viewRequests from './modules/request/view/reducers';
+import { currentAccommodation, allAccommodations } from './modules/accomodation/reducers';
+import { allAccommodationRooms, currentRoom } from './modules/accomodation/roomReducer';
 
 const rootReducer = combineReducers({
   auth: authReducers,
@@ -21,6 +23,10 @@ const rootReducer = combineReducers({
   role: roleReducers,
   social: socialReducer,
   viewRequests,
+  currentAccommodation,
+  allAccommodations,
+  allAccommodationRooms,
+  currentRoom
 });
 
 export default rootReducer;

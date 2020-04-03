@@ -5,25 +5,33 @@ import './styles/Table.scss';
 import options from '../../assets/icons/icons8-menu-vertical-30.png';
 
 const renderData = (data, cols, actions, handleAction) =>
-  data.map(row => (
+  data.map((row) => (
     <tr key={row.id}>
-      {!!cols && cols.map(col => (
-        <td key={col.name}>
-          {Array.isArray(row[col.name])
-            ? row[col.name].map(arr => (
-                <>
-                  {arr}
-                  <br />
-                </>
-              ))
-            : row[col.name]}
-        </td>
-      ))}
+      {!!cols &&
+        cols.map((col) => (
+          <td key={col.name}>
+            {Array.isArray(row[col.name])
+              ? row[col.name].map((arr) => (
+                  <>
+                    {arr}
+                    <br />
+                  </>
+                ))
+              : row[col.name]}
+          </td>
+        ))}
       {actions && (
         <td key="actions">
-          <button type="button"  onClick={() => handleAction(row)}>
-            <img src={options} alt="more options" />
-          </button>
+          <div className="dropdown">
+            <button
+              className="dropbtn"
+              type="button"
+              id={`table_dots_btn_${row.id}`}
+              onClick={(e) => handleAction(row, e)}
+            >
+              <img src={options} alt="more options" />
+            </button>
+           </div>
         </td>
       )}
     </tr>

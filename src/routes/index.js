@@ -18,6 +18,8 @@ import ResetPassword from '../pages/resetPassword';
 import UserRole from '../components/admin/userRole';
 import ProtectedRoutes from '../components/ProtectedRoutes';
 import Request from '../pages/Request';
+import HostSupplier from '../pages/host_supplier';
+import Tests from '../components/Table/TableLoader';
 
 export default function index() {
   const isLoggeddIn = AuthService.isLoggedIn();
@@ -30,18 +32,8 @@ export default function index() {
       <ProtectedRoutes path="/userrole" exact component={UserRole} />
       <ProtectedRoutes path="/profile" exact component={ProfilePage} />
       <ProtectedRoutes path="/edit-profile" exact component={EditProfilePage} />
-      <Route
-        path="/profile"
-        render={() => (isLoggedIn ? <ProfilePage /> : <Redirect to="/login" />)}
-      />
-      <Route
-        path="/edit-profile"
-        render={() => (isLoggedIn ? <EditProfilePage /> : <Redirect to="/login" />)}
-      />
-      <Route
-        path="/userrole"
-        render={() => (isLoggedIn ? <UserRole /> : <Redirect to="/login" />)}
-      />
+      <ProtectedRoutes path="/dashboard/:token" exact component={Dashboard} />
+      <ProtectedRoutes path="/dashboard" exact component={Dashboard} />
       <Route path="/test" exact component={Test} />
       <Route path="/403" exact component={Error403} />
       <Route path="/404" exact component={Error404} />
@@ -51,6 +43,8 @@ export default function index() {
       <ProtectedRoutes path="/dashboard/:token" exact component={Dashboard} />
       <Route path="/forgetPassword" exact component={ForgetPassword} />
       <Route path="/resetPassword" exact component={ResetPassword} />
+      <Route path="/accommodations" component={HostSupplier} />
+      <Route path="/test_code" exact component={Tests} />
       <Route
         path="/request"
         exact

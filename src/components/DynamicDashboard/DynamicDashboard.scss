@@ -1,0 +1,236 @@
+@import '../../assets/scss/variables.scss';
+//Layout Stylling
+.active {
+  background: rgb(10, 45, 75);
+  cursor: pointer;
+  color: $TextColor;
+}
+.dynamic_layout {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 2fr 10fr ;
+  grid-template-rows: 1fr 10fr;
+  width: 100%;
+}
+.dynamic_sidebar {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3 ;
+  height: 100%;
+  grid-template-columns: 1fr ;
+  grid-template-rows: 1fr;
+  height: 100%;
+  width: 100%;
+  background: #08233C;
+  z-index: 2;
+  // top: 0; 
+
+  &_header {
+    position: absolute;
+    top: 10px;
+
+      &_img {
+        position: absolute;
+        left: 0px;
+        top: 16px;
+        width: 34px;
+        padding-left: 10px;
+      }
+
+      &_title {
+        position: absolute;
+        padding-left: 50px;
+        margin: 0 auto;
+        top: 12px;
+        font-family: "Poppins", sans-serif;;
+        font-weight: bold;
+        font-size: 24px;
+        color: white;
+      }
+  }
+
+  &_main {
+    position: relative;
+    top: 94px;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    list-style: none;
+
+    &_component1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      height: 60px;
+      font-family: $font-family;
+      font-weight: bold;
+      font-size: 14px;
+      list-style: none;
+      color: $TextColor;
+      text-decoration: none;
+
+      &:hover {
+        background: rgb(10, 45, 75);
+        cursor: pointer;
+        color: $TextColor;
+      }
+
+      &_text {
+        display: inline-block;
+        width: 60%;
+      }
+
+      &_icon {
+        display: inline-block;
+        width: 24px;
+      }
+
+      &_image {
+        display: inline-block;
+        color: $TextColor;
+        width: 24px;
+      }
+    }
+  }
+
+  &_bottom {
+    position: relative;
+    top: 350px;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    list-style: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+
+    li:last-child {
+      p {
+        margin-left: -72px;        
+      }
+      img {
+        margin-left: -35px;
+      }
+    }
+
+    &_component {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      height: 60px;
+      border-top: 1px solid $HoverColor;
+      border-bottom: 1px solid $HoverColor;
+      font-family: $font-family;
+      font-weight: bold;
+      font-size: 14px;
+      list-style: none;
+      color: $TextColor;
+      text-decoration: none;
+
+      &:hover {
+        background: rgb(10, 45, 75);
+        cursor: pointer;
+        color: $TextColor;
+      }
+
+      &_text {
+        display: inline-block;
+        width: 60%;
+      }
+
+      &_icon {
+        display: inline-block;
+        width: 24px;
+      }
+
+      &_image {
+        display: inline-block;
+        color: $TextColor;
+        width: 24px;
+      }
+    }
+  }
+}
+.left_title {
+  font-weight: bold;
+  span {
+    color: black;
+    font-size: 14px;
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+.dynamic_navbar {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2 ;
+  height: 100%;
+  grid-template-columns: 1fr ;
+  grid-template-rows: 1fr;
+  height: 100%;
+  width: 100%;
+
+  // width: 83%;
+  // height: 10%;
+  background: white;
+  // position: fixed;
+  // left: 17%;
+  // top: 0px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+
+  &_left_items {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    list-style: none;
+    font-size: 20px;
+    margin: 0px;
+    padding: 2%;
+    float: left;
+  }
+
+  &_items {
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    list-style: none;
+    margin: 0px;
+    float: right;
+
+    &_single {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      margin-top: 15px;
+    }
+
+    &_single2 {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      margin: 5px 0 0 50px;
+      border-radius: 50%;
+    }
+  }
+}
+.dynamic_container {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3 ;
+  height: 100%;
+  grid-template-columns: 1fr ;
+  grid-template-rows: 1fr;
+  width: 100%;
+  overflow: hidden;
+  &_div {
+    height: 100%;
+    overflow: auto;
+  }
+}

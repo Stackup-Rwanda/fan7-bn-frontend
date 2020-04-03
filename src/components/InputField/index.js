@@ -18,7 +18,8 @@ const InputField = ({
   error,
   onKeyUp,
   onFocus
-}) => (
+}) =>{
+return  (
   <div className="">
     <div className="form_group">
       <input
@@ -37,10 +38,10 @@ const InputField = ({
         onKeyUp={onKeyUp}
         onFocus={onFocus}
       />
-      <span className="invalid_input">{error}</span>
+      <div className="invalid_input">{error}</div>
     </div>
   </div>
-);
+)};
 
 InputField.propTypes = {
   type: PropTypes.string,

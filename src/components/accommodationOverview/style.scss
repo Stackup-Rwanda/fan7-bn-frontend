@@ -1,0 +1,77 @@
+.hotel_overview_card {
+    // border: 2px solid red;
+    background: #fff;
+    padding: 7px;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    &_flame {
+        display: grid;
+        height: 500px;
+        grid-template-columns: minmax(0, 1fr) ;
+        grid-template-rows: 2fr 1fr;
+        width: 100%;
+        &_top {
+            display: grid;
+            height: 100%;
+            grid-template-columns: 1.5fr 3fr ;
+            grid-template-rows: 1fr;
+            width: 100%;
+            border-bottom: .5px solid #ECECEC;
+            &_left {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2 ;
+                display: grid;
+                height: 100%;
+                grid-template-columns: 1fr ;
+                grid-template-rows: 1fr 1.6fr 1fr;
+                &_rating {
+                    grid-column: 1 / 2;
+                    grid-row: 1 / 2 ;
+                    display: grid;
+                    height: 100%;
+                    grid-template-columns: 1fr 2fr 1fr;
+                    grid-template-rows: 1fr;
+                }
+                &_rating {
+                   border-bottom: .5px solid #ECECEC;
+                }
+                &_allAmenities {
+                    display: flex;
+                    justify-content: flex-end;
+                    padding: 10px 20px;
+                    &_button {
+                        width: fit-content;
+                        padding: 10px 20px !important;
+                    }
+                }
+            }
+            &_right {
+                grid-column: 2 / 3;
+                grid-row: 1 / 2 ;
+                display: grid;
+                height: 100%;
+                grid-template-columns: 1fr ;
+                grid-template-rows: 1fr;
+                padding-top: 40px;
+                padding-bottom: 0;
+                box-sizing: border-box;
+                #hotel_overview_card_flame_top_right_image{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        &_buttom {
+            padding: 15px 20px;
+            &_div {
+                &_title {
+                    margin: 15px 0;
+                }
+                &_description {
+                    font-size: .95em;
+                }
+            }
+        }
+    }
+}

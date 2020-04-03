@@ -21,7 +21,6 @@ class Login extends Component {
       isPasswordValid: false,
     };
   }
-
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({

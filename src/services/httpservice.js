@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const heroku = 'https://barefoot-nomad-staging.herokuapp.com/api';
+export const heroku = 'http://localhost:5000/api';
 
 export const axiosCall = axios.create({
   baseURL: heroku,

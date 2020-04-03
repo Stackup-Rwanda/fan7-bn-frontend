@@ -4,7 +4,7 @@ import AuthService from './AuthService';
 const token = AuthService.getToken();
 
 export const instance = axios.create({
-  baseURL: 'https://barefoot-nomad-staging.herokuapp.com/api',
+  baseURL: 'http://localhost:5000/api',
   responseType: 'json',
   headers: {
     token: `Bearer ${token}`,

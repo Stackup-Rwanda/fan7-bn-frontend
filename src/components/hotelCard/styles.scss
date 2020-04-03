@@ -1,0 +1,88 @@
+.hotel_card {
+    // border: 2px solid red;
+    background: #fff;
+    padding: 7px;
+    width: 100%;
+    max-width: 100%;
+    // margin-top: 100px !important;
+    margin: auto;
+    &_flame {
+        display: flex;
+        height: 250px;
+        max-width: 900px;
+        margin: auto;
+
+        &_image_container{
+            width: 40%;
+            background: rgb(202, 186, 202);
+            &_image {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &_content_container {
+            display: flex;
+            width: 60%;
+            // background: lightblue;
+            &_middle {
+               width: 70%;
+               height: 100%;
+               &_container {
+                width: 100%;
+                padding:  0 12px;
+                box-sizing: border-box;
+                &_header {
+                    text-transform: uppercase;
+                }
+                &_amenities {
+                    display: flex;
+                    flex-wrap: wrap;
+                    // justify-content: space-between;
+                    width: 100%;
+                    margin: 1em 0;
+                    border-right: 0.3px solid #ECECEC;
+                    // overflow: hidden;
+                    &_container {
+                        display: flex;
+                        align-items: center;
+                        width: fit-content;
+                        &_first, &_second, &_third {
+                            display: flex;
+                            align-items: center;
+                            margin-right: 1em;
+                            white-space: nowrap;
+                            width: fit-content;
+                            // border: 0.5px solid red;
+                            .hoteCard_icon {
+                                height: 25px;
+                                width: 25px;
+
+                                // filter: invert(11%) sepia(100%) saturate(6343%) hue-rotate(242deg) brightness(91%) contrast(133%);
+                            }
+                            &_text {
+                                margin: 0 .5em;
+                                padding-bottom: 4px;
+                                font-size: .9em;
+                                font-weight: 500;
+                                color: #2681FF;
+                            }
+                        }
+                        
+                    }
+
+                }
+                &_description {
+                    font-size: 0.9em;
+                    box-sizing: border-box;
+                }
+            }
+            }
+            
+            &_right {
+                width: 30%;
+                // background: orange;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}

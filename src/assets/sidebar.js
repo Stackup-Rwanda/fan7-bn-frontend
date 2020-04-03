@@ -1,0 +1,58 @@
+import bookIcon from './icons/icons8-hotel-check-in-30.png';
+import trip from './icons/icons8-trekking-26.png';
+import accomodations from './icons/icons8-hotel-check-in-30.png';
+
+export const requesterDashboard = {
+  head: 'REQUESTER',
+  topLeftHeader: {
+    head: 'Trip requests',
+    description: 'All my trip requests',
+  },
+  links: [
+    {
+      name: 'My Bookings',
+      path: 'booking',
+      icon: bookIcon
+    },
+    {
+      name: 'Trip Request',
+      path: 'request',
+      icon: trip
+    },
+    {
+      name: 'Accommodations',
+      path: 'accommodation',
+      icon: accomodations
+    },
+  ]
+}
+
+export const managerDashboard = {
+  head: 'MANAGER',
+  topLeftHeader: {
+    head: 'Accommodations',
+    description: 'All trip requests',
+  },
+  links: [
+    {
+      name: 'Trip request',
+      path: 'request',
+      icon: trip
+    },
+  ]
+}
+
+export const hostSupplierDashboard = {
+  head: 'HOST-SUPPLIER',
+  topLeftHeader: {
+    head: 'Accommodations',
+    description: 'All my accommodations',
+  },
+  links: [
+    {
+      name: 'Accommodations',
+      path: 'accommodations',
+      icon: accomodations
+    },
+  ]
+}

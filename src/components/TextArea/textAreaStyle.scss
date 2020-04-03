@@ -1,0 +1,92 @@
+.RichEditor-root {
+  background: #fff;
+  border: 1px solid rgb(64, 129, 214);
+  font-family: 'Georgia', serif;
+  font-size: 14px;
+  padding: 15px;
+}
+
+.RichEditor-editor {
+  border-top: 1px solid rgb(64, 129, 214);
+  color: #000;
+  cursor: text;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.DraftEditor-root,
+.DraftEditor-editorContainer,
+.public-DraftEditor-content {
+  padding: 0;
+  margin: 0;
+}
+.public-DraftStyleDefault-ltr {
+  // background: rgba(0, 0, 0, .5);
+  color: #000;
+  padding: 0;
+  span {
+    padding: 0;
+
+  }
+}
+
+.RichEditor-editor .public-DraftEditorPlaceholder-root,
+.RichEditor-editor .public-DraftEditor-content {
+  margin: 0 -15px -15px;
+  padding: 15px;
+}
+
+.RichEditor-editor .public-DraftEditor-content {
+  min-height: 100px;
+  // color: red;
+  text-shadow: 0px 0px 0px #000;
+  -webkit-text-fill-color: transparent;
+}
+.RichEditor-Fetch-root .public-DraftEditor-content{
+  text-shadow: 0px 0px 0px #000;
+  -webkit-text-fill-color: transparent;
+  // border: 1px solid red;
+  padding: 0;
+
+}
+
+.RichEditor-hidePlaceholder .public-DraftEditorPlaceholder-root {
+  display: none;
+}
+
+.RichEditor-editor .RichEditor-blockquote {
+  border-left: 5px solid #eee;
+  color: #666;
+  font-family: 'Hoefler Text', 'Georgia', serif;
+  font-style: italic;
+  margin: 16px 0;
+  padding: 10px 20px;
+}
+
+.RichEditor-editor .public-DraftStyleDefault-pre {
+  background-color: rgba(0, 0, 0, 0.05);
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  padding: 0;
+
+}
+
+.RichEditor-controls {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 14px;
+  padding: auto 0;
+  margin-bottom: 5px;
+  user-select: none;
+  color: #000;
+}
+
+.RichEditor-styleButton {
+  color: #999;
+  cursor: pointer;
+  margin-right: 16px;
+  padding: 2px 0;
+  display: inline-block;
+}
+
+.RichEditor-activeButton {
+  color: #5890ff;
+}

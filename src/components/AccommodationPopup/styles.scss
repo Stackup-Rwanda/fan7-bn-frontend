@@ -1,0 +1,222 @@
+.accommodation_popup {  
+    position: fixed;  
+    width: 100%;  
+    height: 100%;  
+    top: 0;  
+    left: 0;  
+    right: 0;  
+    bottom: 0;  
+    margin: auto;  
+    background-color: rgba(189, 189, 189, 0.397); 
+    z-index: 1; 
+
+    &_innerContainer {  
+      position: relative;
+      width: 90%;
+      max-width: 520px; 
+      // left: 30%;  
+      // right: 30%;  
+      top: 10%;  
+      margin: auto;  
+      background: white;  
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+
+      &_close{
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 40px;
+        width: 100%;
+        margin-top: 20px;
+        &_div {
+          width: fit-content;
+          margin: 20px 20px 0 0;
+        }
+    }
+    &_radios{
+      height: 40px;
+      margin-top: 10%;
+      margin-left: 10%;
+
+      &_radio{
+        width: 5%;
+        margin: 3%;
+    }
+  }
+   &_title {
+     width: 100%;
+     height: fit-content;
+    //  margin-top: ;
+     &_name {
+       font-size: 18px;
+       text-align: center;
+     }
+   }
+  &_inputContainer{
+    margin-top: 5%;
+    width: 100%;
+    height: 100%;
+    max-height: 300px;
+    padding-right: 10px;
+    background-color: white;
+    overflow-x: hidden; 
+    overflow-y: auto;
+    &_transition_container {
+      overflow: hidden;
+    }
+    &_box {
+      display: flex;
+      box-sizing: border-box;
+      height: fit-content;
+      justify-content: space-between;
+      padding: 5px 20px;
+      margin-top: 10px;
+      &_text{
+      width: 25%;
+      margin-top: 0;
+
+      &_texts {
+        padding: 5px 0;
+        display: inline-block;
+        font-size: 14px;
+      }
+  }
+  &_div1{
+    width: 300px;
+    height: 100%;
+    padding-bottom: 0;
+    // margin-left: 10%;
+  
+    &_inputs{
+      height: 33px;
+      padding: 4px 15px 4px 15px!important;
+      width: 100%;
+      margin: 0;
+      // float: right;
+      font-weight: lighter;
+      // margin-top: 20px;
+
+    }
+
+&_select{
+  height: 30px;
+  width: 70%;
+  margin: 0;
+  float: right;
+  font-weight: lighter;
+  margin-top: 20px;
+  background-color: white;
+  font-size: 14px ;
+  color: #000;
+  border: 1px solid rgb(64, 129, 214);
+  border-radius: 40px;
+  padding: 5px 10px;
+  &:focus {
+    box-shadow: none;
+    outline-width: 0;
+    font-weight: 400
+  }
+
+  }
+}
+
+    }
+    .display_block {
+      margin-bottom: 20px;
+      display: block;
+      &_text{
+        width: 100%;
+        // margin-top: 0;
+      border: 1px solid blue;
+
+      }
+      
+      
+    }
+    &_box:first-child {
+      margin-top: 20px;
+    }
+    
+    }
+    
+    &_buttons {
+      padding: 25px 0; 
+      max-width: 400px;
+      width: 100%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      
+      &_submit, &_cancel{
+        width: 100% ;
+        margin: 4px;
+        padding: 0 !important;
+        cursor: pointer;
+      
+      }
+      &_button {
+        margin: 0;
+        padding: 7px 20px !important;
+      }
+    } 
+  }
+
+}
+.invalid_input {
+  color: red;
+  padding-left: 10px;
+  height: 10px;
+}
+#description_div1{
+        width: 100%;
+      }
+.disabled_btn:disabled ,
+.disabled_btn[disabled] {
+  border: 1px solid #999999 !important;
+  background-color: #dbbee9!important;
+  cursor: alias !important;
+  color: #2f2f30 !important;
+}
+.bigg-container {
+  border: 1px solid rgb(64, 129, 214);
+  width: fit-content;
+  display: flex;
+}
+.answer-container {
+  display: flex;
+  color: #fff;
+  background-color: rgb(64, 129, 214);
+  margin: 3px;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+.fade-enter-active{
+  opacity: 1;
+  transform: translateX(0%);
+}
+.fade-exit{
+  opacity: 1;
+  transform: translateX(0%);
+}
+.fade-exit-active{
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.fade-enter-active ,
+.fade-exit-active {
+  transition: opacity 500ms, transform 500ms;
+}
+div[disabled]
+{
+  pointer-events: none;
+  opacity: 0.7;
+}
