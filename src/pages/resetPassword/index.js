@@ -90,7 +90,7 @@ class ResetPassword extends Component {
             placeholder="New password"
             name="password"
             id="pass"
-            className="input"
+            className="input auth_input"
             required
             error={this.state.error}
             onChange={this.handleChange}
@@ -105,7 +105,7 @@ class ResetPassword extends Component {
             placeholder="Confirm new password"
             name="confirmPassword"
             id="confirmPass"
-            className="input"
+            className="input auth_input"
             required
             error={this.state.error}
             onChange={this.handleChange}

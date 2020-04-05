@@ -7,7 +7,7 @@ class Logo extends Component {
     return (
       <div className="logoo">
         <img src={logo} alt="logo" className="logo" />
-        <h2 className="heading">
+        <h2 className="logo_heading">
           <span>Barefoot </span>
           Nomad
         </h2>

@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import { Router } from 'react-router-dom';
 import history from '../utils/helpers/history';
-import Routes from '../routes';
+import AuthenticationRoutes from '../routes/Authenticantion';
+import ErrorRoutes from '../routes/Errors';
 
 class App extends Component {
   render() {
     return (
       <>
         <Router history={history}>
-          <Routes />
+          <AuthenticationRoutes />
+          <ErrorRoutes />
         </Router>
       </>
     );
