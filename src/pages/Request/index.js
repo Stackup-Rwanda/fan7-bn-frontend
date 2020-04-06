@@ -3,12 +3,20 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import jwtDecode from 'jwt-decode';
 import Table from '../../components/Table';
+import {
+  create_one_way_trip,
+  create_return_trip,
+  create_multi_city_trip,
+  editTripRequest
+
+} from '../../store/modules/requests/userRequests/actions';
 import { getTripRequests } from '../../store/modules/request/view/actions';
 import {
   selectLoading,
   selectCount,
   selectRequests,
 } from '../../store/modules/request/view/selectors';
+import Popup from '../../components/popup/popup';
 import AuthService from '../../utils/AuthService';
 import './Request.scss';
 import DynamicDashboard from '../../components/DynamicDashboard/Dashboard';
@@ -22,7 +30,9 @@ class Request extends Component {
   constructor(props) {
     super(props);
     this.initialState = {
+      showPopup: false,
       requests: [],
+      data: null
     };
 
     this.state = this.initialState;
@@ -41,6 +51,34 @@ class Request extends Component {
   onChangePage(page, limit) {
     const { dispatch } = this.props;
     dispatch(getTripRequests(page, limit));
+  }
+  togglePopup() {
+    this.setState({
+      showPopup: !this.state.showPopup,
+      data: null
+    });
+  }
+  toggleEditPopup(data) {
+    this.setState({
+      showPopup: !this.state.showPopup,
+      data
+    });
+  }
+  oneway(data) {
+    const { dispatch } = this.props;
+    dispatch(create_one_way_trip(data))
+  }
+  returnTrip(data) {
+    const { dispatch } = this.props;
+    dispatch(create_return_trip(data))
+  }
+  multicity(data) {
+    const { dispatch } = this.props;
+    dispatch(create_multi_city_trip(data))
+  }
+  handleTripRequestUpdate(data, id) {
+const { dispatch } = this.props;
+    dispatch(editTripRequest(data, id))
   }
 
   render() {
@@ -73,7 +111,21 @@ class Request extends Component {
           type="submit"
           className="btn buton"
           value=" + Create Trip Request"
+          onClick={this.togglePopup.bind(this)}
         />
+
+
+        {this.state.showPopup ?
+          <Popup
+            oneWay={this.oneway.bind(this)}
+            returntrip={this.returnTrip.bind(this)}
+            multiCity={this.multicity.bind(this)}
+            closePopup={this.togglePopup.bind(this)}
+            data={this.state.data}
+            update={this.handleTripRequestUpdate.bind(this)}
+          />
+          : null
+        }
       </div>
       : <div className="emptyDiv"></div>;
 
@@ -103,7 +155,8 @@ class Request extends Component {
             data={requests}
             loading={loading}
             actions={true}
-            handleAction={this.handleAction}
+            handleAction={role === 'manager' && this.handleAction}
+            handleEdit={role === 'requester' && this.toggleEditPopup.bind(this)}
           />
             {/* Pagination start*/}
             <ServerSidePagination

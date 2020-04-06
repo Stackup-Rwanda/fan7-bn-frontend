@@ -151,7 +151,7 @@ exports[`<ProfileForm /> shallow rendering tests matches the snapshot 1`] = `
         </span>
         <input
           className="form_content__inputField___input"
-          defaultValue="2020-04-02"
+          defaultValue="2020-04-04"
           name="dob"
           onChange={[Function]}
           type="date"

@@ -6,8 +6,8 @@ class Logo extends Component {
   render() {
     return (
       <div className="logoo">
-        <img src={logo} alt="logo" className="logo" />
-        <h2 className="heading">
+        <img src={logo} alt="logo" className="logoo_logo" />
+        <h2 className="logoo_heading">
           <span>Barefoot </span>
           Nomad
         </h2>
