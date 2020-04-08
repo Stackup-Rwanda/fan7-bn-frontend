@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import jwtDecode from 'jwt-decode';
 import Table from '../../components/Table';
-import { getTripRequests } from '../../store/modules/request/view/actions';
+import { getTripRequests, ApproveReject } from '../../store/modules/request/view/actions';
 import {
   selectLoading,
   selectCount,
@@ -26,7 +26,8 @@ class Request extends Component {
     };
 
     this.state = this.initialState;
-    this.handleAction = this.handleAction.bind(this);
+    this.handleApprove = this.handleApprove.bind(this);
+    this.handleReject = this.handleReject.bind(this);
     this.onChangePage = this.onChangePage.bind(this);
   }
 
@@ -35,8 +36,21 @@ class Request extends Component {
     dispatch(getTripRequests(1, 5));
   }
 
-  handleAction(row) {
-    console.log(row);
+  handleApprove(row) {
+    const status = 'approve';
+    const { dispatch } = this.props;
+    if(row.status === 'Approved') {
+      alert('Request Already approved')
+    }
+    dispatch(ApproveReject(row.id, status));
+  }
+  handleReject(row) {
+    const status = 'reject';
+    const { dispatch } = this.props;
+    if(row.status === 'Rejected') {
+      alert(`Request Already ${row.status}`)
+    }
+    dispatch(ApproveReject(row.id, status));
   }
   onChangePage(page, limit) {
     const { dispatch } = this.props;
@@ -103,7 +117,8 @@ class Request extends Component {
             data={requests}
             loading={loading}
             actions={true}
-            handleAction={this.handleAction}
+            handleApprove={this.handleApprove}
+            handleReject={this.handleReject}
           />
             {/* Pagination start*/}
             <ServerSidePagination

@@ -36,7 +36,7 @@ describe("Login Page", () => {
     expect(loginPage.find(".title").text()).toEqual("Login into your account");
   });
   test("should render the login button", () => {
-    expect(loginPage.find('button').length).toBe(1);
+    expect(loginPage.find('.btn').length).toBe(2);
   });
 });
 

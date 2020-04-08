@@ -2,6 +2,10 @@ import {
   GET_TRIP_REQUEST_START,
   GET_TRIP_REQUEST_SUCCESS,
   GET_TRIP_REQUEST_ERROR,
+  APPROVE_REJECT_SUCCESS,
+  REQUEST_REJECT_SUCCESS,
+  APPROVE_REJECT_ERROR,
+  REQUEST_REJECT_ERROR
   // HANDLE_PAGE_CHANGE,
   // HANDLE_ROWS_PER_PAGE_CHANGE,
 } from './types';
@@ -37,7 +41,18 @@ export default (state = initialState, { type, payload }) => {
         error: payload,
         loading: false,
       };
-
+    case APPROVE_REJECT_SUCCESS: 
+    return {
+      ...state,
+      status: payload.data,
+      loading: false
+    }
+    case APPROVE_REJECT_ERROR: 
+    return {
+      ...state,
+      error: payload,
+      loading: false
+    }
     // case HANDLE_ROWS_PER_PAGE_CHANGE:
     //   return {
     //     ...state,

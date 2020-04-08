@@ -4,7 +4,7 @@ import TableLoader from './TableLoader';
 import './styles/Table.scss';
 import options from '../../assets/icons/icons8-menu-vertical-30.png';
 
-const renderData = (data, cols, actions, handleAction) =>
+const renderData = (data, cols, actions, handleApprove, handleReject) =>
   data.map(row => (
     <tr key={row.id}>
       {!!cols && cols.map(col => (
@@ -21,9 +21,14 @@ const renderData = (data, cols, actions, handleAction) =>
       ))}
       {actions && (
         <td key="actions">
-          <button type="button"  onClick={() => handleAction(row)}>
-            <img src={options} alt="more options" />
-          </button>
+          <div className="dropdown">
+            <button className="dropbtn"><img src={options} alt="more options" /></button>
+            <div className="dropdown-content">
+                <a href="#" >Add a comment</a>
+                <a href="#" onClick={() => handleApprove(row)}>Approve request</a>
+                <a href="#" onClick={() => handleReject(row)}>Reject request</a>
+            </div>
+        </div>
         </td>
       )}
     </tr>
@@ -31,7 +36,7 @@ const renderData = (data, cols, actions, handleAction) =>
 
 const renderEmptyState = (cols, actions) => <tr><td colSpan={actions ? cols.length + 1 : cols.length}>There is no data in this table</td></tr>;
 
-const Table = ({ cols, data, loading, actions, handleAction }) => {
+const Table = ({ cols, data, loading, actions, handleApprove, handleReject }) => {
   return (
     <div className="data-table">
       <table className="table">
@@ -47,7 +52,7 @@ const Table = ({ cols, data, loading, actions, handleAction }) => {
           {loading ? (
             <div className="table-loader"><TableLoader /></div>
           ) : data.length > 0 ? (
-            renderData(data, cols, actions, handleAction)
+            renderData(data, cols, actions, handleApprove, handleReject)
           ) : (
             renderEmptyState(cols, actions)
           )}
@@ -62,7 +67,8 @@ Table.propTypes = {
   data: PropTypes.arrayOf(),
   loading: PropTypes.bool,
   actions: PropTypes.bool,
-  handleAction: PropTypes.func
+  handleApprove: PropTypes.func,
+  handleReject: PropTypes.func
 };
 
 Table.defaultProps = {
@@ -77,7 +83,8 @@ Table.defaultProps = {
   ],
   loading: false,
   actions: false,
-  handleAction: () => {}
+  handleApprove: () => {},
+  handleReject: () => {}
 };
 
 export default Table;
