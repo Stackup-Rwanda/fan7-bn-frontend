@@ -9,6 +9,7 @@ import Spinner from '../../components/Spinner';
 import profileActions from '../../store/modules/profile/actions';
 import selectors from '../../store/modules/profile/selectors';
 import './styles/profile.scss';
+import Chatbot from '../../components/Chatbot';
 
 class ProfilePage extends Component {
   constructor(props) {
@@ -56,6 +57,7 @@ class ProfilePage extends Component {
           {show === 'activityFeeds' && <ProfileFeeds gender={gender} dob={dob} address={address} />}
           {show === 'trips' && <ProfileTrips trips={trips} />}
         </div>
+        <Chatbot />
       </div>
     );
   }

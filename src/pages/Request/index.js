@@ -17,6 +17,7 @@ import { requesterDashboard, managerDashboard } from '../../assets/sidebar';
 import profileImg from '../../assets/images/icons8-user-30.png';
 import InputField from '../../components/InputField';
 import Button from '../../components/Button';
+import Chatbot from '../../components/Chatbot';
 
 class Request extends Component {
   constructor(props) {
@@ -126,6 +127,9 @@ class Request extends Component {
             totalRows={count}
             />
             {/* Pagination end */}
+
+            <Chatbot />
+            
           </div>
       </div>
     );

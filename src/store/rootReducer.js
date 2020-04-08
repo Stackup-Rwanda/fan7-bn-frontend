@@ -10,6 +10,7 @@ import forgetEmail from './modules/forgetPassword/reducers';
 import resetPassword from './modules/resetPassword/reducers';
 import viewRequests from './modules/request/view/reducers';
 import notifications from './modules/notification/reducers';
+import chatReducer from './reducers/chatReducer';
 
 const rootReducer = combineReducers({
   auth: authReducers,
@@ -23,6 +24,7 @@ const rootReducer = combineReducers({
   social: socialReducer,
   viewRequests,
   notifications,
+  chat: chatReducer,
 });
 
 export default rootReducer;

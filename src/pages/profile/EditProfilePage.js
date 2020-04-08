@@ -9,6 +9,7 @@ import Spinner from '../../components/Spinner';
 import profileActions from '../../store/modules/profile/actions';
 import selectors from '../../store/modules/profile/selectors';
 import './styles/editProfile.scss';
+import Chatbot from '../../components/Chatbot';
 
 class EditProfilePage extends Component {
   constructor(props) {
@@ -74,6 +75,7 @@ class EditProfilePage extends Component {
             />
           </>
         )}
+        <Chatbot />
       </div>
     );
   }
