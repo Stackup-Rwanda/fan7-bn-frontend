@@ -9,6 +9,7 @@ import signUpUser from './modules/authentication/Signup/reducers';
 import forgetEmail from './modules/forgetPassword/reducers';
 import resetPassword from './modules/resetPassword/reducers';
 import viewRequests from './modules/request/view/reducers';
+import notifications from './modules/notification/reducers';
 
 const rootReducer = combineReducers({
   auth: authReducers,
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   role: roleReducers,
   social: socialReducer,
   viewRequests,
+  notifications,
 });
 
 export default rootReducer;

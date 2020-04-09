@@ -151,7 +151,6 @@ body{
   height: 70px;
   left: 20%;
   top: 0px;
-  overflow: hidden;
   background: #fff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   z-index: 1;
@@ -167,7 +166,6 @@ body{
     &_single {
       position: relative;
       display: inline-block;
-      width: 40px;
       height: 40px;
       margin-top: 15px;
     }

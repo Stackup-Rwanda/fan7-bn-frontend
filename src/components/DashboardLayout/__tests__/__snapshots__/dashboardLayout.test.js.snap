@@ -208,15 +208,16 @@ exports[`<DashboardLayout /> shallow rendering tests matches the snapshot 1`] = 
       className="navbar_items"
     >
       <li>
-        <img
-          alt="notifications"
-          className="navbar_items_single"
-          src={
+        <DropdownMenu
+          icon={
             Object {
               "process": [Function],
             }
           }
-        />
+          text="10"
+        >
+          <Connect(Notification) />
+        </DropdownMenu>
       </li>
       <li>
         <img
