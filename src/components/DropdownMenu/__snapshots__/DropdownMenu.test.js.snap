@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DropdownMenu /> shallow rendering tests matches the snapshot 1`] = `
+<div
+  className="dropdown-menu"
+>
+  <button
+    className="dropdown-menu__button"
+    onClick={[Function]}
+    type="button"
+  >
+    <img
+      className="dropdown-menu__icon"
+      src={
+        Object {
+          "process": [Function],
+        }
+      }
+    />
+    <span
+      className="dropdown-menu__text"
+    >
+      0
+    </span>
+  </button>
+  <div
+    className="dropdown-menu__content"
+  >
+    <p>
+      Menu item
+    </p>
+  </div>
+</div>
+`;

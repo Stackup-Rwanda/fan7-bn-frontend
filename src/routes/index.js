@@ -42,9 +42,15 @@ export default function index() {
       <Route path="/forgetPassword" exact component={ForgetPassword} />
       <Route path="/resetPassword" exact component={ResetPassword} />
       <Route
-        path="/request"
+        path="/requests"
         exact
         component={Request}
+        roleRequired={['requester', 'manager']}
+      />
+      <Route
+        path="/requests/:id"
+        exact
+        component={null}
         roleRequired={['requester', 'manager']}
       />
       <Route path="*" component={Error} />

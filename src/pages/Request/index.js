@@ -39,9 +39,6 @@ class Request extends Component {
   handleApprove(row) {
     const status = 'approve';
     const { dispatch } = this.props;
-    if(row.status === 'Approved') {
-      alert('Request Already approved')
-    }
     dispatch(ApproveReject(row.id, status));
   }
   handleReject(row) {
