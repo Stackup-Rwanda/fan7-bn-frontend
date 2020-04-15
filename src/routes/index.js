@@ -18,6 +18,8 @@ import ResetPassword from '../pages/resetPassword';
 import UserRole from '../components/admin/userRole';
 import ProtectedRoutes from '../components/ProtectedRoutes';
 import Request from '../pages/Request';
+import HostSupplier from '../pages/host_supplier';
+import Tests from '../components/ImageUploader';
 
 export default function index() {
   const isLoggeddIn = AuthService.isLoggedIn();
@@ -41,6 +43,8 @@ export default function index() {
       <ProtectedRoutes path="/dashboard/:token" exact component={Dashboard} />
       <Route path="/forgetPassword" exact component={ForgetPassword} />
       <Route path="/resetPassword" exact component={ResetPassword} />
+      <Route path="/hostSupplier" exact component={HostSupplier} />
+      <Route path="/test_code" exact component={Tests} />
       <Route
         path="/requests"
         exact

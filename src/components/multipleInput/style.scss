@@ -1,0 +1,52 @@
+.bigg_input_container {
+  margin-top: 20px;
+  border: 1px solid blue;
+  background: #fff;
+  width: fit-content;
+  display: flex;
+  height: fit-content;
+  padding: 7px 19px;
+  font-size: 0.8em;
+  border-radius: 50px;
+  &_answer_container {
+    // box-sizing: border-box;
+    display: flex;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    border-radius: 4px;
+    background: blue;
+    margin:  0 3px;
+    &_item {
+      margin: 0;
+      padding: 0;
+      border-radius: 4px;
+      background-color: blue !important;
+      overflow: hidden;
+      white-space:nowrap;
+      &_word {
+        padding: 2px 3px;
+        color: inherit;
+        height: fit-content;
+        margin: 0;
+      }
+      &_close {
+        width: fit-content;
+        padding: 2px 3px;
+        cursor: pointer;
+        margin: 0;
+        border: none;
+        color: inherit;
+        &:hover {
+          background: darkblue;
+        }
+      }
+    }
+}
+  &_input_container {
+    border: none !important;
+    margin-bottom: 0;
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+}
