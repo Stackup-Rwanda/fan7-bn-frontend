@@ -4,9 +4,8 @@ import InputField from '../../components/InputField/index';
 import Button from '../../components/Button/index';
 import AuthLayout from '../../containers/AuthLayout';
 import '../../containers/authLayout.scss';
-// import  './forgetPassword.scss';
-// import Logo from '../../components/logo/logo';
 import sendEmail from '../../store/modules/forgetPassword/actions';
+import history from '../../utils/helpers/history';
 
 class ForgetPassword extends Component {
   constructor(props) {

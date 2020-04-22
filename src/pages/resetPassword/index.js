@@ -5,6 +5,7 @@ import Button from '../../components/Button';
 import AuthLayout from '../../containers/AuthLayout';
 import '../../containers/authLayout.scss';
 import updatePassword from '../../store/modules/resetPassword/actions';
+import history from '../../utils/helpers/history';
 
 
 class ResetPassword extends Component {
