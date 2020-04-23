@@ -1,0 +1,211 @@
+.accommodationCard {
+  display: grid;
+  grid-template-columns: 500px auto auto;
+  width: 100%;
+  min-height: 250px;
+  background: #ffffff;
+
+  &__content {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  &__map {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 24px 8px 0 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 24px 24px 0 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 8px;
+
+    &__title {
+      font-family: 'Poppins', sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 24px;
+      text-transform: uppercase;
+      color: #000000;
+    }
+  }
+
+  &__location {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    max-height: 18px;
+    line-height: 1;
+    margin-bottom: 8px;
+
+    &__icon {
+      width: 18px;
+      height: 18px;
+      margin-right: 8px;
+      color: rgba(0, 0, 0, 0.53);
+    }
+
+    &__address {
+      font-family: 'Poppins', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 18px;
+      color: rgba(0, 0, 0, 0.53);
+    }
+  }
+
+  &__amenities {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 24px;
+    padding: 24px;
+
+    &__content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      max-height: 18px;
+      line-height: 1;
+      margin-right: 8px;
+    }
+
+    &__icon {
+      width: 18px;
+      height: 18px;
+      color: #2681ff;
+      margin-right: 8px;
+    }
+
+    &__text {
+      font-family: 'Poppins', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 18px;
+      color: #2681ff;
+    }
+  }
+
+  &__desc {
+    grid-column: 1 / 4;
+    width: 100%;
+    height: 100%;
+    font-style: normal;
+    color: #000000;
+    padding: 24px;
+
+    &__title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+
+    &__content {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__ratings {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+    &__review {
+      font-family: 'Poppins', sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 4;
+      color: #2681ff;
+    }
+  }
+
+  &__rating {
+    display: grid;
+    justify-content: flex-start;
+
+    &__text {
+      grid-row: 1 / span 1;
+      font-family: 'Poppins', sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      color: #000000;
+    }
+
+    &__stars {
+      grid-row: 2 / span 1;
+      font-family: 'Poppins', sans-serif;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 30px;
+      margin-top: -10px;
+      color: rgba(0, 0, 0, 0.54);
+    }
+
+    &__value {
+      grid-row: 1 / span 2;
+      font-family: 'Poppins', sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 48px;
+      line-height: 1;
+      margin-right: 8px;
+      color: #2681ff;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 30px;
+
+    &__btn {
+      max-width: 150px;
+      padding: 3px 50px !important;
+      font-family: 'Poppins', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px !important;
+      color: #ffffff;
+    }
+  }
+}

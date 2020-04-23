@@ -7,6 +7,7 @@ const Button = ({
   isloading,
   value,
   onClick,
+  disabled
 }) => (
   <div className="row justify-content-center my-3 px-3">
     <button
@@ -14,6 +15,7 @@ const Button = ({
       type="submit"
       isloading={isloading}
       onClick={onClick}
+      disabled={disabled}
     >
       {value}
     </button>

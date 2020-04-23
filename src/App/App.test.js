@@ -22,9 +22,7 @@ describe('Render Home component', () => {
 
     const setUp = (initialState = {}, props = {}) => {
       const store = testStore(initialState);
-      return shallow(
-        <Routes {...props} store={store} />,
-      );
+      return shallow(<Routes {...props} store={store} />);
     };
   });
 
