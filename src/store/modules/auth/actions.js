@@ -39,7 +39,7 @@ export const loginAction = (data) => async (dispatch) => {
       timer: 3000,
       buttons: false,
     });
-    history.push('/dashboard');
+    history.push('/requests');
   } catch (error) {
     swal({
       title: 'Login error',

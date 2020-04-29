@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import jwtDecode from 'jwt-decode';
+import swal from 'sweetalert';
 import Table from '../../components/Table';
 import { getTripRequests, ApproveReject } from '../../store/modules/request/view/actions';
 import {
@@ -17,6 +18,8 @@ import { requesterDashboard, managerDashboard } from '../../assets/sidebar';
 import profileImg from '../../assets/images/icons8-user-30.png';
 import InputField from '../../components/InputField';
 import Button from '../../components/Button';
+import Dropdown from '../../components/index';
+
 
 class Request extends Component {
   constructor(props) {
@@ -26,8 +29,6 @@ class Request extends Component {
     };
 
     this.state = this.initialState;
-    this.handleApprove = this.handleApprove.bind(this);
-    this.handleReject = this.handleReject.bind(this);
     this.onChangePage = this.onChangePage.bind(this);
   }
 
@@ -35,20 +36,25 @@ class Request extends Component {
     const { dispatch } = this.props;
     dispatch(getTripRequests(1, 5));
   }
+  handleStatus = (row) => {
+    const { dispatch } = this.props;
+    swal({
+      title: "Approve or Reject trip request",
+      text: " Text approve or reject",
+      content: "input",
 
-  handleApprove(row) {
-    const status = 'approve';
-    const { dispatch } = this.props;
-    dispatch(ApproveReject(row.id, status));
-  }
-  handleReject(row) {
-    const status = 'reject';
-    const { dispatch } = this.props;
-    if(row.status === 'Rejected') {
-      alert(`Request Already ${row.status}`)
-    }
-    dispatch(ApproveReject(row.id, status));
-  }
+    }).then((input) => {
+      if(row.status === 'Approved' || row.status === 'Rejected') {
+        alert('Request is already approved or rejected')
+      }
+      if(input != 'approve' && input != 'reject') {
+        alert('Text should approve or reject')
+      }
+       if (input) {
+        dispatch(ApproveReject(row.id, input));
+       } 
+  });
+}
   onChangePage(page, limit) {
     const { dispatch } = this.props;
     dispatch(getTripRequests(page, limit));
@@ -114,8 +120,8 @@ class Request extends Component {
             data={requests}
             loading={loading}
             actions={true}
-            handleApprove={this.handleApprove}
-            handleReject={this.handleReject}
+            handleAction={this.handleStatus}
+
           />
             {/* Pagination start*/}
             <ServerSidePagination
