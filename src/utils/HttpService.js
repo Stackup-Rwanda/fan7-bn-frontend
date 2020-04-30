@@ -1,10 +1,11 @@
 import request from './API';
 
 class HttpService {
-  static get(url, params = {}, config = {}) {
+  static get(url, data, params = {}, config = {}) {
     return request({
       url,
       method: 'GET',
+      data,
       params,
       ...config,
     });
