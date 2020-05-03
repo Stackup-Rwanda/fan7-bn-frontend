@@ -8,7 +8,7 @@ import EditProfilePage from '../pages/profile/EditProfilePage';
 import Error403 from '../pages/errors/Error403';
 import Error404 from '../pages/errors/Error404';
 import Error500 from '../pages/errors/Error500';
-import Test from '../components/Table/TableLoader';
+import Test from '../pages/Accommodation';
 import AuthService from '../utils/AuthService';
 import Signup from '../pages/Authentication/Signup';
 import EmailConfirm from '../pages/Authentication/EmailVerification';
@@ -18,6 +18,8 @@ import ResetPassword from '../pages/resetPassword';
 import UserRole from '../components/admin/userRole';
 import ProtectedRoutes from '../components/ProtectedRoutes';
 import Request from '../pages/Request';
+import Accommodations from '../pages/Accommodations';
+import Accommodation from '../pages/Accommodation';
 
 export default function index() {
   const isLoggeddIn = AuthService.isLoggedIn();
@@ -41,18 +43,10 @@ export default function index() {
       <ProtectedRoutes path="/dashboard/:token" exact component={Dashboard} />
       <Route path="/forgetPassword" exact component={ForgetPassword} />
       <Route path="/resetPassword" exact component={ResetPassword} />
-      <Route
-        path="/requests"
-        exact
-        component={Request}
-        roleRequired={['requester', 'manager']}
-      />
-      <Route
-        path="/requests/:id"
-        exact
-        component={null}
-        roleRequired={['requester', 'manager']}
-      />
+      <Route path="/requests" exact component={Request} roleRequired={['requester', 'manager']} />
+      <Route path="/requests/:id" exact component={null} roleRequired={['requester', 'manager']} />
+      <Route path="/accommodations" exact component={Accommodations} />
+      <Route path="/accommodations/:id" exact component={Accommodation} />
       <Route path="*" component={Error} />
     </Switch>
   );

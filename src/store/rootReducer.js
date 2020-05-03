@@ -10,6 +10,8 @@ import forgetEmail from './modules/forgetPassword/reducers';
 import resetPassword from './modules/resetPassword/reducers';
 import viewRequests from './modules/request/view/reducers';
 import notifications from './modules/notification/reducers';
+import accommodation from './modules/accommodation/reducers';
+import booking from './modules/booking/reducers';
 
 const rootReducer = combineReducers({
   auth: authReducers,
@@ -23,6 +25,8 @@ const rootReducer = combineReducers({
   social: socialReducer,
   viewRequests,
   notifications,
+  accommodation,
+  booking,
 });
 
 export default rootReducer;

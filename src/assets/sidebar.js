@@ -10,8 +10,8 @@ export const requesterDashboard = {
   },
   links: [
     {
-      name: 'My Bookings',
-      path: 'booking',
+      name: 'Booking',
+      path: 'accommodations',
       icon: bookIcon
     },
     {
