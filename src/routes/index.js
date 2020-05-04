@@ -18,6 +18,7 @@ import ResetPassword from '../pages/resetPassword';
 import UserRole from '../components/admin/userRole';
 import ProtectedRoutes from '../components/ProtectedRoutes';
 import Request from '../pages/Request';
+import Comment from '../pages/comments';
 
 export default function index() {
   const isLoggeddIn = AuthService.isLoggedIn();
@@ -53,6 +54,7 @@ export default function index() {
         component={null}
         roleRequired={['requester', 'manager']}
       />
+      <Route path="/tripRequest/:id/addComment" exact component={Comment} />
       <Route path="*" component={Error} />
     </Switch>
   );

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL: 'https://barefoot-nomad-staging.herokuapp.com/',
+  baseURL: 'http://localhost:5000',
   responseType: 'json',
 });
