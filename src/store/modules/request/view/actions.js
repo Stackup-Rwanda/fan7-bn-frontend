@@ -1,4 +1,4 @@
-import swal from 'sweetalert';
+import { toast } from "react-toastify";
 import {
   GET_TRIP_REQUEST_START,
   GET_TRIP_REQUEST_SUCCESS,
@@ -24,13 +24,15 @@ export const ApproveReject = (id, status) => async dispatch => {
   try {
     const response = await HttpService.patch(`/requests/${id}/${status}`);
     dispatch({type: APPROVE_REJECT_SUCCESS, payload: response.data});
-    swal({
-      text: `Request Successfuly ${response.data.status}`,
-      icon: 'success',
-      timer: 3000,
-      buttons: false,
+    console.log(response.data);
+    
+    toast.success(`Request Successfuly ${response.data.status}`, {
+      position: toast.POSITION.TOP_RIGHT
     })
   } catch (error) {
-    dispatch({ type: APPROVE_REJECT_ERROR, payload: Errors.selectMessage(error)})
+    dispatch({ type: APPROVE_REJECT_ERROR, payload: error.response.data});
+    toast.error(`${error.response.data.error}`, {
+      position: toast.POSITION.TOP_RIGHT
+    });
   }
 }

@@ -4,31 +4,34 @@ import TableLoader from './TableLoader';
 import './styles/Table.scss';
 import options from '../../assets/icons/icons8-menu-vertical-30.png';
 
-const renderData = (data, cols, actions, handleApprove, handleReject) =>
-  data.map(row => (
+const renderData = (data, cols, actions, handleAction) =>
+  data.map((row) => (
     <tr key={row.id}>
-      {!!cols && cols.map(col => (
-        <td key={col.name}>
-          {Array.isArray(row[col.name])
-            ? row[col.name].map(arr => (
-                <>
-                  {arr}
-                  <br />
-                </>
-              ))
-            : row[col.name]}
-        </td>
-      ))}
+      {!!cols &&
+        cols.map((col) => (
+          <td key={col.name}>
+            {Array.isArray(row[col.name])
+              ? row[col.name].map((arr) => (
+                  <>
+                    {arr}
+                    <br />
+                  </>
+                ))
+              : row[col.name]}
+          </td>
+        ))}
       {actions && (
         <td key="actions">
           <div className="dropdown">
-            <button className="dropbtn"><img src={options} alt="more options" /></button>
-            <div className="dropdown-content">
-                <a href="#" >Add a comment</a>
-                <a href="#" onClick={() => handleApprove(row)}>Approve request</a>
-                <a href="#" onClick={() => handleReject(row)}>Reject request</a>
-            </div>
-        </div>
+            <button
+              className="dropbtn"
+              type="button"
+              id={`table_dots_btn_${row.id}`}
+              onClick={(e) => handleAction(row, e)}
+            >
+              <img src={options} alt="more options" />
+            </button>
+           </div>
         </td>
       )}
     </tr>
@@ -36,7 +39,7 @@ const renderData = (data, cols, actions, handleApprove, handleReject) =>
 
 const renderEmptyState = (cols, actions) => <tr><td colSpan={actions ? cols.length + 1 : cols.length}>There is no data in this table</td></tr>;
 
-const Table = ({ cols, data, loading, actions, handleApprove, handleReject }) => {
+const Table = ({ cols, data, loading, actions, handleAction }) => {
   return (
     <div className="data-table">
       <table className="table">
@@ -52,7 +55,7 @@ const Table = ({ cols, data, loading, actions, handleApprove, handleReject }) =>
           {loading ? (
             <div className="table-loader"><TableLoader /></div>
           ) : data.length > 0 ? (
-            renderData(data, cols, actions, handleApprove, handleReject)
+            renderData(data, cols, actions, handleAction)
           ) : (
             renderEmptyState(cols, actions)
           )}
@@ -67,8 +70,7 @@ Table.propTypes = {
   data: PropTypes.arrayOf(),
   loading: PropTypes.bool,
   actions: PropTypes.bool,
-  handleApprove: PropTypes.func,
-  handleReject: PropTypes.func
+  handleAction: PropTypes.func
 };
 
 Table.defaultProps = {
@@ -83,8 +85,7 @@ Table.defaultProps = {
   ],
   loading: false,
   actions: false,
-  handleApprove: () => {},
-  handleReject: () => {}
+  handleAction: () => {}
 };
 
 export default Table;

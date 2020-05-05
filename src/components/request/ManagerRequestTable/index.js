@@ -5,7 +5,7 @@ import Spinner from '../../Spinner';
 import './ManagerRequestTable.scss';
 import options from '../../../assets/icons/icons8-menu-vertical-30.png';
 
-const Table = ({ requests, handleSearch, loading }) => {
+const Table = ({ requests, handleSearch, loading, handleAction }) => {
   return (
     <div className="requests-table">
       <div className="requests-table__header">
@@ -50,7 +50,7 @@ const Table = ({ requests, handleSearch, loading }) => {
                 <td>{request.type}</td>
                 <td>{request.status}</td>
                 <td>
-                  <button type="button">
+                  <button type="button" onClick={handleAction}>
                     <img src={options} alt="more options" data-requestId={request.id} />
                   </button>
                 </td>
