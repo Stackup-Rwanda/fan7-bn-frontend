@@ -7,9 +7,9 @@ import UserActions from '../../store/modules/role/actions';
 import DashboardLayout from '../DashboardLayout/index';
 import Pagination from '../Pagination/index';
 import Spinner from '../Spinner/index';
-// import InputField from '../InputField';
 import '../../assets/scss/style.scss';
 import Dropdown from './Dropdown';
+import Chatbot from '../../components/Chatbot';
 
 class userRole extends Component {
   constructor(props) {
@@ -132,6 +132,7 @@ class userRole extends Component {
                 onChangePage={this.onChangePage}
               />
           </div>
+          <Chatbot />
         </div>
       );
   }

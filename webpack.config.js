@@ -25,7 +25,7 @@ module.exports = (env) => ({
       },
       {
         test: /\.css$/,
-        loader: 'style-laoder!css-loader?modules=true',
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.scss$/,

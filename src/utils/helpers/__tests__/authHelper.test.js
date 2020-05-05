@@ -1,10 +1,7 @@
 import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
-import axios from 'axios';
 import moxios from 'moxios';
-import { SUCCESS_GET_USER, SUCCESS_LOGIN } from '../../../store/actions/types';
 import { getUser, storeToken } from '../authHelper';
-import JwtDecode from 'jwt-decode';
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);

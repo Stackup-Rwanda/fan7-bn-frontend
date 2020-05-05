@@ -21,7 +21,17 @@ const history = {
 
 describe('EditProfilePage Component Test', () => {
   it('should return true if component exists', () => {
-    const initialState = {};
+    localStorage.setItem('barefoot_nomad_token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJlbHZpc3J1Z2FtYmFAZ21haWwuY29tIiwicm9sZSI6Im1hbmFnZXIiLCJpbWFnZV91cmwiOm51bGwsImlhdCI6MTU4NjYyODg1OH0.i8T-qF8n0e4jySQkaP1G7bUG9oMmiL1BC6DYiJHknLE');
+
+    const initialState = {
+      chat: {
+        messages: {
+          senderId: 1,
+          sender: 'The Great',
+          message: 'Test react',
+          createdAt: '01-03-2019'
+        }
+    }};
     const store = mockStore(initialState);
     const wrapper = mount(
       <Provider store={store}>
@@ -35,8 +45,18 @@ describe('EditProfilePage Component Test', () => {
   });
 
   it("should display spinner if it's loading", () => {
+    localStorage.setItem('barefoot_nomad_token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJlbHZpc3J1Z2FtYmFAZ21haWwuY29tIiwicm9sZSI6Im1hbmFnZXIiLCJpbWFnZV91cmwiOm51bGwsImlhdCI6MTU4NjYyODg1OH0.i8T-qF8n0e4jySQkaP1G7bUG9oMmiL1BC6DYiJHknLE');
+
     const initialState = {
       userProfile: { loading: true },
+      chat: {
+        messages: {
+          senderId: 1,
+          sender: 'The Great',
+          message: 'Test react',
+          createdAt: '01-03-2019'
+        }
+      }
     };
     const store = mockStore(initialState);
     const wrapper = mount(
@@ -51,11 +71,21 @@ describe('EditProfilePage Component Test', () => {
   });
 
   it('should display Sidebar if it is not loading', () => {
+    localStorage.setItem('barefoot_nomad_token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJlbHZpc3J1Z2FtYmFAZ21haWwuY29tIiwicm9sZSI6Im1hbmFnZXIiLCJpbWFnZV91cmwiOm51bGwsImlhdCI6MTU4NjYyODg1OH0.i8T-qF8n0e4jySQkaP1G7bUG9oMmiL1BC6DYiJHknLE');
+
     const handleUpdateProfile = jest.fn();
     const data = { user_name: 'elvisR' };
     const image = 'img.jpg';
     const initialState = {
       userProfile: { loading: false, profile: {} },
+      chat: {
+        messages: {
+          senderId: 1,
+          sender: 'The Great',
+          message: 'Test react',
+          createdAt: '01-03-2019'
+        }
+      }
     };
     const store = mockStore(initialState);
     const wrapper = mount(
