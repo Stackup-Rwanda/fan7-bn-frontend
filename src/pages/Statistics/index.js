@@ -38,15 +38,15 @@ class Request extends Component {
   tripsHandler = async (event) => {
    event.preventDefault();
    const { startDate, endDate } = this.state
-   console.log(this.state.trips);
+  // console.log(this.props.trips);
     await this.props.StatsFetch({startDate, endDate});
   }
-
-
   render() {
     const token = AuthService.getToken();
     const { role } = !!token ? jwtDecode(token) : { role: '' };
     const board = role === 'requester' ? requesterDashboard : managerDashboard;
+    const { trips } = this.props;
+    console.log(trips);
 
     return (
       <div className="big-container">
@@ -97,7 +97,7 @@ Request.propTypes = {
 };
 
 const mapStateToProps = state => {
-  console.log(state.viewRequests.trips);
+  console.log(state.viewRequests);
   const { viewRequests } = state;
   return {
     trips: viewRequests

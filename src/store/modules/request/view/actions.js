@@ -43,13 +43,11 @@ export const getTripStatistics = (data) => async dispatch => {
   dispatch({ type: GET_TRIP_REQUEST_START });
   try {
     const { startDate, endDate } = data;
-       const res = await HttpService.get(`requests/statistics`,
-        { 
-        startDate, 
-         endDate 
-        });
+       const res = await HttpService.get(`requests/statistics/${startDate}/${endDate}`);
+        console.log(res.data);
     
-    dispatch({ type: TRIPS_STATS_SUCCESS, payload: res });
+    dispatch({ type: TRIPS_STATS_SUCCESS, payload: res.data });
+    return res.data;
   } catch (error) {
     dispatch({ type: TRIPS_STATS_ERROR, payload: Errors.selectMessage(error) });
   }
