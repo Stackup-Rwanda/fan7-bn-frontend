@@ -3,12 +3,13 @@
 	top: 30%;
 	left: 50%;
 	bottom: 10%;
-	min-width: 400px;
-	height: 330px;
+	min-width: 100px;
+	height: 250px;
 	transform: translate(-50%, -50%);
 	background: linear-gradient(#fcfcfc, #f0f0f0);
 	border-radius: 3px;
-	padding: 50px;
+	padding: 20px;
+	margin-bottom: 60px;
 	box-shadow: 0px 5px 11px -7px #000
 }
 	
@@ -65,7 +66,7 @@
 
 		h2 span{
 			background-color: #fff;
-			padding: 5px;
+			padding: 5px 20px ;
 			border-radius: 25px 25px 25px 25px;
 		}
 	}

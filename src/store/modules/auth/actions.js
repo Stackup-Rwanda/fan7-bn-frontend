@@ -24,14 +24,12 @@ export function setCurrentUser(payload) {
 export const loginAction = (data) => async (dispatch) => {
   try {
     const { email, password } = data;
-    console.log(data);
     
     const response = await axiosCall.post('/auth/login', {
       email,
       password,
     });
-    console.log(response);
-    
+
     const { token } = response.data.data;
     localStorage.setItem('barefoot_nomad_token', token);
     await dispatch(setCurrentUser(jwtDecode(token)));

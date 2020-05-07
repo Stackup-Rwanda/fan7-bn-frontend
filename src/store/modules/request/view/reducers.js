@@ -4,7 +4,10 @@ import {
   GET_TRIP_REQUEST_ERROR,
   APPROVE_REJECT_SUCCESS,
   APPROVE_REJECT_ERROR,
-  TRIPS_STATS_SUCCESS
+  TRIPS_STATS_SUCCESS,
+  TRIPS_STATS_ERROR,
+  TRIPS_STATS_BEGIN,
+  MOST_VISITED
   // HANDLE_PAGE_CHANGE,
   // HANDLE_ROWS_PER_PAGE_CHANGE,
 } from './types';
@@ -13,7 +16,7 @@ const initialState = {
   loading: false,
   count: 0,
   requests: [],
-  trips: [],
+  totalTrips: 0,
   // numberOfRows: 5,
   // page: 1,
   error: '',
@@ -53,11 +56,30 @@ export default (state = initialState, { type, payload }) => {
       error: payload,
       loading: false
     }
+    case TRIPS_STATS_BEGIN: 
+    return {
+      ...state,
+      loading: true
+    }
     case TRIPS_STATS_SUCCESS:
       return { 
         ...state,
-         trips: action.payload,
+        loading: false,
+        error: '',
+        trips: action.payload,
+        totalTrips: action.totalTrips
          };
+    case TRIPS_STATS_ERROR: 
+      return {
+        ...state,
+        error: payload,
+        loading: false
+      }
+    case MOST_VISITED:
+      return { 
+        ...state,
+          mostVisited: action.payload 
+        };
     // case HANDLE_ROWS_PER_PAGE_CHANGE:
     //   return {
     //     ...state,
@@ -76,5 +98,4 @@ export default (state = initialState, { type, payload }) => {
   }
 };
 
-export const getStatistics = state => state.trips;
 

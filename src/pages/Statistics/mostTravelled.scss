@@ -1,0 +1,30 @@
+.component_section {
+	border-radius: 4px;
+	background-color: #fff;
+	border:1px solid rgba(0, 0, 0, 0.08);
+	box-shadow:0 3px 8px 0 rgba(0,0,0,0.08);
+	padding: 0 30px 30px 30px;
+    width:80%;
+    margin: 50px 10px 100px 70px;
+	float:left;
+}
+.component_section_container {
+	width: calc(100% + 60px);
+	left: -30px;
+	position: relative;
+	padding:20px 25px;
+	margin: 0 0 30px 0;
+	border-radius: 4px 4px 0 0;
+	background-color: #2c7fcc;
+	border-bottom: 1px solid #eaeaea;
+}
+.component_section_container h3 {
+	padding: 0;
+	margin: 0;
+	color:#fff;
+	font-weight:400;
+	line-height: 34px;
+	font-size: 20px;
+	position: relative;
+	top: 1px;
+}

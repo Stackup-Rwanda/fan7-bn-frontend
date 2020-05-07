@@ -8,7 +8,8 @@ import {
   APPROVE_REJECT_ERROR,
   TRIPS_STATS_BEGIN,
   TRIPS_STATS_SUCCESS,
-  TRIPS_STATS_ERROR
+  TRIPS_STATS_ERROR,
+  MOST_VISITED
 } from './types';
 import HttpService from '../../../../utils/HttpService';
 import Errors from '../../../../utils/helpers/errors';
@@ -40,15 +41,25 @@ export const ApproveReject = (id, status) => async dispatch => {
 }
 
 export const getTripStatistics = (data) => async dispatch => {
-  dispatch({ type: GET_TRIP_REQUEST_START });
+  dispatch({ type: TRIPS_STATS_BEGIN   });
   try {
     const { startDate, endDate } = data;
        const res = await HttpService.get(`requests/statistics/${startDate}/${endDate}`);
         console.log(res.data);
     
-    dispatch({ type: TRIPS_STATS_SUCCESS, payload: res.data });
-    return res.data;
+    dispatch({ type: TRIPS_STATS_SUCCESS, payload: res.data, totalTrips: res.data.totalTrips });
+    // return res.data;
   } catch (error) {
     dispatch({ type: TRIPS_STATS_ERROR, payload: Errors.selectMessage(error) });
   }
+};
+
+export const mostTravelled = () => async (dispatch) => {
+  const res = await HttpService.get(`requests/destinations/mostTravelled`)
+  console.log(res.Destinations[0]);
+  
+  dispatch({
+    type: MOST_VISITED,
+    payload: res ? res.Destinations[0] : '',
+  });
 };

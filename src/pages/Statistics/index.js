@@ -5,21 +5,20 @@ import jwtDecode from 'jwt-decode';
 import './style.scss'
 import { getTripStatistics } from '../../store/modules/request/view/actions';
 import {
-  selectLoading,
-  selectCount,
-  selectRequests,
+  TotalTrips,
 } from '../../store/modules/request/view/selectors';
 import AuthService from '../../utils/AuthService';
 import DynamicDashboard from '../../components/DynamicDashboard/Dashboard';
 import { requesterDashboard, managerDashboard } from '../../assets/sidebar';
 import profileImg from '../../assets/images/icons8-user-30.png';
+import MostTravelled from './MostTravelled';
 
 
-class Request extends Component {
+class TripStatistics extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      trips: [],
+      trips: 20,
       startDate: '',
       endDate: '',
     };
@@ -38,16 +37,16 @@ class Request extends Component {
   tripsHandler = async (event) => {
    event.preventDefault();
    const { startDate, endDate } = this.state
-  // console.log(this.props.trips);
+   const { totalTrips } = this.props;
     await this.props.StatsFetch({startDate, endDate});
+    this.setState({
+      trips: totalTrips
+    })
   }
   render() {
     const token = AuthService.getToken();
     const { role } = !!token ? jwtDecode(token) : { role: '' };
     const board = role === 'requester' ? requesterDashboard : managerDashboard;
-    const { trips } = this.props;
-    console.log(trips);
-
     return (
       <div className="big-container">
         <div className="sub-container">
@@ -63,7 +62,7 @@ class Request extends Component {
                     </div>
                     <div className="form-control">
                         <label>To</label>
-                        <input type="text" name="endDate" value={this.state.endData} onChange={this.handleChange}  className="input"/>
+                        <input type="text" name="endDate" value={this.state.endDate} onChange={this.handleChange}  className="input"/>
                     </div>
                     <button className="btn trips__btn">Search</button>
                 </form>
@@ -72,15 +71,16 @@ class Request extends Component {
                 <div className="col2">
                 <p className="stat__title">Trips stats</p>
                 <div className="trips__searched">
-                {this.state.trips.length > 0 ? (
+                {this.state.trips > 0 ? (
                   <h2><span>{this.state.trips}</span> trips found</h2>
                 ) : (
-                  <h2>No trips found</h2>
+                  <h3>No trips found</h3>
                 )}
                   </div>
                 </div>
             </div>
             </div>
+            <MostTravelled />
           <DynamicDashboard
           properties={board}
           profile={profileImg}
@@ -96,13 +96,12 @@ Request.propTypes = {
   loading: PropTypes.bool.isRequired,
 };
 
-const mapStateToProps = state => {
-  console.log(state.viewRequests);
-  const { viewRequests } = state;
-  return {
-    trips: viewRequests
-   }
-}
+// const mapStateToProps = (state) => ({
+//   totalTrips: state.viewRequests.totalTrips
+// });
+const select = ({ viewRequests }) => ({
+  totalTrips: TotalTrips(viewRequests),
+});
 
 const mapDispatchToProps = dispatch => ({
     StatsFetch: data => {
@@ -110,4 +109,4 @@ const mapDispatchToProps = dispatch => ({
     },
   });
 
-  export default connect(mapStateToProps, mapDispatchToProps)(Request);
+  export default connect(select, mapDispatchToProps)(TripStatistics);
