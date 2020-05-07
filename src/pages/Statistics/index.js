@@ -11,14 +11,13 @@ import AuthService from '../../utils/AuthService';
 import DynamicDashboard from '../../components/DynamicDashboard/Dashboard';
 import { requesterDashboard, managerDashboard } from '../../assets/sidebar';
 import profileImg from '../../assets/images/icons8-user-30.png';
-import MostTravelled from './MostTravelled';
 
 
 class TripStatistics extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      trips: 20,
+      trips: 0,
       startDate: '',
       endDate: '',
     };
@@ -38,15 +37,19 @@ class TripStatistics extends Component {
    event.preventDefault();
    const { startDate, endDate } = this.state
    const { totalTrips } = this.props;
+   console.log("trips: ", totalTrips);
+   
     await this.props.StatsFetch({startDate, endDate});
     this.setState({
-      trips: totalTrips
+      trips: this.props.totalTrips
     })
   }
   render() {
     const token = AuthService.getToken();
     const { role } = !!token ? jwtDecode(token) : { role: '' };
     const board = role === 'requester' ? requesterDashboard : managerDashboard;
+    const { totalTrips } = this.props;
+    
     return (
       <div className="big-container">
         <div className="sub-container">
@@ -71,8 +74,8 @@ class TripStatistics extends Component {
                 <div className="col2">
                 <p className="stat__title">Trips stats</p>
                 <div className="trips__searched">
-                {this.state.trips > 0 ? (
-                  <h2><span>{this.state.trips}</span> trips found</h2>
+                {totalTrips > 0 ? (
+                  <h2><span>{totalTrips}</span> trips found</h2>
                 ) : (
                   <h3>No trips found</h3>
                 )}
@@ -80,7 +83,6 @@ class TripStatistics extends Component {
                 </div>
             </div>
             </div>
-            <MostTravelled />
           <DynamicDashboard
           properties={board}
           profile={profileImg}

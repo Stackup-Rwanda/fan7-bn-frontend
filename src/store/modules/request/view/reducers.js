@@ -17,12 +17,16 @@ const initialState = {
   count: 0,
   requests: [],
   totalTrips: 0,
+  // visiteCount: 0,
+  // visitedPlace: {},
   // numberOfRows: 5,
   // page: 1,
   error: '',
 };
 
 export default (state = initialState, { type, payload }) => {
+
+  
   switch (type) {
     case GET_TRIP_REQUEST_START:
       return {
@@ -66,8 +70,8 @@ export default (state = initialState, { type, payload }) => {
         ...state,
         loading: false,
         error: '',
-        trips: action.payload,
-        totalTrips: action.totalTrips
+        trips: payload.data,
+        totalTrips: payload.totalTrips
          };
     case TRIPS_STATS_ERROR: 
       return {
@@ -75,11 +79,13 @@ export default (state = initialState, { type, payload }) => {
         error: payload,
         loading: false
       }
-    case MOST_VISITED:
-      return { 
-        ...state,
-          mostVisited: action.payload 
-        };
+    // case MOST_VISITED:
+    //   return { 
+    //     ...state,
+    //       mostVisited: payload.Destinations
+    //     };
+       
+        
     // case HANDLE_ROWS_PER_PAGE_CHANGE:
     //   return {
     //     ...state,

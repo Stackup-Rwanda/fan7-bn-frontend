@@ -1,5 +1,5 @@
 import swal from 'sweetalert';
-import axios from 'axios';
+import { toast } from 'react-toastify';
 import {
   GET_TRIP_REQUEST_START,
   GET_TRIP_REQUEST_SUCCESS,
@@ -9,7 +9,7 @@ import {
   TRIPS_STATS_BEGIN,
   TRIPS_STATS_SUCCESS,
   TRIPS_STATS_ERROR,
-  MOST_VISITED
+  // MOST_VISITED
 } from './types';
 import HttpService from '../../../../utils/HttpService';
 import Errors from '../../../../utils/helpers/errors';
@@ -44,22 +44,25 @@ export const getTripStatistics = (data) => async dispatch => {
   dispatch({ type: TRIPS_STATS_BEGIN   });
   try {
     const { startDate, endDate } = data;
-       const res = await HttpService.get(`requests/statistics/${startDate}/${endDate}`);
-        console.log(res.data);
-    
+    const res = await HttpService.get(`requests/statistics/${startDate}/${endDate}`);
+
     dispatch({ type: TRIPS_STATS_SUCCESS, payload: res.data, totalTrips: res.data.totalTrips });
-    // return res.data;
+    
   } catch (error) {
+      toast.error(`${Errors.selectMessage(error)}`, {
+      position: toast.POSITION.TOP_CENTER
+    });
     dispatch({ type: TRIPS_STATS_ERROR, payload: Errors.selectMessage(error) });
   }
 };
 
-export const mostTravelled = () => async (dispatch) => {
-  const res = await HttpService.get(`requests/destinations/mostTravelled`)
-  console.log(res.Destinations[0]);
+// export const mostTravelled = () => async (dispatch) => {
+//   const res = await HttpService.get(`requests/destinations/mostTravelled`)
   
-  dispatch({
-    type: MOST_VISITED,
-    payload: res ? res.Destinations[0] : '',
-  });
-};
+//   dispatch({
+//     type: MOST_VISITED,
+//     payload: res.Destinations[0],
+//     mostVisitedPlace: res ? res.Destinations[0].destination : '',
+//     visitedCount: res ? res.Destinations[0].visit_count : ''
+//   });
+// };
