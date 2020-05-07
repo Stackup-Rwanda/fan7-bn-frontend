@@ -18,6 +18,7 @@ import ResetPassword from '../pages/resetPassword';
 import UserRole from '../components/admin/userRole';
 import ProtectedRoutes from '../components/ProtectedRoutes';
 import Request from '../pages/Request';
+import Statistics from "../pages/Statistics";
 
 export default function index() {
   const isLoggeddIn = AuthService.isLoggedIn();
@@ -47,11 +48,16 @@ export default function index() {
         component={Request}
         roleRequired={['requester', 'manager']}
       />
-      <Route
+        <Route
+        path="/stats" 
+        exact 
+        component={Statistics}
+        roleRequired={['requester', 'manager', 'super-administrator']}
+         />
+      <ProtectedRoutes
         path="/requests/:id"
         exact
         component={null}
-        roleRequired={['requester', 'manager']}
       />
       <Route path="*" component={Error} />
     </Switch>

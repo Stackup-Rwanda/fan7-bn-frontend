@@ -24,10 +24,12 @@ export function setCurrentUser(payload) {
 export const loginAction = (data) => async (dispatch) => {
   try {
     const { email, password } = data;
+    
     const response = await axiosCall.post('/auth/login', {
       email,
       password,
     });
+
     const { token } = response.data.data;
     localStorage.setItem('barefoot_nomad_token', token);
     await dispatch(setCurrentUser(jwtDecode(token)));
@@ -39,7 +41,7 @@ export const loginAction = (data) => async (dispatch) => {
       timer: 3000,
       buttons: false,
     });
-    history.push('/dashboard');
+    history.push('/stats');
   } catch (error) {
     swal({
       title: 'Login error',

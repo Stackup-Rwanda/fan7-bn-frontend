@@ -10,6 +10,10 @@ export const selectCount = createSelector([selectRaw], viewRequests =>
   viewRequests ? viewRequests.count : 0
 );
 
+export const TotalTrips = createSelector([selectRaw], viewRequests =>
+  viewRequests ? viewRequests.totalTrips : 0
+);
+
 export const selectRequests = createSelector([selectRaw, selectCount], (viewRequests, count) =>
   viewRequests && count > 0
     ? viewRequests.requests.map(request => ({
